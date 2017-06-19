@@ -18,3 +18,5 @@ tags: [Leanote,theme]
 关于警告框，在笔记编辑器里选中文字加下划线就可以了。
 
 主题已上架[主题市场](https://leanote.com/member/blog/theme)，有什么问题欢迎留言。
+
+最新地址：[github](https://github.com/wuyouzhuguli/summer.git)

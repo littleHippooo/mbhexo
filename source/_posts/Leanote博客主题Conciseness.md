@@ -119,4 +119,4 @@ title为歌曲名，artist为歌手名，mp3为音乐连接，cover为专辑封�
 
 修复一些bug，样式调整。
 
-最新安装包：http://pan.baidu.com/s/1o8Q9brs
+最新安装包：[github](https://github.com/wuyouzhuguli/Conciseness.git)

@@ -51,6 +51,4 @@ theme.json文件中，`WebImgName` 为网页小图标图片名称+格式名， `
 
 修复Markdown下点击文章导航不跳转问题。
 
-最新主题包下载地址：
-
-百度云：[http://pan.baidu.com/s/1hrLNE5I](http://pan.baidu.com/s/1hrLNE5I)
+最新主题包下载地址：[github](https://github.com/wuyouzhuguli/Material-Design.git)
