@@ -12,6 +12,7 @@ $code-block {
   color: $highlight-foreground;
   background: $highlight-background;
   line-height: $line-height-code-block;
+  border-bottom: 1px solid #ededed;
 }
 
 pre, code { font-family: $code-font-family;}
@@ -19,8 +20,8 @@ pre, code { font-family: $code-font-family;}
 code {
   padding: 2px 4px;
   word-wrap: break-word;
-  color: #e96900;
-  background: $code-background;
+  color: #f5871f;
+  background: #f9f9f9;
   border-radius: $code-border-radius;
   font-size $code-font-size;
   letter-spacing: .5px;
@@ -48,7 +49,7 @@ pre {
 
 .highlight {
   @extend $code-block;
-  border-radius: 1px
+  border-radius: 3px
 
   pre {
     border: none;

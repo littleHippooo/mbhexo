@@ -21,11 +21,15 @@
     margin: 0;
     +mobile() { display: block; }
   }
+  .menu-item-active a{
+	color: #42b983;
+  }
 
   .menu-item a {
     padding: 0 10px;
     background: none;
     border: none;
+	letter-spacing: 1px;
     border-radius: 2px;
     transition-property: background;
 
@@ -33,7 +37,7 @@
       text-align: left;
     }
 
-    &:hover { background: #e1e1e1; }
+    &:hover {  }
   }
 
   a::before {

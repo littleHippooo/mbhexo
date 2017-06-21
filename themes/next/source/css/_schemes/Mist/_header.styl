@@ -1,8 +1,10 @@
 // Header
 // --------------------------------------------------
-.header { background: $whitesmoke; }
+.header { 
+	border-bottom: 1px solid #f2f2f2;
+ }
 .header-inner {
-  padding: 20px 0 20px;
+  padding: 25px 0 10px;
   clearfix();
 
   +mobile() {
@@ -32,7 +34,7 @@
 
   .site-title {
     font-size: 22px;
-    font-weight: bolder;
+    font-weight: 500;
 
     +mobile() { line-height: 34px; }
   }
@@ -41,7 +43,7 @@
 
 .logo-line-before,
 .logo-line-after {
-  display: block;
+  display: none;
   overflow: hidden;
   margin: 0 auto;
   width: 75%;

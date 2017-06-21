@@ -7,16 +7,16 @@ title:
 author: 博主
 
 menu:
-  home: 主页
-  archives: 归档
+  home: HOME
+  archives: ARCHIVES
   categories: 分类
-  tags: 标签
+  tags: TAGS
   about: 关于
   search: 搜索
   schedule: 日程表
   sitemap: 站点地图
   commonweal: 公益404
-  music: 音乐
+  music: MUSIC
 
 sidebar:
   overview: 站点概览
@@ -28,7 +28,7 @@ post:
   sticky: 置顶
   posted: 发表于
   in: 分类于
-  read_more: 阅读全文
+  read_more: READ MORE
   untitled: 未命名
   toc_empty: 此文章未包含目录
   visitors: 阅读次数
