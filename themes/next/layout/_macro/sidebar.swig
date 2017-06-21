@@ -1,14 +1,10 @@
 {% macro render(is_post) %}
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
+
+
 
   <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
+    
+	<div class="sidebar-inner">
 
       {% set display_toc = is_post and theme.toc.enable or is_page and theme.toc.enable %}
 
@@ -24,6 +20,7 @@
       {% endif %}
 
       <section class="site-overview sidebar-panel{% if not display_toc or toc(page.content).length <= 1 %} sidebar-panel-active{% endif %}">
+	  <!--
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="{{ url_for( theme.avatar | default(theme.images + '/avatar.gif') ) }}"
@@ -121,9 +118,55 @@
         {% endif %}
 
         {% include '../_custom/sidebar.swig' %}
-
+		 -->
+		
+		<div class="sidebar-sticky sticky">
+		  <div itemscope="" itemtype="http://schema.org/Person">
+			<div class="author__avatar">
+			  <img src="https://mmistakes.github.io/minimal-mistakes/assets/images/michael-rose.jpg" class="author__avatar" alt="Michael Rose" itemprop="image"></div>
+			<div class="author__content">
+			  <h3 class="author__name" itemprop="name">Michael Rose</h3>
+			  <p class="author__bio" itemprop="description">Just another boring, tattooed, time traveling, designer.</p></div>
+			<div class="author__urls-wrapper">
+			  <button class="btn btn--inverse">Follow</button>
+			  <ul class="author__urls social-icons">
+				<li>
+				  <a href="https://mademistakes.com" itemprop="url">
+					<i class="fa fa-fw fa-map-marker" aria-hidden="true"></i>FuZhou,CN</a>
+				</li>  
+				<li>
+				  <a href="https://mademistakes.com" itemprop="url">
+					<i class="fa fa-fw fa-chain" aria-hidden="true"></i>Website</a>
+				</li>
+				<li>
+				  <a href="https://twitter.com/mmistakes" itemprop="sameAs">
+					<i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i>Twitter</a>
+				</li>
+				<li>
+				  <a href="https://www.facebook.com/michaelrose" itemprop="sameAs">
+					<i class="fa fa-fw fa-facebook-square" aria-hidden="true"></i>Facebook</a>
+				</li>
+				<li>
+				  <a href="https://instagram.com/mmistakes" itemprop="sameAs">
+					<i class="fa fa-fw fa-instagram" aria-hidden="true"></i>Instagram</a>
+				</li>
+				<li>
+				  <a href="https://github.com/mmistakes" itemprop="sameAs">
+					<i class="fa fa-fw fa-github" aria-hidden="true"></i>GitHub</a>
+				</li>
+				<!-- <li>
+				<a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs">
+				<i class="fa fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+				</a>
+				</li>
+				-->
+			  </ul>
+			</div>
+		  </div>
+		</div>
+		
+		
       </section>
-
       {% if display_toc and toc(page.content).length > 1 %}
       <!--noindex-->
         <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
@@ -156,5 +199,7 @@
       {% endif %}
 
     </div>
+	<!--
+	 -->
   </aside>
 {% endmacro %}

@@ -163,8 +163,8 @@ NexT.utils = NexT.$u = {
    * via comparing location.path with menu item's href.
    */
   addActiveClassToMenuItem: function () {
-    var path = window.location.pathname;
-    path = path === '/' ? path : path.substring(0, path.length - 1);
+    var path = window.location.pathname.toLowerCase();
+    path = path === '/' ? path : path.substring(0, path.length - 1).toLowerCase()+"/";
     $('.menu-item a[href="' + path + '"]').parent().addClass('menu-item-active');
   },
 

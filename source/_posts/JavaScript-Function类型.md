@@ -104,7 +104,7 @@ function inner(){
     alert(inner.caller);
 }
 outer(); 
-```   
+```
 以上代码会导致警告框中显示outer()函数的源代码。因为outer()调用了inner()，所以inner.caller 就指向outer()。  
 ## 属性和方法
 ECMAScript 中的函数是对象，因此函数也有属性和方法。每个函数都包含两个属性：length 和prototype。

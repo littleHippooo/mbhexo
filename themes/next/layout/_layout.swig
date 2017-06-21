@@ -12,6 +12,7 @@
 	<script>
 		window.jQuery || document.write('<script type="text/javascript" src="{{ url_for(theme.js) }}/jquery-1.11.3.min.js"><\/script>');
 	</script>
+  <script src="http://at.alicdn.com/t/font_7t5uxv1tbjhbbj4i.js"></script>
   {% include '_partials/head.swig' %}
   <title>{% block title %}{% endblock %}</title>
 </head>
@@ -81,7 +82,7 @@
 
     {% if not theme.sidebar.b2t %}
       <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
+        <span style="font-family: 'Source Sans Pro','Helvetica Neue',Arial,sans-serif;font-size:1.2em;font-weight:600;">TOP</span>
         {% if theme.sidebar.scrollpercent %}
           <span id="scrollpercent"><span>0</span>%</span>
         {% endif %}
