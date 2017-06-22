@@ -414,19 +414,20 @@
   text-transform: uppercase;
   letter-spacing: 0.15em;
   font-weight: 600;
+  opacity: .9;
   white-space: pre-wrap;
   line-height: 1;
   margin-bottom: 0.75em;
 }
 @media screen and (min-width:1400px) {
     .terminal .prompt {
-        font-size: 13px; 
+        font-size: 14px; 
         line-height: 1.2em;
     }    
 }    
 @media screen and (max-width:1399px) {
     .terminal .prompt {
-        font-size: 1.02em; 
+        font-size: 13px; 
         line-height: 1.2em;
     }    
 } 

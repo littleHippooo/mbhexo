@@ -17,7 +17,7 @@ rss: /atom.xml
 since: 2016
 
 # icon between year and author @Footer
-authoricon: diamond
+authoricon: leaf
 
 # Footer `powered-by` and `theme-info` copyright
 copyright: true
@@ -49,6 +49,7 @@ menu:
   archives: /archives/
   tags: /tags/
   music: /music/
+  friends: /friends/
   #sitemap: /sitemap.xml
   #commonweal: /404.html
 

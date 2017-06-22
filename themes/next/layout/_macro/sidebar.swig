@@ -139,6 +139,10 @@
 					<i class="fa fa-fw fa-chain" aria-hidden="true"></i>&nbsp;&nbsp;Website</a>
 				</li>
 				<li>
+				  <a href="/atom.xml" target="_blank" itemprop="url">
+					<i class="fa fa-fw fa-rss" aria-hidden="true"></i>&nbsp;&nbsp;RSS</a>
+				</li>
+				<li>
 				  <a href="https://www.tuchuang001.com/images/2017/06/22/c5b1ffe54905189ab5a3e97dd819f4fb.png" target="_blank" itemprop="sameAs">
 					<i class="fa fa-fw fa-weixin" aria-hidden="true"></i>&nbsp;&nbsp;WeChat</a>
 				</li>

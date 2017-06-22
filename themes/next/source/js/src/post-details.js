@@ -20,7 +20,7 @@ $(document).ready(function () {
       })
       .on('clear.bs.scrollspy', removeCurrentActiveClass);
 
-    $('body').scrollspy({ target: tocSelector });
+   $('body').scrollspy({ target: tocSelector });
 
     function removeCurrentActiveClass () {
       $(tocSelector + ' ' + activeCurrentSelector)
@@ -135,13 +135,11 @@ $(document).ready(function () {
 
   // Expand sidebar on post detail page by default, when post has a toc.
   var $tocContent = $('.post-toc-content');
-  var isSidebarCouldDisplay = CONFIG.sidebar.display === 'post' ||
-      CONFIG.sidebar.display === 'always';
-  var hasTOC = $tocContent.length > 0 && $tocContent.html().trim().length > 0;
-  if (isSidebarCouldDisplay && hasTOC) {
+  var isSidebarCouldDisplay = CONFIG.sidebar.display === 'always';
+  if (isSidebarCouldDisplay) {
     CONFIG.motion ?
       (NexT.motion.middleWares.sidebar = function () {
-          NexT.utils.displaySidebar();
+         NexT.utils.displaySidebar();
       }) : NexT.utils.displaySidebar();
   }
 });

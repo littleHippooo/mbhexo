@@ -10,6 +10,7 @@
   display: inline-block;
   margin: 0 10px;
   list-style: none;
+  width:auto;
 
   @media screen and (max-width: 767px) {
     margin-top: 10px;
@@ -20,12 +21,37 @@
     font-size: 14px;
     line-height: inherit;
 	font-weight:600;
+	position: relative;
 	font-family: ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
     border-bottom: 1px solid $menu-link-border;
     transition-property: border-color;
     the-transition();
 
     &:hover { border-bottom-color: $menu-link-hover-border; }
+	&:hover:after{
+		height: 3px;
+		opacity: 1;
+		-webkit-transform: translateY(0);
+		-moz-transform: translateY(0);
+		transform: translateY(0)
+	}
+  }
+  a:after{
+	position: absolute;
+	top: 100%;
+	left: 8px;
+	width: 80%;
+	height: 1px;
+	background: rgba(66,185,131,.6);
+	content: '';
+	opacity: 0;
+	-webkit-transition: height .3s,opacity .3s,-webkit-transform .3s;
+	-moz-transition: height .3s,opacity .3s,-moz-transform .3s;
+	transition: height .3s,opacity .3s,transform .3s;
+	-webkit-transform: translateY(-5px);
+	-moz-transform: translateY(-5px);
+	transform: translateY(-5px)
+	
   }
   @media screen and (min-width:1400px) {
 	a{

@@ -4,7 +4,7 @@ date: 2017-03-25 17:42:10
 tags: ubuntu
 ---
 ## 安装JDK
-JDK1.8下载地址：http://pan.baidu.com/s/1qYPORRA，JDK安装步骤：
+JDK1.8下载地址：[http://pan.baidu.com/s/1qYPORRA](http://pan.baidu.com/s/1qYPORRA)，JDK安装步骤：
 
 1.将下载的包解压到/opt/jvm：
 ```bash
@@ -43,7 +43,7 @@ Java(TM) SE Runtime Environment (build 1.8.0_77-b03)
 Java HotSpot(TM) 64-Bit Server VM (build 25.77-b03, mixed mode)
 ```
 ## 安装eclipse
-eclipse下载，官网：https://www.eclipse.org/downloads/eclipse-packages/?osType=linux&release=undefined，或者百度云：http://pan.baidu.com/s/1pKMmRR9。eclipse安装步骤：       
+eclipse下载，官网：[https://www.eclipse.org/downloads/eclipse-packages/?osType=linux&release=undefined](https://www.eclipse.org/downloads/eclipse-packages/?osType=linux&release=undefined)，或者百度云：[http://pan.baidu.com/s/1pKMmRR9](http://pan.baidu.com/s/1pKMmRR9)。eclipse安装步骤：       
 
 1.下载后切换到下载目录，将其解压到/opt/文件夹中：
 ```bash

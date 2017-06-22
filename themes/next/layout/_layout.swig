@@ -8,10 +8,7 @@
 <html class="{{ html_class | lower }}" lang="{{ config.language }}">
 <head>
   <link href="{{ url_for(theme.css) }}/animsition.min.css" rel="stylesheet" type="text/css" />
-  <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
-	<script>
-		window.jQuery || document.write('<script type="text/javascript" src="{{ url_for(theme.js) }}/jquery-1.11.3.min.js"><\/script>');
-	</script>
+  <script type="text/javascript" src="{{ url_for(theme.js) }}/jquery-1.11.3.min.js"></script>
   <script src="http://at.alicdn.com/t/font_7t5uxv1tbjhbbj4i.js"></script>
   {% include '_partials/head.swig' %}
   <title>{% block title %}{% endblock %}</title>

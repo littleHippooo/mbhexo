@@ -19,6 +19,7 @@
   &::after {
     content: " ";
     position: absolute;
+	display: none;
     top: 20px;
     left: 0;
     margin-left: -2px;
@@ -33,7 +34,7 @@
 
   .collection-title {
     position: relative;
-    margin: 35px 0;
+    margin: 25px 0;
 
     h1, h2 { margin-left: 20px; }
 
@@ -44,6 +45,7 @@
       position: absolute;
       left: 0;
       top: 50%;
+	  display: none;
       margin-left: -4px;
       margin-top: -4px;
       width: 8px;
@@ -65,7 +67,7 @@
     position: relative;
     the-transition();
     transition-property: border;
-    border-bottom: 1px dashed $grey-light;
+	margin-left: 20px;
 
     &::before {
       content: " ";
@@ -74,6 +76,7 @@
       top: 12px;
       width: 6px;
       height: 6px;
+	  display: none;
       margin-left: -4px;
       background: $grey;
       circle();
@@ -91,7 +94,7 @@
 
   .post-meta {
     position: absolute;
-    font-size: 12px;
+    font-size: 16px;
     left: 20px;
     top: 5px;
   }

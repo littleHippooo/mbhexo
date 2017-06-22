@@ -8,7 +8,12 @@
     position: relative;
     top: 3px;
     left: 20px;
-
+    font-family: ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    opacity: .7;
+	
+	
     +mobile() {
       top: 5px;
     }
@@ -17,14 +22,18 @@
   .posts-collapse {
 	  @media (max-width: 1399px) {
 		.post-title{
-			font-size: 14px !important;
-			margin: 10px 0 10px 60px !important;
+			font-size: 15px !important;
+			margin-left: 80px;
+			padding-top: 5px;
+			margin-top: 4px;
+			margin-bottom: 4px;
 		}
 	}
     .archive-move-on {
       position: absolute;
       top: 11px;
       left: 0;
+	  display: none;
       margin-left: -6px;
       width: 10px;
       height: 10px;
@@ -34,5 +43,23 @@
 
       circle();
     }
+	.post-title a:hover {
+		color: #42b983;
+	}
+  }
+  .archive-year {
+	 font-size: 19px;
+	 color: #42b983;
+	 text-decoration: none;
+     text-transform: uppercase;
+     letter-spacing: 2px;
+     margin-bottom: 1em;
+     line-height: 1em;
+     font-weight: bold;
+  }
+  .archive-year:before{
+	 font-family: "FontAwesome";
+     content: "\f273";
+     margin-right: 0.2em;
   }
 }
