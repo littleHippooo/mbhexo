@@ -123,36 +123,36 @@
 		<div class="sidebar-sticky sticky">
 		  <div itemscope="" itemtype="http://schema.org/Person">
 			<div class="author__avatar">
-			  <img src="https://mmistakes.github.io/minimal-mistakes/assets/images/michael-rose.jpg" class="author__avatar" alt="Michael Rose" itemprop="image"></div>
+			  <img src="https://www.tuchuang001.com/images/2017/06/22/boy.jpg" class="author__avatar" alt="MrBird" itemprop="image"></div>
 			<div class="author__content">
-			  <h3 class="author__name" itemprop="name">Michael Rose</h3>
+			  <h3 class="author__name" itemprop="name">MrBird's Blog</h3>
 			  <p class="author__bio" itemprop="description">Just another boring, tattooed, time traveling, designer.</p></div>
 			<div class="author__urls-wrapper">
 			  <button class="btn btn--inverse">Follow</button>
 			  <ul class="author__urls social-icons">
 				<li>
-				  <a href="https://mademistakes.com" itemprop="url">
-					<i class="fa fa-fw fa-map-marker" aria-hidden="true"></i>FuZhou,CN</a>
+				  <a href="http://map.baidu.com/?newmap=1&s=s%26wd%3D%E7%A6%8F%E5%B7%9E%E5%B8%82%26c%3D300&from=alamap&tpl=mapcity" target="_blank" itemprop="url">
+					<i class="fa fa-fw fa-map-marker" aria-hidden="true"></i>&nbsp;&nbsp;FuZhou,CN</a>
 				</li>  
 				<li>
-				  <a href="https://mademistakes.com" itemprop="url">
-					<i class="fa fa-fw fa-chain" aria-hidden="true"></i>Website</a>
+				  <a href="http://mrbird.leanote.com" target="_blank" itemprop="url">
+					<i class="fa fa-fw fa-chain" aria-hidden="true"></i>&nbsp;&nbsp;Website</a>
 				</li>
 				<li>
-				  <a href="https://twitter.com/mmistakes" itemprop="sameAs">
-					<i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i>Twitter</a>
+				  <a href="https://www.tuchuang001.com/images/2017/06/22/c5b1ffe54905189ab5a3e97dd819f4fb.png" target="_blank" itemprop="sameAs">
+					<i class="fa fa-fw fa-weixin" aria-hidden="true"></i>&nbsp;&nbsp;WeChat</a>
 				</li>
 				<li>
-				  <a href="https://www.facebook.com/michaelrose" itemprop="sameAs">
-					<i class="fa fa-fw fa-facebook-square" aria-hidden="true"></i>Facebook</a>
+				  <a href="https://www.facebook.com/mrbirdleanote" target="_blank" itemprop="sameAs">
+					<i class="fa fa-fw fa-facebook-square" aria-hidden="true"></i>&nbsp;&nbsp;Facebook</a>
 				</li>
 				<li>
-				  <a href="https://instagram.com/mmistakes" itemprop="sameAs">
-					<i class="fa fa-fw fa-instagram" aria-hidden="true"></i>Instagram</a>
+				  <a href="http://weibo.com/mrbird123" target="_blank" itemprop="sameAs">
+					<i class="fa fa-fw fa-weibo" aria-hidden="true"></i>&nbsp;&nbsp;Weico</a>
 				</li>
 				<li>
-				  <a href="https://github.com/mmistakes" itemprop="sameAs">
-					<i class="fa fa-fw fa-github" aria-hidden="true"></i>GitHub</a>
+				  <a href="https://github.com/wuyouzhuguli" target="_blank" itemprop="sameAs">
+					<i class="fa fa-fw fa-github-alt" aria-hidden="true"></i>&nbsp;&nbsp;GitHub</a>
 				</li>
 				<!-- <li>
 				<a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs">

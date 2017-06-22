@@ -413,13 +413,14 @@
   font-weight: normal;
   text-transform: uppercase;
   letter-spacing: 0.15em;
+  font-weight: 600;
   white-space: pre-wrap;
   line-height: 1;
   margin-bottom: 0.75em;
 }
 @media screen and (min-width:1400px) {
     .terminal .prompt {
-        font-size: 1.1em; 
+        font-size: 13px; 
         line-height: 1.2em;
     }    
 }    
