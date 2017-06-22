@@ -8,6 +8,7 @@
 <html class="{{ html_class | lower }}" lang="{{ config.language }}">
 <head>
   <link href="{{ url_for(theme.css) }}/animsition.min.css" rel="stylesheet" type="text/css" />
+  <link href="{{ url_for(theme.css) }}/xps13.css" rel="stylesheet" type="text/css" />
   <script type="text/javascript" src="{{ url_for(theme.js) }}/jquery-1.11.3.min.js"></script>
   <script src="http://at.alicdn.com/t/font_7t5uxv1tbjhbbj4i.js"></script>
   {% include '_partials/head.swig' %}
@@ -19,7 +20,6 @@
 <script>
 	console.log("::::::::::::::::::::::::::::::\n::::::::::::::::,:,:,,,:::::::\n:::::::::::::::,,..::...,:::::\n::::::::::::::,.v@B@B@@L.,,:::\n:::,,.,,:,:,,..M@F, , FBZ ,,::\n:::.B@r......vB@..,@BE iBM,,,:\n:::.@B@BMqqO@@q.,.:0ML.  B@q::\n::,.BG ;10ZP7..,::,,... O@ki,:\n:::.LB: ....,,:::::,,..F@ .,::\n::::.ZBL ..,,:,:,:,,..E@r.,:::\n::::,.5B@v.........:qB@:.,::::\n::::::..Z@B@PYY12OB@BL.,,:::::\n:::::::,..r20B@P@Gr...,:::::::\n:::::::::,.. @: BJ.,,:::::::::\n:::::::::::,.L,.L:,:::::::::::\n::::::::::::,:,:,:::::::::::::");
 	console.log("- Welcome to MrBird's blog -");
-	$("a").not(".nav-link,.cloud-tie-join-count").addClass("animsition-link");
 	 $("body").animsition({
 			inClass: 'fade-in',
 			outClass: 'fade-out',
@@ -109,4 +109,9 @@
   {% include '_third-party/scroll-cookie.swig' %}
   {% include '_third-party/exturl.swig' %}
 </body>
+<script>
+	$(function(){
+		$("a").not(".nav-link,.cloud-tie-join-count").addClass("animsition-link");
+	});
+</script>
 </html>

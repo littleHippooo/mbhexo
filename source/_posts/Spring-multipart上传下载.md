@@ -34,7 +34,7 @@ maven tomcat设置URI编码为UTF-8：
     <!-- 临时目录 -->
     <property name="uploadTempDir" value="/WEB-INF/temp"/>
 </bean>
-```     
+```
 ## form表单
 ```html
 <form action='<s:url value="/upload"/>' method="post"
