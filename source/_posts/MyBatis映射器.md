@@ -153,7 +153,7 @@ MyBatis就会自动将数据库字段名转换为JavaBean的字段名，比如�
 定义一个抽象方法：
 ```java
 public List<Role> getRole(Map<String,String> params); 
-```   
+```
 映射文件中配置select：
 ```xml
 <resultMap type="role" id="roleList">

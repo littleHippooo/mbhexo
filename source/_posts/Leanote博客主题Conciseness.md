@@ -40,9 +40,9 @@ tags: [Leanote,theme]
 ```
 title为歌曲名，artist为歌手名，mp3为音乐连接，cover为专辑封面。关于这几个值的获取方法，下面做详细介绍：
 
-1.比如在网易云音乐中搜索莫文蔚的《当你老了》，可得到音乐链接为：http://music.163.com/#/song?id=30621954&userid=3425798。其中song的id为30621954。
+1.比如在网易云音乐中搜索莫文蔚的《当你老了》，可得到音乐链接为：[http://music.163.com/#/song?id=30621954&userid=3425798](http://music.163.com/#/song?id=30621954&userid=3425798)。其中song的id为30621954。
 
-2.复制该id，打开链接：http://music.163.com/api/song/detail/?id=yourId&ids=%5ByourId%5D&csrf_token=。
+2.复制该id，打开链接：[http://music.163.com/api/song/detail/?id=yourId&ids=%5ByourId%5D&csrf_token=](http://music.163.com/api/song/detail/?id=yourId&ids=%5ByourId%5D&csrf_token=)。
 
 3.将链接中的yourId更改为第一条复制的音乐id，然后回车，可看到页面解析出一个json格式内容：
 ```javascript

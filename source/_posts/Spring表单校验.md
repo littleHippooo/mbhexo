@@ -234,7 +234,7 @@ name.msg=\u7528\u6237\u540D\u957F\u5EA6\u4E3A{min}\u5230{max}\u4E2A\u5B57\u7B26
 password.msg=\u5BC6\u7801\u957F\u5EA6\u4E3A{min}\u5230{max}\u4E2A\u5B57\u7B26
 email.msg=\u90AE\u7BB1\u683C\u5F0F\u4E0D\u5408\u6CD5
 ```
-ValidationMessages.properties文件中每条信息的key值对应于注解中message属性占位符的 值。同时，最小和最大长度在ValidationMessages.properties文件中有自己的占位符——{min}和{max}——它们会引用@Size注解上所设置的min 和max属性。
+ValidationMessages.properties文件中每条信息的key值对应于注解中message属性占位符的 值。同时，最小和最大长度在ValidationMessages.properties文件中有自己的占位符——\{min\}和\{max\}——它们会引用@Size注解上所设置的min和max属性。
 ## Spring JSP库    
 为了使用Spring JSP库，需要在JSP页首加入：
 ```html

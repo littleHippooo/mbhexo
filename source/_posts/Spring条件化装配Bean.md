@@ -78,7 +78,7 @@ public class ResultCondition implements Condition{
     }
 }
 ```
-设置给@Conditional的类可以是任意实现了Condition接口的类型。可以看出来，这个接口实现起来很简单直接，只需提供matches()方法的实现即可。如果matches()方法返回 true，那么就会创建带有@Conditional注解的bean。如果matches()方法返回false，将不会创建这些bean。
+设置给`@Conditional`的类可以是任意实现了Condition接口的类型。可以看出来，这个接口实现起来很简单直接，只需提供matches()方法的实现即可。如果matches()方法返回 true，那么就会创建带有@Conditional注解的bean。如果matches()方法返回false，将不会创建这些bean。
 
 ConditionContext是一个接口，大致如下所示：
 ```java

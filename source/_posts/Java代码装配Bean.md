@@ -43,7 +43,7 @@ tags: Spring
 public interface Driver {
     public void drive();
 } 
-```       
+```
 其实现类LaoSiJi：
 ```java
 public class LaoSiJi implements Driver{

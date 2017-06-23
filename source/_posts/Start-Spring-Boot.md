@@ -207,7 +207,7 @@ server:
   port: 8081
   tomcat:
     uri-encoding: utf-8 
-```	
+```
 这里配置了tomcat的端口号以及uri编码。
 
 更多配置请参考：http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html

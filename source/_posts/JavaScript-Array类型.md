@@ -74,7 +74,7 @@ alert(values); //5,4,3,2,1
 var values = [0, 1, 5, 10, 15];
 values.sort();
 alert(values); //0,1,10,15,5   
-``` 
+```
 `sort()`方法还可以接收一个比较函数作为参数，以便我们指定哪个值位于哪个值的前面。
 ```javascript
 function compare(value1, value2){

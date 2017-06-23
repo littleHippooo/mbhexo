@@ -13,6 +13,7 @@ MyBatis配置文件mybatis-config.xml包含：
 
 ■ typeHandlers：配置类型处理器。
 <!--more-->
+
 ■ plugins：配置拦截器，用于拦截sql语句的执行。
 
 ■ environments：配置数据源信息、连接池、事务属性等。
