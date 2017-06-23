@@ -209,7 +209,7 @@ public class EmpDaoImpl implements EmpDao{
 ![88573480-file_1488531143826_15b09.png](https://www.tuchuang001.com/images/2017/06/12/88573480-file_1488531143826_15b09.png)
 
 applicationContext.xml完整配置如下：
-```mxl
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
