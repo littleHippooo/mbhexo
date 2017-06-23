@@ -606,7 +606,7 @@ function showMusic() {
 		   {"title":"A Case Of You","author":"James Blake","url":"http://music.163.com/song/media/outer/url?id=18663058.mp3","pic":"https://www.tuchuang001.com/images/2017/06/11/AqEFhbF6i9e2fEg47eDcaw3D3D2F722379139458555.jpg"},
 		   {"title":"Rolle Me in Cotton","author":"Ooberman","url":"http://music.163.com/song/media/outer/url?id=1810614.mp3","pic":"https://www.tuchuang001.com/images/2017/06/11/13tfJfuYXDrKozDccTGN_A3D3D2F1722934720725594.png"},
 		   {"title":"Parachute","author":"Sean Lennon","url":"http://music.163.com/song/media/outer/url?id=22551663.mp3","pic":"https://www.tuchuang001.com/images/2017/06/11/DwESEhOKuL3VbSjFZjAWHA3D3D2F6648746814095251.jpg"},
-		   {"title":"May Rain","author":"窦靖童","url":"http://music.163.com/song/media/outer/url?id=409941123.mp3","pic":"https://www.tuchuang001.com/images/2017/06/11/3tH9E3jKmnSwWyVgztHNcQ3D3D2F1387583681385031.jpg"},
+		   {"title":"May Rain","author":"Leah Dou","url":"http://music.163.com/song/media/outer/url?id=409941123.mp3","pic":"https://www.tuchuang001.com/images/2017/06/11/3tH9E3jKmnSwWyVgztHNcQ3D3D2F1387583681385031.jpg"},
         ]
     });
     resetForm(true);
