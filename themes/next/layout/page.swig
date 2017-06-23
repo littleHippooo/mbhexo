@@ -23,12 +23,30 @@
     {% if page.type === "tags" %}
       <div class="tag-cloud">
         <div class="tag-cloud-title">
-            {{ _p('counter.tag_cloud', site.tags.length) }}
+           There are {{ site.tags.length }} tags in total till now.
         </div>
         <div class="tag-cloud-tags">
-          {{ tagcloud({min_font: 14, max_font: 15, amount: 200, color: true, start_color: '#111', end_color: '#555'}) }}
+          {{ tagcloud({min_font: 14, max_font: 15, amount: 40000, color: true, start_color: '#111', end_color: '#555'}) }}
         </div>
       </div>
+	{% elif page.type === "friends" %}
+	<script>
+		document.title = "友链 | MrBird's blog"
+		$(".post-header").hide();
+	</script>
+	<link href="{{ url_for(theme.css) }}/friends.css" rel="stylesheet" type="text/css" />	
+	  <div class="friends-model">
+        Let us be friends, g<span style="color:rgba(255,153,102,0.9);"><s>a</s></span>uys
+	  </div>
+	  <div class="friends-href">
+		<a href="https://32mb.space/" target="_blank"><i class="fa fa-fw fa-star"></i>32mb space</a>
+		<a href="http://blog.leanote.com/jint" target="_blank"><i class="fa fa-fw fa-star"></i>jint's blog</a>
+		<a href="http://ltsc.leanote.com/" target="_blank"><i class="fa fa-fw fa-star"></i>ltcs's blog</a>
+		<a href="http://blog.leanote.com/althars" target="_blank"><i class="fa fa-fw fa-star"></i>Althars's blog</a>
+		<a href="https://libisky.com/" target="_blank"><i class="fa fa-fw fa-star"></i>LiBiSky's blog</a>
+		<a href="http://hao.iyangqiong.com/" target="_blank"><i class="fa fa-fw fa-star"></i>HaoWeb navigation</a>
+	  </div>
+		
 	{% elif page.type === "music" %}
 	
 	<script>

@@ -20,10 +20,11 @@ pre, code { font-family: $code-font-family;}
 code {
   padding: 2px 4px;
   word-wrap: break-word;
-  color: #f5871f;
-  background: #f9f9f9;
+  color: #414a51;
+  background: #fbfbfb;
   border-radius: $code-border-radius;
   font-size $code-font-size;
+  font-style: italic;
   letter-spacing: .5px;
 }
 @media screen and (min-width:1400px) {
@@ -48,8 +49,8 @@ pre {
 
 .highlight {
   @extend $code-block;
-  border-radius: 3px
-
+  border-radius: 2px
+  position: relative;
   pre {
     border: none;
     margin: 0;
@@ -100,7 +101,6 @@ pre {
   .line { height: 20px; margin: .5px 0;}
 }
 
-
 .gutter {
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -117,7 +117,7 @@ pre {
 // For diff highlight
 pre .deletion { background: $highlight-deletion; }
 pre .addition { background: $highlight-addition; }
-pre .meta     { color: $highlight-purple; }
+pre .meta     { color: rgba(0,146,219,.8) }
 
 pre {
 
@@ -135,7 +135,7 @@ pre {
   .css .id
   .css .class
   .css .pseudo {
-    color: $highlight-red;
+    color: rgba(100,149,237,.9);
   }
 
   .number
@@ -145,12 +145,11 @@ pre {
   .params
   .constant
   .command {
-    color: $highlight-orange;
+    color: rgba(245,135,31,.9);
   }
 
   .ruby .class .title
   .css .rules .attribute
-  .string
   .value
   .inheritance
   .header
@@ -161,7 +160,9 @@ pre {
   .formula {
     color: $highlight-green;
   }
-
+  .string {
+	color: rgba(51,153,0,.8);
+  }
   .title
   .css .hexcolor {
     color: $highlight-aqua;
@@ -180,7 +181,7 @@ pre {
 
   .keyword
   .javascript .function {
-    color: $highlight-purple;
+    color: #5FA6BF;
   }
 
 }

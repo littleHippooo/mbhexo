@@ -7,10 +7,10 @@
 {% block content %}
 
   <div id="posts" class="posts-collapse">
-    <div class="collection-title">
+    <div class="collection-tag-title">
       <{% if theme.seo %}h2{% else %}h1{% endif %}>{#
       #}{{ page.tag }}{#
-      #}<small>{{  __('title.tag')  }}</small>
+      #}
       </{% if theme.seo %}h2{% else %}h1{% endif %}>
     </div>
 

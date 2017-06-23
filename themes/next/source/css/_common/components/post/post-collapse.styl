@@ -32,9 +32,18 @@
   margin-left: $posts-collapse-left;
   +mobile() { margin: 0 20px; }
 
-  .collection-title {
+  .collection-title, .collection-tag-title {
     position: relative;
     margin: 25px 0;
+	font-size: 20px;
+    color: #42b983;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1em;
+    line-height: 1em;
+    font-weight: bold;
+	
 
     h1, h2 { margin-left: 20px; }
 
@@ -117,4 +126,13 @@
       border-bottom: none;
     }
   }
+}
+.posts-collapse .collection-tag-title h2 {
+	position: relative;
+	font-size: 18px;
+}
+.posts-collapse .collection-tag-title h2:before{ 
+	font-family: "FontAwesome";
+    content: "\f02b";
+    margin-right: 0.2em;
 }

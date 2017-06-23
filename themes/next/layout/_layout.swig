@@ -10,7 +10,6 @@
   <link href="{{ url_for(theme.css) }}/animsition.min.css" rel="stylesheet" type="text/css" />
   <link href="{{ url_for(theme.css) }}/xps13.css" rel="stylesheet" type="text/css" />
   <script type="text/javascript" src="{{ url_for(theme.js) }}/jquery-1.11.3.min.js"></script>
-  <script src="http://at.alicdn.com/t/font_7t5uxv1tbjhbbj4i.js"></script>
   {% include '_partials/head.swig' %}
   <title>{% block title %}{% endblock %}</title>
 </head>

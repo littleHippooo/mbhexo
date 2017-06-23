@@ -18,6 +18,7 @@ jQuery自身提供了许多选择器，除此之外其还允许我们自定义�
 //先筛选出data-technologies属性包含"jquery"的li
 var $levels = $('.levels li[data-technologies~="jquery"]');
 var matchedLevels = [];
+
 //循环遍历$levels，将符合条件的li塞到matchedLevels数组里
 for (var i = 0; i < $levels.length; i++) {
     if ($levels[i].getAttribute('data-level') > 2 && 

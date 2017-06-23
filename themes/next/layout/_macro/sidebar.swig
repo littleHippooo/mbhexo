@@ -123,10 +123,10 @@
 		<div class="sidebar-sticky sticky">
 		  <div itemscope="" itemtype="http://schema.org/Person">
 			<div class="author__avatar">
-			  <img src="https://www.tuchuang001.com/images/2017/06/22/boy.jpg" class="author__avatar" alt="MrBird" itemprop="image"></div>
+			  <img src="{{ url_for( theme.avatar | default(theme.images + '/avatar.gif') ) }}" class="author__avatar" alt="MrBird" itemprop="image"></div>
 			<div class="author__content">
 			  <h3 class="author__name" itemprop="name">MrBird's Blog</h3>
-			  <p class="author__bio" itemprop="description">Just another boring, tattooed, time traveling, designer.</p></div>
+			  <p class="author__bio" itemprop="description">A programmer, likes freedom likes birds, Just keep blogging</p></div>
 			<div class="author__urls-wrapper">
 			  <button class="btn btn--inverse">Follow</button>
 			  <ul class="author__urls social-icons">
@@ -168,7 +168,6 @@
 			</div>
 		  </div>
 		</div>
-		
 		
       </section>
       {% if display_toc and toc(page.content).length > 1 %}
