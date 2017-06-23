@@ -23,7 +23,7 @@
     {% if page.type === "tags" %}
       <div class="tag-cloud">
         <div class="tag-cloud-title">
-           There are {{ site.tags.length }} tags in total till now.
+           There are {{ site.tags.length }} tags in total till now
         </div>
         <div class="tag-cloud-tags">
           {{ tagcloud({min_font: 14, max_font: 15, amount: 40000, color: true, start_color: '#111', end_color: '#555'}) }}

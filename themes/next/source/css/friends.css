@@ -13,7 +13,7 @@
 }	
 .friends-href a {
 	display: inline-block;
-    font-size: 17px !important;
+    font-size: 17px;
     margin-top: 15px;
     letter-spacing: 0.4px;
     position: relative;

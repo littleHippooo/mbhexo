@@ -34,17 +34,20 @@
 		font-size: 17px !important;
 	}	
 	.page-archive .archive-page-counter {
-		font-size: 22px !important;
+		font-size: 23px !important;
 	}	
 	.page-archive .archive-year {
 		font-size: 20px !important;
 	}	
 	.posts-collapse .post-title {
 		margin:6px 0px 6px 90px !important;
-		padding-top: 5px !important;
+		padding-bottom: 5px !important;
 		font-size: 18px !important;
 		letter-spacing: .4px !important;
 	}
+	.posts-collapse .post-title a{
+		font-size: 18px !important;
+	}	
 	.posts-collapse .post-meta {
 		font-size:18px !important;
 	}
@@ -73,5 +76,22 @@
 	.author__avatar img {
 		padding: 7px;
 		max-width: 120px !important;
+	}	
+	.tag-cloud a {
+		font-size: 19px !important;
+		width: 170px !important;
+	}	
+	.tag-cloud-title {
+		font-size: 23px !important;
+	}	
+	.friends-model {
+		font-size: 23px !important;
+	}	
+	.friends-href a {
+		font-size: 19px !important;
+		width: 255px !important;
+	}	
+	.sidebar {
+		width: 345px !important;
 	}	
 }

@@ -12,7 +12,7 @@
     <span class="archive-move-on"></span>
 
     <span class="archive-page-counter">
-     There are <span style="font-weight:600;opacity:1">{{ site.posts.length }}</span> posts in total till now.
+     There are <span style="font-weight:600;opacity:1">{{ site.posts.length }}</span> posts in total till now
     </span>
 
     {% for post in page.posts %}

@@ -45,8 +45,9 @@
   display: none !important; }
 
 .aplayer {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
   margin: 5px;
+  font-weight: 600;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
   border-radius: 2px;
   overflow: hidden;
@@ -74,8 +75,8 @@
   .aplayer .aplayer-pic {
     position: relative;
     float: left;
-    height: 66px;
-    width: 66px;
+    height: 80px;
+    width: 80px;
     background-image: url(./default.jpg);
     background-size: 100%;
     transition: all 0.3s ease; }
@@ -121,8 +122,8 @@
         width: 12px; }
   .aplayer .aplayer-info {
     margin-left: 66px;
-    padding: 14px 7px 0 10px;
-    height: 66px;
+    padding: 14px 20px 0 20px;
+    height: 80px;
     box-sizing: border-box; }
     .aplayer .aplayer-info .aplayer-music {
       overflow: hidden;
@@ -135,7 +136,7 @@
       .aplayer .aplayer-info .aplayer-music .aplayer-title {
         font-size: 14px; }
       .aplayer .aplayer-info .aplayer-music .aplayer-author {
-        font-size: 12px;
+        font-size: 14px;
         color: #666; }
     .aplayer .aplayer-info .aplayer-controller {
       position: relative;
@@ -181,7 +182,7 @@
         bottom: 3px;
         height: 17px;
         color: #999;
-        font-size: 11px;
+        font-size: 14px;
         padding-left: 7px; }
         .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-time-inner {
           vertical-align: middle; }
@@ -302,10 +303,10 @@
       padding: 0; }
       .aplayer .aplayer-list ol li {
         position: relative;
-        height: 32px;
-        line-height: 32px;
+        height: 40px;
+        line-height: 40px;
         padding: 0 15px;
-        font-size: 12px;
+        font-size: 14px;
         border-top: 1px solid #e9e9e9;
         cursor: pointer;
         transition: all 0.2s ease;
@@ -321,7 +322,7 @@
         .aplayer .aplayer-list ol li .aplayer-list-cur {
           display: none;
           width: 3px;
-          height: 22px;
+          height: 29px;
           position: absolute;
           left: 0;
           top: 5px;
@@ -407,14 +408,13 @@
 
    
 .terminal .prompt {
-  color: #777!important;
+  color: #888 !important;
   display: block;
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-weight: normal;
   text-transform: uppercase;
   letter-spacing: 0.15em;
   font-weight: 600;
-  opacity: .9;
   white-space: pre-wrap;
   line-height: 1;
   margin-bottom: 0.75em;
@@ -597,15 +597,16 @@ function showMusic() {
         theme: '#FF9966',
         mode: 'order',
         music: [
-		   {"title":"Everything Goes My Way","author":"Metronomy","url":"https://m1.jixun.moe/21256976/320000/e655c052dd754999aa39fb6acc332b5a060214fb0350708e452c2cb36b0e4a30","pic":"https://www.tuchuang001.com/images/2017/06/15/2533274791115699.jpg"},
-		   {"title":"This Woman's Work","author":"Greg Laswell","url":"https://m1.jixun.moe/18016001/320000/7cdaf57e6558c182f96d7bb9888af9ce688c7b6942ae32fd7cc12060fb65df28","pic":"https://www.tuchuang001.com/images/2017/06/11/Qpi5PkxdS4-LPtFAJMf3Hg3D3D2F650910883652293.jpg"},
-    	   {"title":"Despair, Hangover & Ecstasy","author":"The Dø","url":"https://m1.jixun.moe/29456910/320000/464143b32bbd54ed8ab5b15c193dea958d49d8c0ce9b0921705e1926955a1f6c","pic":"https://www.tuchuang001.com/images/2017/06/11/EBUKsCHWuGj1q-qOf5Z8XQ3D3D2F2544269907076330.jpg"},
-		   {"title":"Wasting Time","author":"Day Wave","url":"https://m1.jixun.moe/439076553/320000/8f3faae14491ab6b2c04ffc14efefbadf00c4b1fe409337e2ef1297ad74c7c9d","pic":"https://www.tuchuang001.com/images/2017/06/11/ajqXji-tHeaGV3bw3HVfpw3D3D2F18158434533491949.jpg"},
-		   {"title":"Before","author":"Vok","url":"https://m1.jixun.moe/27578965/320000/9d4d2701ddafe919533a6a49457fe17d269b5552310bd1687714442f8ba95637","pic":"https://www.tuchuang001.com/images/2017/06/11/Vuch-HSOqiA3cSRRXLQmcQ3D3D2F5674579511021902.jpg"},
-		   {"title":"A Case Of You","author":"James Blake","url":"https://m1.jixun.moe/18663058/320000/4bb731200b3cbf261ef8756075d565b5055be2645aa5f4fc8c3e74d7d8ae46b0","pic":"https://www.tuchuang001.com/images/2017/06/11/AqEFhbF6i9e2fEg47eDcaw3D3D2F722379139458555.jpg"},
-		   {"title":"Rolle Me in Cotton","author":"Ooberman","url":"https://m1.jixun.moe/1810614/320000/9cbcaa476371c9de1f1bb9d20a6e0a284ab44130d877038ebd95e4014e6b6285","pic":"https://www.tuchuang001.com/images/2017/06/11/13tfJfuYXDrKozDccTGN_A3D3D2F1722934720725594.png"},
-		   {"title":"Parachute","author":"Sean Lennon","url":"https://m1.jixun.moe/22551663/320000/0248936aa04582001bc9e9863b7affd3c86f506f0ae0e6c4736117707bdd9f13","pic":"https://www.tuchuang001.com/images/2017/06/11/DwESEhOKuL3VbSjFZjAWHA3D3D2F6648746814095251.jpg"},
-		   {"title":"May Rain","author":"窦靖童","url":"https://m1.jixun.moe/409941123/320000/c6cbc188cf52258ba2eb2fa71f446e762dd5f9b41110a1145aec43bc3566dd58","pic":"https://www.tuchuang001.com/images/2017/06/11/3tH9E3jKmnSwWyVgztHNcQ3D3D2F1387583681385031.jpg"},
+		   {"title":"All I Can Think About Is You","author":"Coldplay","url":"http://music.163.com/song/media/outer/url?id=484638725.mp3","pic":"https://www.tuchuang001.com/images/2017/06/23/18343152486650119.jpg"},
+		   {"title":"Everything Goes My Way","author":"Metronomy","url":"http://music.163.com/song/media/outer/url?id=21256976.mp3","pic":"https://www.tuchuang001.com/images/2017/06/15/2533274791115699.jpg"},
+		   {"title":"This Woman's Work","author":"Greg Laswell","url":" http://music.163.com/song/media/outer/url?id=18016001.mp3 ","pic":"https://www.tuchuang001.com/images/2017/06/11/Qpi5PkxdS4-LPtFAJMf3Hg3D3D2F650910883652293.jpg"},
+    	   {"title":"Despair, Hangover & Ecstasy","author":"The Dø","url":"http://music.163.com/song/media/outer/url?id=29456910.mp3","pic":"https://www.tuchuang001.com/images/2017/06/11/EBUKsCHWuGj1q-qOf5Z8XQ3D3D2F2544269907076330.jpg"},
+		   {"title":"Wasting Time","author":"Day Wave","url":"http://music.163.com/song/media/outer/url?id=439076553.mp3","pic":"https://www.tuchuang001.com/images/2017/06/11/ajqXji-tHeaGV3bw3HVfpw3D3D2F18158434533491949.jpg"},
+		   {"title":"Before","author":"Vok","url":"http://music.163.com/song/media/outer/url?id=27578965.mp3","pic":"https://www.tuchuang001.com/images/2017/06/11/Vuch-HSOqiA3cSRRXLQmcQ3D3D2F5674579511021902.jpg"},
+		   {"title":"A Case Of You","author":"James Blake","url":"http://music.163.com/song/media/outer/url?id=18663058.mp3","pic":"https://www.tuchuang001.com/images/2017/06/11/AqEFhbF6i9e2fEg47eDcaw3D3D2F722379139458555.jpg"},
+		   {"title":"Rolle Me in Cotton","author":"Ooberman","url":"http://music.163.com/song/media/outer/url?id=1810614.mp3","pic":"https://www.tuchuang001.com/images/2017/06/11/13tfJfuYXDrKozDccTGN_A3D3D2F1722934720725594.png"},
+		   {"title":"Parachute","author":"Sean Lennon","url":"http://music.163.com/song/media/outer/url?id=22551663.mp3","pic":"https://www.tuchuang001.com/images/2017/06/11/DwESEhOKuL3VbSjFZjAWHA3D3D2F6648746814095251.jpg"},
+		   {"title":"May Rain","author":"窦靖童","url":"http://music.163.com/song/media/outer/url?id=409941123.mp3","pic":"https://www.tuchuang001.com/images/2017/06/11/3tH9E3jKmnSwWyVgztHNcQ3D3D2F1387583681385031.jpg"},
         ]
     });
     resetForm(true);
