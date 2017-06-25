@@ -586,7 +586,7 @@ function showMusic() {
   setTimeout(function() {
 	$('.terminal').append('<div id="player" class="aplayer"></div>');
 	if(!browser){
-	    window.animatelo.fadeIn('#player');
+	    window.animatelo.pulse('#player');
 	}
 	var mrbird = new APlayer({
         element: document.getElementById('player'),
@@ -597,7 +597,7 @@ function showMusic() {
         theme: '#FF9966',
         mode: 'order',
         music: [
-		   {"title":"All I Can Think About Is You","author":"Coldplay","url":"http://music.163.com/song/media/outer/url?id=484638725.mp3","pic":"https://www.tuchuang001.com/images/2017/06/23/18343152486650119.jpg"},
+		   {"title":"All I Can Think About Is You","author":"Coldplay","url":"http://music.163.com/song/media/outer/url?id=484638725.mp3","pic":"https://www.tuchuang001.com/images/2017/06/25/be31ae42d0d1b48f0b3a6a9274bc0d3d.jpg"},
 		   {"title":"Everything Goes My Way","author":"Metronomy","url":"http://music.163.com/song/media/outer/url?id=21256976.mp3","pic":"https://www.tuchuang001.com/images/2017/06/15/2533274791115699.jpg"},
 		   {"title":"This Woman's Work","author":"Greg Laswell","url":" http://music.163.com/song/media/outer/url?id=18016001.mp3 ","pic":"https://www.tuchuang001.com/images/2017/06/11/Qpi5PkxdS4-LPtFAJMf3Hg3D3D2F650910883652293.jpg"},
     	   {"title":"Despair, Hangover & Ecstasy","author":"The Dø","url":"http://music.163.com/song/media/outer/url?id=29456910.mp3","pic":"https://www.tuchuang001.com/images/2017/06/11/EBUKsCHWuGj1q-qOf5Z8XQ3D3D2F2544269907076330.jpg"},

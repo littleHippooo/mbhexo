@@ -26,7 +26,7 @@
            There are {{ site.tags.length }} tags in total till now
         </div>
         <div class="tag-cloud-tags">
-          {{ tagcloud({min_font: 14, max_font: 15, amount: 40000, color: true, start_color: '#111', end_color: '#555'}) }}
+          {{ tagcloud({min_font: 14, max_font: 15, amount: 40000, color: true, start_color: '#111', end_color: '#111'}) }}
         </div>
       </div>
 	{% elif page.type === "friends" %}
