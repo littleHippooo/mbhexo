@@ -1,8 +1,6 @@
 title: jQuery工具函数
 author: MrBird
-tags:
-  - jQuery
-categories: []
+tags: jQuery
 date: 2017-05-10 15:27:00
 ---
 ## 数组和对象操作

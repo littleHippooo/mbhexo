@@ -1,7 +1,7 @@
 ---
 title: jQuery中的Deferred和Promise
 date: 2017-05-20 15:50:25
-tags: jquery
+tags: jQuery
 ---
 jQuery中的Deferred和Promise有助于我们处理Ajax这样的异步过程，以jQuery中的\$.ajax()为例，当嵌套多个\$.ajax()异步函数时，代码就成了下面这样：
 
