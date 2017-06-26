@@ -113,14 +113,5 @@ console.log(deferred.state()); //resolved
 当状态为rejected时，执行fail方法。当状态为resolved时，执行done方法。而always方法无论成功与失败都会执行。
 
 例如，下面这个例子三秒后弹出success：
-```javascript
-var deferred = $.Deferred();
-deferred.promise().done(function(){
-    alert("success");
-}).fail(function(){
-    alert("fail");
-});
-setTimeout(function(){
-    deferred.resolve();
-}, 3000);
-```
+<iframe height='300' scrolling='no' title='deferred' src='//codepen.io/mrbird/embed/jwGYPp/?height=300&theme-id=30192&default-tab=js&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/mrbird/pen/jwGYPp/'>deferred</a> by wuyouzhuguli (<a href='https://codepen.io/mrbird'>@mrbird</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>

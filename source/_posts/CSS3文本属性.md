@@ -22,7 +22,8 @@ text-shadow:[颜色 x轴 y轴 模糊半径],[颜色 x轴 y轴 模糊半径]...
 代码实例：
 
 **x轴偏移量演示：**
-<iframe width="100%" height="200" src="//jsfiddle.net/wuyouzhuguli/1sht7nhe/embedded/html,css,result/?bodyColor=f7f7f7&accentColor=42b983" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+<iframe height='180' scrolling='no' title='text-shadow' src='//codepen.io/mrbird/embed/owGodv/?height=180&theme-id=30192&default-tab=css&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/mrbird/pen/owGodv/'>text-shadow</a> by wuyouzhuguli (<a href='https://codepen.io/mrbird'>@mrbird</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
 **多层阴影:**
 
@@ -39,10 +40,12 @@ text-stroke：[ text-stroke-width ] || [ text-stroke-color ]
 （2）`text-stroke-color`：设置元素中文本的描边颜色。
 
 代码实例：
-<iframe width="100%" height="200" src="//jsfiddle.net/wuyouzhuguli/pcmcc3m0/embedded/html,css,result/?bodyColor=f7f7f7&accentColor=42b983" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+<iframe height='218' scrolling='no' title='text-stroke' src='//codepen.io/mrbird/embed/vZeWQL/?height=218&theme-id=30192&default-tab=css&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/mrbird/pen/vZeWQL/'>text-stroke</a> by wuyouzhuguli (<a href='https://codepen.io/mrbird'>@mrbird</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
 `text-stroke`是一个复合属性，也可以将它们拆开单独设置：
-<iframe width="100%" height="200" src="//jsfiddle.net/wuyouzhuguli/fd4hqdm7/embedded/html,css,result/?bodyColor=f7f7f7&accentColor=42b983" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+<iframe height='209' scrolling='no' title='text-stroke1' src='//codepen.io/mrbird/embed/Ngawew/?height=209&theme-id=30192&default-tab=css&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/mrbird/pen/Ngawew/'>text-stroke1</a> by wuyouzhuguli (<a href='https://codepen.io/mrbird'>@mrbird</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
 ## text-overflow
 该属性用于控制文本溢出样式，基本语法如下：
@@ -58,7 +61,8 @@ text-overflow：clip | ellipsis
 {% note danger %}需要与overflow:hidden和white-space:nowrap配合使用才能够生效。{% endnote %}
 
 代码实例：
-<iframe width="100%" height="280" src="//jsfiddle.net/wuyouzhuguli/m39anyLv/embedded/html,css,result/?bodyColor=f7f7f7&accentColor=42b983" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+<iframe height='257' scrolling='no' title='text-overflow' src='//codepen.io/mrbird/embed/dRVZao/?height=257&theme-id=30192&default-tab=css&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/mrbird/pen/dRVZao/'>text-overflow</a> by wuyouzhuguli (<a href='https://codepen.io/mrbird'>@mrbird</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
 ## text-fill-color
 设置文字的填充颜色，同时设置`text-fill-color`和`color`，text-fill-color将会覆盖color属性。
@@ -66,7 +70,8 @@ text-overflow：clip | ellipsis
 代码实例：
 
 使用`text-fill-color`和`text-stroke`属性来制造**镂空文字**效果：
-<iframe width="100%" height="230" src="//jsfiddle.net/wuyouzhuguli/4x0pztcu/embedded/html,css,result/?bodyColor=f7f7f7&accentColor=42b983" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+<iframe height='207' scrolling='no' title='text-fill-color' src='//codepen.io/mrbird/embed/awLVXr/?height=207&theme-id=30192&default-tab=css&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/mrbird/pen/awLVXr/'>text-fill-color</a> by wuyouzhuguli (<a href='https://codepen.io/mrbird'>@mrbird</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
 ## word-wrap
 该属性提供换行的功能，基本语法：
@@ -80,7 +85,8 @@ word-wrap: normal | break-word
 （2）break-word：此属性值可以实现内容换行，也就是可以实现在边界内换行，不能够超出边界。
 
 代码实例：
-<iframe width="100%" height="370" src="//jsfiddle.net/wuyouzhuguli/uhkjyewj/embedded/html,css,result/?bodyColor=f7f7f7&accentColor=42b983" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+<iframe height='265' scrolling='no' title='word-wrap' src='//codepen.io/mrbird/embed/KqXyJR/?height=265&theme-id=30192&default-tab=css&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/mrbird/pen/KqXyJR/'>word-wrap</a> by wuyouzhuguli (<a href='https://codepen.io/mrbird'>@mrbird</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
 ## @font-face
 该属性用于引入网络中的字体，基本语法：
