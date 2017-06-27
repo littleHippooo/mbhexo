@@ -178,8 +178,8 @@
               cursor: pointer !important; }
       .aplayer .aplayer-info .aplayer-controller .aplayer-time {
         position: relative;
-        right: 0;
-        bottom: 3px;
+        left: 10px;
+        bottom: 8px;
         height: 17px;
         color: #999;
         font-size: 14px;
@@ -482,8 +482,8 @@
   </form>
 
   <div class="terminal">
-      <p class="prompt">hi man,please enter <span style="color:#FF9966;font:inherit">muisc</span> to install music plugin.</p>
-      <p class="prompt">or enter <span style='color:#FF9966;font:inherit'>--help</span> for help.</p>
+      <p class="prompt">hi man,please enter <span style="color:#FF9966;font:inherit">music</span> to install music plugin.</p>
+      <p class="prompt">or enter <span style='color:#FF9966;font:inherit'>help</span> for help.</p>
       <p class="prompt output new-output"></p>
   </div>
 </div>
@@ -525,10 +525,10 @@ $('.four-oh-four-form').on('submit', function(e) {
   if (val === 'music') {
     showMusic();
   }
-  else if ( val === '--help') {
+  else if ( val === 'help') {
     showHelp();  
   }
-  else if ( val === 'gohome') {
+  else if ( val === 'home') {
      goHome(); 
   }
   else {
@@ -537,7 +537,7 @@ $('.four-oh-four-form').on('submit', function(e) {
 });
 
 function resetForm(withKittens) {
-  var message = "oops that command is not recognized.enter <span style='color:#FF9966;font:inherit'>--help</span> for help"
+  var message = "oops that command is not recognized.enter <span style='color:#FF9966;font:inherit'>help</span> for help"
   var input = $('.music-input');
 
   if (withKittens) {
@@ -553,7 +553,7 @@ function goHome(){
     window.location.href = "http://mrbird.cc";
 }
 function showHelp() {
-  var message = "ENTER <span style='color:#FF9966;font:inherit'>MUSIC</span> TO INSTALL MUSIC PLUGIN.\n  ENTER <span style='color:#FF9966;font:inherit'>GOHOME</span> TO VISIT HOME PAGE.";
+  var message = "<span >ENTER <span style='color:#FF9966;font:inherit'>MUSIC</span> TO INSTALL MUSIC PLUGIN.\n</span> &nbsp;<span style='line-height:30px;'> ENTER <span style='color:#FF9966;font:inherit'>HOME</span> TO VISIT HOME PAGE.</span>";
   var input = $('.music-input');
   $('.new-output').removeClass('new-output');
   input.val('');
