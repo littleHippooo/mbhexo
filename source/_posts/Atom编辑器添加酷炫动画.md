@@ -7,7 +7,7 @@ tags: Atom
 
 1.首先安装node.js：[https://nodejs.org/en/](https://nodejs.org/en/)。
 
-2.然后下载 activate-power-mode-master 并解压到 C:\Users\Administrator\.atom\packages目录下。
+2.然后下载 activate-power-mode-master 并解压到 C:\Users\Administrator\\.atom\packages目录下。
 
 3.使用CMD命令切换到activate-power-mode-master文件夹下，执行npm命令：
 

@@ -7,7 +7,7 @@ IntelliJ IDEA 主要用于支持 Java、Scala、Groovy 等语言的开发工具�
 
 最近使用后觉得比eclipse强太多。初次使用要配置各种开发环境，所以记之。
 ## 配置Git
-1.在官网https://git-scm.com/下载Git for windows并安装。
+1.在官网[https://git-scm.com/](https://git-scm.com/)下载Git for windows并安装。
 
 2.打开IntelliJ IDEA的设置界面，选择Version Control → Git：  
 <!--more--> 
