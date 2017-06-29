@@ -3,7 +3,7 @@ title: 调教Sublime Text 3
 date: 2017-06-29 15:05:20
 tags: Sublime Text
 ---
-Sublime Text 3 是一款编辑器软件，自带语法高亮，代码提示，自动补全等让开发者爱不释手的功能。并且启动速度极快，支持自定义主题和装第三方插件。不过刚下载的Sublime Text不仅图标巨丑，主题还难看，建议对其进行一番调教。调教包括配置主题，安装插件，了解快捷键和配置云同步等。
+Sublime Text 3 是一款编辑器软件，自带语法高亮，代码提示，自动补全等让开发者爱不释手的功能。并且启动速度极快，支持自定义主题和安装第三方插件。不过刚下载的Sublime Text不仅图标巨丑，主题还难看，建议对其进行一番调教。调教包括配置主题，安装插件，了解快捷键和配置云同步等。
 
 调教之前需要安装Package Control。使用快捷键`Ctrl+Shift+P`呼出Command Palette，然后输入install Package Control，然后Enter即可安装。官方Package Control市场：[https://packagecontrol.io/](https://packagecontrol.io/)。
 <!--more-->
@@ -13,7 +13,7 @@ Sublime Text包含很多优秀的第三方主题，不过个人还是比较喜�
 
 ![0dbde8ff58e3737611256ccf2b2bd1ba.png](https://www.tuchuang001.com/images/2017/06/29/0dbde8ff58e3737611256ccf2b2bd1ba.png)
 
-点击Enter呼出Package Control后输入Bosy Theme后点击Enter即可安装。控制台提示安装成功后，使用快捷键`Ctrl+Shift+P`呼出Command Palette，输入boxy，选择Boxy Theme:Activation即可在Boxy Theme自带的几款主题中进行切换：
+点击Enter呼出Package Control后输入Boxy Theme后点击Enter即可安装。控制台提示安装成功后，使用快捷键`Ctrl+Shift+P`呼出Command Palette，输入boxy，选择Boxy Theme:Activation即可在Boxy Theme自带的几款主题中进行切换：
 
 ![ae239d9946016dda0e9247b769fd36e0.png](https://www.tuchuang001.com/images/2017/06/29/ae239d9946016dda0e9247b769fd36e0.png)
 
