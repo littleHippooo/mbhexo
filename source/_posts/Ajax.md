@@ -22,7 +22,7 @@ var xhr = getXHR();
 ### get请求
 打开请求：
 ```javascript
-xhr.open("get", "example.php?name1=value1&name2=value2", true);    
+xhr.open("get", "example.php?name1=value1&name2=value2", true);
 ```
 `true`表示发送异步请求。
 
@@ -32,18 +32,18 @@ function addURLParam(url, name, value) {
     url += (url.indexOf("?") == -1 ? "?" : "&");
     url += encodeURIComponent(name) + "=" + encodeURIComponent(value);
     return url;
-}   
+}
 ```
 `addURLParam()`函数接受三个参数：要添加参数的URL、参数的名称和参数的值。
 
 下面是使用这个函数来构建请求URL 的示例。
 ```javascript
 var url = "example.php";
- 
+
 //添加参数
 url = addURLParam(url, "name", "Nicholas");
 url = addURLParam(url, "book", "Professional JavaScript");
- 
+
 //初始化请求
 xhr.open("get", url, false);
 ```
@@ -58,19 +58,19 @@ xhr.send(null);
 XHR 对象的`readyState` 属性可取的值：
 
  0：未初始化。尚未调用open()方法。
- 
+
  1：启动。已经调用open()方法，但尚未调用send()方法。
- 
+
  2：发送。已经调用send()方法，但尚未接收到响应。
- 
+
  3：接收。已经接收到部分响应数据。
- 
+
  4：完成。已经接收到全部响应数据，而且已经可以在客户端使用了。
- 
+
 只要readyState 属性的值由一个值变成另一个值，都会触发一次readystatechange 事件。可以利用这个事件来检测每次状态变化后readyState 的值。
 
 ```javascript
-xhr.onreadystatechange = function(){callback(xhr);};  
+xhr.onreadystatechange = function(){callback(xhr);};
 //回调函数
 function callback(xhr) {
      //当请求结束且没报错时
@@ -93,11 +93,11 @@ function callback(xhr) {
 ```javascript
 xhr.open("post", "postexample.php", true);
 xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
- 
+
 //发送form表单数据
 var form = document.getElementById("form");
 xhr.send(serialize(form));
- 
+
 //发送普通数据
 xhr.send("name = Nicholas");
 xhr.send("book = Professional JavaScript");
@@ -108,7 +108,7 @@ xhr.send("book = Professional JavaScript");
 
 语法：
 ```javascript
-load(url,data,function(response,status,xhr));  
+load(url,data,function(response,status,xhr));
 ```
 <table>
         <tr>
@@ -151,8 +151,8 @@ load(url,data,function(response,status,xhr));
 
             </td>
         </tr>
-</table> 
- 
+</table>
+
 如在id为result的div中加载test.html页面：
 ```javascript
 $("#result").load("test.html");
@@ -163,7 +163,7 @@ $("#result").load("test.html");
 
 语法：
 ```javascript
-$.get(URL,data,function(data,status,xhr),dataType); 
+$.get(URL,data,function(data,status,xhr),dataType);
 ```
 参数：
 <table>
@@ -241,7 +241,7 @@ $.get("get.php",{
         userName : $("#userName").val().trim(),
         content : $("#content").val().trim()
     },function(data){
-        // do something 
+        // do something
 },"json");
 ```
 `$.post()`和`$.get()`类似，区别在于`$.post()`可发送的数据量更大。

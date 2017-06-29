@@ -4,8 +4,9 @@
 
 # Site
 title: MrBird
-subtitle: 
+subtitle:
 description:
+  
 author: MrBird
 language: zh-Hans
 timezone:
@@ -81,7 +82,7 @@ server:
   port: 4001
   compress: true
   header: true
-  
+
 index_generator:
   per_page: 5
 
@@ -92,7 +93,7 @@ archive_generator:
 
 tag_generator:
   per_page: 10
-  
+
 marked:
   gfm: true
   breaks: false
