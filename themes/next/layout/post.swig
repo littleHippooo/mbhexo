@@ -23,9 +23,15 @@
         {% include '_partials/share/duoshuo_share.swig' %}
       {% endif %}
       {% if theme.gitment.enable %} 
-        <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-        <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+        <link href="{{ url_for(theme.css) }}/sweetalert.min.css" rel="stylesheet" type="text/css" />
+        <link href="{{ url_for(theme.css) }}/gitment.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="{{ url_for(theme.js) }}/sweetalert.min.js"></script>
+        <script type="text/javascript" src="{{ url_for(theme.js) }}/gitment.js"></script>
+        <script type="text/javascript" src="{{ url_for(theme.js) }}/activate-power-mode.js"></script>
         <script>
+          POWERMODE.colorful = true; 
+          POWERMODE.shake = false; 
+          document.body.addEventListener('input', POWERMODE);
           var gitment = new Gitment({
             id: window.location.pathname,
             owner: '{{ theme.gitment.owner }}',
@@ -34,8 +40,8 @@
               client_id: '{{ theme.gitment.client_id }}',
               client_secret: '{{ theme.gitment.client_secret }}'
             }
-          })
-          gitment.render('container')
+          });
+          gitment.render('container');
         </script>
       {% endif %}
     </div>
