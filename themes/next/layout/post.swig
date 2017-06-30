@@ -9,10 +9,9 @@
 
 
 {% block content %}
-
   <div id="posts" class="posts-expand">
     {{ post_template.render(page) }}
-
+    <div id="container"></div>
     <div class="post-spread">
       {% if theme.jiathis %}
         {% include '_partials/share/jiathis.swig' %}
@@ -22,6 +21,21 @@
         {% include '_partials/share/add-this.swig' %}
       {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
         {% include '_partials/share/duoshuo_share.swig' %}
+      {% endif %}
+      {% if theme.gitment.enable %} 
+        <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+        <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+        <script>
+          var gitment = new Gitment({
+            owner: '{{ theme.gitment.owner }}',
+            repo: '{{ theme.gitment.repo }}',
+            oauth: {
+              client_id: '{{ theme.gitment.client_id }}',
+              client_secret: '{{ theme.gitment.client_secret }}'
+            }
+          })
+          gitment.render('container')
+        </script>
       {% endif %}
     </div>
   </div>

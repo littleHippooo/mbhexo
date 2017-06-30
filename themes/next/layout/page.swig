@@ -46,7 +46,26 @@
 		<a href="https://libisky.com/" target="_blank"><i class="fa fa-fw fa-star"></i>LiBiSky's blog</a>
 		<a href="http://hao.iyangqiong.com/" target="_blank"><i class="fa fa-fw fa-star"></i>HaoWeb navigation</a>
 	  </div>
-		
+  <hr>
+  <div class="friends-model">
+        Looking forward to your comments 🎉
+  </div>
+    {% if theme.gitment.enable %} 
+  	<div id="container"></div>
+    <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+    <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+    <script>
+      var gitment = new Gitment({
+        owner: '{{ theme.gitment.owner }}',
+        repo: '{{ theme.gitment.repo }}',
+        oauth: {
+          client_id: '{{ theme.gitment.client_id }}',
+          client_secret: '{{ theme.gitment.client_secret }}'
+        }
+      })
+      gitment.render('container')
+    </script>
+    {% endif %}
 	{% elif page.type === "music" %}
 	
 	<script>

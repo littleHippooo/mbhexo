@@ -314,6 +314,14 @@ han: false
 # Duoshuo ShortName
 #duoshuo_shortname:
 
+# Gitment comments
+gitment:
+  enable: true
+  owner: wuyouzhuguli
+  repo: Blog-Comments
+  client_id: 5b26ca7149a3cb78da1e
+  client_secret: dd0fb1af7fb9d5712b03e8fe07e55981a43d988d
+
 # Disqus
 disqus:
   enable: false
@@ -634,3 +642,4 @@ images: images
 
 # Theme version
 version: 5.1.1
+

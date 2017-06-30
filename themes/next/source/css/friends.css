@@ -9,7 +9,9 @@
 }
 .friends-href {
 	display: block;
-	padding-left: 30px;
+    padding-left: 30px;
+    margin: 15px 0px;
+    min-height: 220px;
 }	
 .friends-href a {
 	display: inline-block;
