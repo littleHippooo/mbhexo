@@ -12,7 +12,7 @@ tags:  servlet&jsp
 
 2.注册标签
 ## SimpleTag
-## 标签处理器
+### 标签处理器
 编写一个Java类，实现SimpleTag接口：
 ```java
 public class MyFirstTag implements SimpleTag{
