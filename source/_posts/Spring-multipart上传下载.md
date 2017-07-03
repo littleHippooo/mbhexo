@@ -112,3 +112,23 @@ public class FileUploadController {
 }   
 ```
 {% note danger%}出现下载失败一般是因为特殊字符转码问题，一般做法是在文件上传的时候，就将文件名里的特殊字符过滤掉。{% endnote %}
+
+## 异步处理
+异步处理multipart可以使用[jQuery.form.js](http://malsup.github.io/jquery.form.js)插件来完成：
+```javascript
+$("#form_id").ajaxSubmit({
+    url: "url.do",
+    type: "post",
+    dataType: "json",
+    success: function(r){
+        // your code here.
+    }
+});
+```
+form表单代码：
+```html
+<form enctype="multipart/form-data">  
+    选择文件:<input type="file" name="upload">  
+</form> 
+```
+后端代码不变。
