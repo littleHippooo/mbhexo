@@ -111,8 +111,18 @@ public class FileUploadController {
     }
 }   
 ```
+
 {% note danger%}出现下载失败一般是因为特殊字符转码问题，一般做法是在文件上传的时候，就将文件名里的特殊字符过滤掉。{% endnote %}
 
+过滤方法：
+```java
+String StringFilter(String str) throws PatternSyntaxException   {         
+    String regEx="[`~!@#$%^&*+=|{}':; ',//[//]<>/?~！@#￥%……&*（）——+|{}【】‘；：”“’。，、？]";
+    Pattern  p  =  Pattern.compile(regEx);
+    Matcher  m  =  p.matcher(str);
+    return  m.replaceAll("").trim();
+}  
+```
 ## 异步处理
 异步处理multipart可以使用[jQuery.form.js](http://malsup.github.io/jquery.form.js)插件来完成：
 ```javascript
