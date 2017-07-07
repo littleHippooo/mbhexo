@@ -46,33 +46,6 @@
 		<a href="https://libisky.com/" target="_blank"><i class="fa fa-fw fa-star"></i>LiBiSky's blog</a>
 		<a href="http://hao.iyangqiong.com/" target="_blank"><i class="fa fa-fw fa-star"></i>HaoWeb navigation</a>
 	  </div>
-  <hr>
-  <div class="friends-model">
-        Looking forward to your comments 🎉
-  </div>
-    {% if theme.gitment.enable %} 
-  	    <div id="container"></div>
-        <link href="{{ url_for(theme.css) }}/sweetalert.min.css" rel="stylesheet" type="text/css" />
-        <link href="{{ url_for(theme.css) }}/gitment.css" rel="stylesheet" type="text/css" />
-        <script type="text/javascript" src="{{ url_for(theme.js) }}/sweetalert.min.js"></script>
-        <script type="text/javascript" src="{{ url_for(theme.js) }}/gitment.js"></script>
-        <script type="text/javascript" src="{{ url_for(theme.js) }}/activate-power-mode.js"></script>
-        <script>
-          POWERMODE.colorful = true; 
-          POWERMODE.shake = false; 
-          document.body.addEventListener('input', POWERMODE);
-          var gitment = new Gitment({
-            id: window.location.pathname,
-            owner: '{{ theme.gitment.owner }}',
-            repo: '{{ theme.gitment.repo }}',
-            oauth: {
-              client_id: '{{ theme.gitment.client_id }}',
-              client_secret: '{{ theme.gitment.client_secret }}'
-            }
-          });
-          gitment.render('container');
-    </script>
-    {% endif %}
 	{% elif page.type === "music" %}
 	
 	<script>
