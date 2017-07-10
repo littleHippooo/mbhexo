@@ -58,14 +58,17 @@ public class FileUploadController {
     public String processUpload(@RequestPart("upload") MultipartFile file,
         HttpServletRequest request,Model model) {
         try{
-            if(!file.isEmpty()){
-                System.out.println(file.getSize());
-                // 文件保存路径  
+            if(file != null && !file.isEmpty()){
+                // 保存的文件名未UUID+上传文件名，并且过滤文件名特殊字符
+                String fileName = makeFileName(StringFilter(file.getOriginalFilename()));
                 String filePath = request.getSession().getServletContext()
-                    .getRealPath("/") + "/WEB-INF/upload/"  
-                    + file.getOriginalFilename();  
+                                    .getRealPath("/") + "/WEB-INF/upload/" + fileName; 
+                File uploadFile = new File(filePath);
+                if(!uploadFile.exists()){
+                    uploadFile.mkdirs();
+                }
                 // 转存文件  
-                file.transferTo(new File(filePath));   
+                file.transferTo(uploadFile);  
                 model.addAttribute("name",file.getOriginalFilename());
                 return "result";
             }else{
@@ -75,8 +78,18 @@ public class FileUploadController {
             e.printStackTrace();
             return "fail";
         }
-    }    
-}    
+    } 
+    String makeFileName(String filename) {
+        return UUID.randomUUID().toString() + "_" + filename;
+    }
+    
+    String StringFilter(String str) throws PatternSyntaxException   {         
+        String regEx="[`~!@#$%^&*+=|{}':; ',//[//]<>/?~！@#￥%……&*（）——+|{}【】‘；：”“’。，、？]";
+        Pattern p = Pattern.compile(regEx);
+        Matcher m = p.matcher(str);
+        return m.replaceAll("").trim();
+    }
+} 
 ```
 多文件上传的话，只需将MultipartFile file改为MultipartFile[] files，input标签加上multiple="multiple"即可。
 ## 处理下载
@@ -90,13 +103,14 @@ public class FileUploadController {
 @RequestMapping(value="download")
   public void processDownload(String fileName,HttpServletResponse response,
     HttpServletRequest request) throws UnsupportedEncodingException{
-    response.setCharacterEncoding("utf-8");
-    response.setContentType("multipart/form-data");
-    response.setHeader("Content-Disposition", "attachment;fileName="
-        + java.net.URLEncoder.encode(fileName,"utf-8"));
-    try{
+    String realFileName = fileName.substring(fileName.indexOf("_") + 1);
+    try {
+        response.setCharacterEncoding("utf-8");
+        response.setContentType("multipart/form-data");
+        response.setHeader("Content-Disposition", "attachment;fileName="
+                    + java.net.URLEncoder.encode(realFileName,"utf-8"));
         String filePath = request.getSession().getServletContext().getRealPath("/") 
-            + "WEB-INF/upload/" + fileName; 
+                    + "WEB-INF/upload/" + fileName; 
         InputStream inputStream = new FileInputStream(new File(filePath));
         OutputStream os = response.getOutputStream();
         byte[] b = new byte[2048];
@@ -106,22 +120,10 @@ public class FileUploadController {
         }
         os.close();
         inputStream.close();
-    }catch(Exception e){
+    } catch (Exception e) {
         e.printStackTrace();
     }
-}   
-```
-
-{% note danger%}出现下载失败一般是因为特殊字符转码问题，一般做法是在文件上传的时候，就将文件名里的特殊字符过滤掉。{% endnote %}
-
-过滤方法：
-```java
-String StringFilter(String str) throws PatternSyntaxException   {         
-    String regEx="[`~!@#$%^&*+=|{}':; ',//[//]<>/?~！@#￥%……&*（）——+|{}【】‘；：”“’。，、？]";
-    Pattern  p  =  Pattern.compile(regEx);
-    Matcher  m  =  p.matcher(str);
-    return  m.replaceAll("").trim();
-}  
+}
 ```
 ## 异步处理
 异步处理multipart可以使用[jQuery.form.js](http://malsup.github.io/jquery.form.js)插件来完成：
