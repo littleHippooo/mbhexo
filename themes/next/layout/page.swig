@@ -46,11 +46,6 @@
 		<a href="https://libisky.com/" target="_blank"><i class="fa fa-fw fa-star"></i>LiBiSky's blog</a>
 		<a href="http://hao.iyangqiong.com/" target="_blank"><i class="fa fa-fw fa-star"></i>HaoWeb navigation</a>
 	  </div>
-  <hr>
-  <div class="friends-model">
-        Looking forward to your comments 🎉
-  </div>
-    
 	{% elif page.type === "music" %}
 	
 	<script>

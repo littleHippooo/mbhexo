@@ -89,7 +89,7 @@ public class FileUploadController {
         Matcher m = p.matcher(str);
         return m.replaceAll("").trim();
     }
-} 
+}
 ```
 多文件上传的话，只需将MultipartFile file改为MultipartFile[] files，input标签加上multiple="multiple"即可。
 ## 处理下载
