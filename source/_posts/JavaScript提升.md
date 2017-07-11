@@ -1,5 +1,5 @@
 ---
-title: JavaScript提升
+title: JavaScript中的提升
 date: 2017-07-11 19:26:28
 tags: JavaScript
 ---
@@ -38,43 +38,44 @@ a = 3;
 ```javascript
 foo(); // 3
 function foo() {
-	var a = 3;
-	console.log(a);
+   var a = 3;
+   console.log(a);
 }
 ```
 实际上为：
 ```javascript
 function foo() {
-	var a = 3;
-	console.log(a);
+   var a = 3;
+   console.log(a);
 }
 foo(); // 3
 ```
-函数声明的提升有两点需要注意：
+函数声明的提升需要注意一点：
 
-1.函数优先原则：函数声明和变量声明都会被提升。但函数声明将先被提升：
+**函数优先原则**：函数声明和变量声明都会被提升。但函数声明将先被提升：
 ```javascript
 foo(); // 4
-var foo;
-foo = function() {
-	var a = 3;
-	console.log(a);
+var foo = function() {
+   var a = 3;
+   console.log(a);
 }
 function foo() {
-	var a = 4;
-	console.log(a);
+   var a = 4;
+   console.log(a);
 }
 ```
 经过JavaScript引擎编译之后，代码变成：
 ```javascript
 function foo() {
-	var a = 4;
-	console.log(a);
+   var a = 4;
+   console.log(a);
 }
 foo();
 foo = function() {
-	var a = 3;
-	console.log(a);
+   var a = 3;
+   console.log(a);
 }
 ```
-其中`var foo`这个重复的声明已经 被略去。
+其中`var foo`这个重复的声明已经被略去。
+
+> [《你不知道的JavaScript上卷》](https://book.douban.com/subject/26351021/)读书笔记
