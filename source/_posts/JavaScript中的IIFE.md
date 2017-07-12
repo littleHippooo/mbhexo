@@ -45,3 +45,28 @@ function foo() {
 }());
 foo(); // 4
 ```
+IIFE还被常用于JS模块化设计，比如：
+```javascript
+var modules = (function() {
+    // 私有变量
+    var msg = "hello world";
+    var msgArr = ['h', 'e', 'l', 'l', 'o'];
+    
+    function helloWorld() {
+        console.log(msg);
+    }
+    
+    function sayHello() {
+        console.log(msgArr.join(''));
+    }
+    // 暴露方法        
+    return {
+        helloWorld: helloWorld,
+        sayHello: sayHello
+    }
+})();
+modules.helloWorld(); // hello world
+modules.sayHello(); // hello
+console.log(modules.msg); // undefined
+```
+可见在外部无法访问模块化内部参数，这避免了内部参数被私自篡改以及变量污染等问题。
