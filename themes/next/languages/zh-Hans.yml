@@ -12,7 +12,7 @@ menu:
   categories: 分类
   tags: TAGS
   about: 关于
-  search: 搜索
+  search: Search
   schedule: 日程表
   sitemap: 站点地图
   commonweal: 公益404
@@ -73,7 +73,7 @@ state:
   categories: 分类
 
 search:
-  placeholder: 搜索...
+  placeholder: Search
 
 cheers:
   um: 嗯..

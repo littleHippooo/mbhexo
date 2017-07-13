@@ -103,3 +103,10 @@ admin:
   username: wuyouzhuguli
   password_hash: $2a$10$5Dy/DYm9iaLv2rpk4Oc7D.RqneViK8YCiPeohzj8S2oBim/W3GheS
   secret: my super secret phrase
+
+sitemap:
+  path: sitemap.xml
+
+search:
+  path: search.xml
+  field: post

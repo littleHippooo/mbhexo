@@ -48,21 +48,6 @@
           </a>
         </li>
       {% endfor %}
-
-      {% if hasSearch %}
-        <li class="menu-item menu-item-search">
-          {% if theme.swiftype_key %}
-            <a href="javascript:;" class="st-search-show-outputs">
-          {% elseif theme.local_search.enable || theme.algolia_search.enable %}
-            <a href="javascript:;" class="popup-trigger">
-          {% endif %}
-            {% if theme.menu_icons.enable %}
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
-            {% endif %}
-            {{ __('menu.search') }}
-          </a>
-        </li>
-      {% endif %}
 	    <div class="sidebar-toggle" style="display:none">
 			<div class="sidebar-toggle-line-wrap">
 			  <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>

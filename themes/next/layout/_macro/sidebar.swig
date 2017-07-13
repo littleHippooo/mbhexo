@@ -158,6 +158,11 @@
 				  <a href="https://github.com/wuyouzhuguli" target="_blank" itemprop="sameAs">
 					<i class="fa fa-fw fa-github-alt" aria-hidden="true"></i>&nbsp;&nbsp;GitHub</a>
 				</li>
+         <li>
+            <a href="javascript:;" class="popup-trigger">
+            <i class="fa fa-fw fa-search" aria-hidden="true"></i>&nbsp;&nbsp;{{ __('menu.search') }}
+          </a>
+        </li>
 				<!-- <li>
 				<a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs">
 				<i class="fa fa-fw" aria-hidden="true"></i> Custom Social Profile Link
