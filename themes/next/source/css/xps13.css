@@ -93,5 +93,9 @@
 	.sidebar {
 		width: 345px !important;
 	}
-
+	.local-search-popup {
+		height: 60% !important;
+		width: 800px !important;
+		top: 20% !important;
+	}
 }
