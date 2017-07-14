@@ -13,7 +13,7 @@ BootstrapValidator是一款基于jQuery的Bootstrap表单校验插件，提供�
 <script type="text/javascript" src="bootstrap/js/bootstrap-3.0.3.min.js"></script>
 <script type="text/javascript" src="bootstrap/js/bootstrapValidator-0.5.2.min.js"></script>
 ```
-其中需要注意的是jQuery版本必须大于1.9.1。
+其中需要注意的是jQuery版本必须大于1.9.1。文件下载地址：[click here](http://pan.baidu.com/s/1slJhf6d)
 <!--more-->
 需要校验的表单必须由`<form></form>`标签包裹，并且需要验证的字段由`<div class="form-group"></div>`包裹，并且有`name`属性。比如：
 ```html
