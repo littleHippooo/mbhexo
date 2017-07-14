@@ -36,7 +36,7 @@ $("form").bootstrapValidator({
     // 图标 
     feedbackIcons: {
         valid: 'glyphicon glyphicon-ok',
-        valid: 'glyphicon glyphicon-remove', 
+        invalid: 'glyphicon glyphicon-remove', 
         validating: 'glyphicon glyphicon-refresh'
     },
     fields: {
