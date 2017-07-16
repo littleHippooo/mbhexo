@@ -75,9 +75,9 @@ exit //回车执行，退出
 
 win10 
 
-![50932488-file_1490422599971_33fb.png](https://www.tuchuang001.com/images/2017/06/11/50932488-file_1490422599971_33fb.png)
+![8f6ad08d1c397149cf741e126b5b22d8.png](https://www.tuchuang001.com/images/2017/07/16/8f6ad08d1c397149cf741e126b5b22d8.png)
 
 ubuntu：
 
-![67449482-file_1490422667947_11aed.png](https://www.tuchuang001.com/images/2017/06/11/67449482-file_1490422667947_11aed.png)
+![1656db2a38b6ef785a962c0dba0dba23.png](https://www.tuchuang001.com/images/2017/07/16/1656db2a38b6ef785a962c0dba0dba23.png)
 
