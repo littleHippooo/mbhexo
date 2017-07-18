@@ -4,7 +4,7 @@ date: 2017-05-18 11:48:43
 tags: jQuery
 ---
 ## 基本
-### show()：
+### show()
 用于显示所有匹配的元素。此外，你还可以指定元素显示的过渡动画效果。 如果元素本身是可见的，则不对其作任何改变。如果元素是隐藏的，则使其可见。
 常用语法：`jQueryObject.show( [ duration ] [, easing ] [, complete ] )`。
 <table>
