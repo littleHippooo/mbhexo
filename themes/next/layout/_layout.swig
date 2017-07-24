@@ -19,8 +19,6 @@
 <body ondragstart="return false;" class="animsition"  style="padding-right: 300px;" lang="{{ page.lang || page.language || config.language }}">
 <script type="text/javascript" src="{{ url_for(theme.js) }}/animsition.min.js"></script>
 <script>
-	console.log("::::::::::::::::::::::::::::::\n::::::::::::::::,:,:,,,:::::::\n:::::::::::::::,,..::...,:::::\n::::::::::::::,.v@B@B@@L.,,:::\n:::,,.,,:,:,,..M@F, , FBZ ,,::\n:::.B@r......vB@..,@BE iBM,,,:\n:::.@B@BMqqO@@q.,.:0ML.  B@q::\n::,.BG ;10ZP7..,::,,... O@ki,:\n:::.LB: ....,,:::::,,..F@ .,::\n::::.ZBL ..,,:,:,:,,..E@r.,:::\n::::,.5B@v.........:qB@:.,::::\n::::::..Z@B@PYY12OB@BL.,,:::::\n:::::::,..r20B@P@Gr...,:::::::\n:::::::::,.. @: BJ.,,:::::::::\n:::::::::::,.L,.L:,:::::::::::\n::::::::::::,:,:,:::::::::::::");
-	console.log("- Welcome to MrBird's blog -");
 	 $("body").animsition({
 			inClass: 'fade-in',
 			outClass: 'fade-out',

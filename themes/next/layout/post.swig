@@ -2,7 +2,6 @@
 {% import '_macro/post.swig' as post_template %}
 {% import '_macro/sidebar.swig' as sidebar_template %}
 
-
 {% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
 {% block page_class %}page-post-detail{% endblock %}
@@ -23,10 +22,10 @@
         {% include '_partials/share/duoshuo_share.swig' %}
       {% endif %}
       {% if theme.gitment.enable %} 
-        <link href="{{ url_for(theme.css) }}/sweetalert.min.css" rel="stylesheet" type="text/css" />
         <link href="{{ url_for(theme.css) }}/gitment.css" rel="stylesheet" type="text/css" />
-        <script type="text/javascript" src="{{ url_for(theme.js) }}/sweetalert.min.js"></script>
+        <link href="{{ url_for(theme.css) }}/sweetalert.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="{{ url_for(theme.js) }}/gitment.js"></script>
+        <script type="text/javascript" src="{{ url_for(theme.js) }}/sweetalert.min.js"></script>
         <script type="text/javascript" src="{{ url_for(theme.js) }}/activate-power-mode.js"></script>
         <script>
           POWERMODE.colorful = true; 
@@ -57,5 +56,3 @@
 {% block script_extra %}
   {% include '_scripts/pages/post-details.swig' %}
 {% endblock %}
- console.log("::::::::::::::::::::::::::::::\n::::::::::::::::,:,:,,,:::::::\n:::::::::::::::,,..::...,:::::\n::::::::::::::,.v@B@B@@L.,,:::\n:::,,.,,:,:,,..M@F, , FBZ ,,::\n:::.B@r......vB@..,@BE iBM,,,:\n:::.@B@BMqqO@@q.,.:0ML.  B@q::\n::,.BG ;10ZP7..,::,,... O@ki,:\n:::.LB: ....,,:::::,,..F@ .,::\n::::.ZBL ..,,:,:,:,,..E@r.,:::\n::::,.5B@v.........:qB@:.,::::\n::::::..Z@B@PYY12OB@BL.,,:::::\n:::::::,..r20B@P@Gr...,:::::::\n:::::::::,.. @: BJ.,,:::::::::\n:::::::::::,.L,.L:,:::::::::::\n::::::::::::,:,:,:::::::::::::");
-  console.log("- Welcome to {{$.blogInfo.Title}} -");
