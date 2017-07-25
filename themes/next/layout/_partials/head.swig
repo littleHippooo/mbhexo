@@ -1,10 +1,11 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
+<script type="text/javascript" src="{{ url_for(theme.js) }}/sha1.js"></script>
 <script>
 	(function(){
 		if('{{ page.password }}'){
-			if (prompt('请输入密码','') !== '{{ page.password }}'){
+			var sha = hex_sha1(prompt('请输入密码',''));
+			if ( sha != '{{ page.password }}'){
 				alert('密码错误！');
 				history.back();
 			}
