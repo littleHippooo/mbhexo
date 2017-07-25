@@ -177,7 +177,7 @@
       </section>
       {% if display_toc and toc(page.content).length > 1 %}
       <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active" style="padding-right:20px;">
           <div class="post-toc">
 
             {% if page.toc_number === undefined %}

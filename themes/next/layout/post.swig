@@ -21,7 +21,7 @@
       {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
         {% include '_partials/share/duoshuo_share.swig' %}
       {% endif %}
-      {% if theme.gitment.enable %} 
+      {% if theme.gitment.enable && !page.password%} 
         <link href="{{ url_for(theme.css) }}/gitment.css" rel="stylesheet" type="text/css" />
         <link href="{{ url_for(theme.css) }}/sweetalert.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="{{ url_for(theme.js) }}/gitment.js"></script>

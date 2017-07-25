@@ -4,9 +4,14 @@
 <script>
 	(function(){
 		if('{{ page.password }}'){
-			var sha = hex_sha1(prompt('请输入密码',''));
-			if ( sha != '{{ page.password }}'){
-				alert('密码错误！');
+			var test = prompt('请输入密码','');
+			if(test){
+				var sha = hex_sha1(test);
+				if(sha != '{{ page.password }}'){
+					alert('密码错误！');
+					history.back();
+				}
+			}else{
 				history.back();
 			}
 		}
