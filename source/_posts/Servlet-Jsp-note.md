@@ -1,6 +1,6 @@
 ---
 title: Servlet Jsp note
-date: 2016-02-24 14:08:25
+date: 2016-03-01 14:08:25
 tags: servlet&jsp
 password: 465af3ec97365f9e17081f9ea40590e27472f946
 ---
@@ -352,5 +352,80 @@ JSP作为简化Servlet开发的一种技术，实质上最终依然要转变为S
     <location>/error.jsp</location>
 </error-page>
 ```
+## 过滤器Filter
+编写过滤器遵循下列步骤：
 
-> 源码地址 [https://git.coding.net/laizhipeng/Servlet.git](https://git.coding.net/laizhipeng/Servlet.git)
+1.编写一个实现了Filter接口的类。
+
+2.实现Filter接口的三个方法，过滤逻辑在doFilter方法中实现。
+
+3.在Web程序中注册过滤器。
+
+4.把过滤器和Web应用一起打包部署。
+
+当有多个过滤器的时候，过滤的先后按照xml文件中mapping的先后顺序执行，具体过程如下图所示：
+
+![6c6a2aadb04e81a2528758b88c26ed30.png](https://www.tuchuang001.com/images/2017/07/27/6c6a2aadb04e81a2528758b88c26ed30.png)
+
+上图展示了多个过滤器的执行流程，过滤器1的doFilter的code1 →过滤器2的doFilter的code1 →service()方法→过滤器2的doFilter的code2 →过滤器1的doFilter的code2 →返回给客户端。在这个动作的传递过程中一定要写`chain.doFilter()`。
+
+模拟一个登录的例子：
+```java
+public class LoginFilter implements Filter{
+    private String[] paths;
+	
+    @Override
+    public void destroy() {
+    	
+    }
+
+	@Override
+    public void doFilter(ServletRequest request, ServletResponse response,
+            FilterChain chain) throws IOException, ServletException {
+        HttpServletRequest req = (HttpServletRequest) request;
+        HttpServletResponse res = (HttpServletResponse) response;
+        String uri = req.getRequestURI();
+        for(String path : paths){
+            if(uri.contains(path)){
+                chain.doFilter(req, res);
+                return;
+            }
+        }
+        //判断session中是否存在登录数据
+        HttpSession session = req.getSession();
+        //模拟一个叫admin的账号
+        String admin = (String) session.getAttribute("admin");
+        if(admin == null) {
+            //没有登录，强制跳转到登录页
+            res.sendRedirect(req.getContextPath() + "/login/toLogin.do");
+        } else {
+            //已登录，继续执行
+            chain.doFilter(req, res);
+        }
+    }
+
+    @Override
+    public void init(FilterConfig filterConfig) throws ServletException {
+        String excludePath = filterConfig.getInitParameter("excludePath");
+        paths = excludePath.split(",");
+    }
+}
+```
+在web.xml中配置Filter：
+```xml
+<filter>
+    <filter-name>loginFilter</filter-name>
+    <filter-class>com.postar.servlet.LoginFilter</filter-class>
+    <!-- 设置要排除过滤的路径 -->
+    <init-param>
+        <param-name>excludePath</param-name>
+        <param-value>login/toLogin,login/login,login/createImage</param-value>
+    </init-param>
+</filter>
+<filter-mapping>
+    <filter-name>loginFilter</filter-name>
+    <url-pattern>*.do</url-pattern>
+</filter-mapping>
+```
+
+> 源码地址 [https://git.coding.net/laizhipeng/Servlet.git](https://git.coding.net/laizhipeng/servlet.git)
