@@ -6,6 +6,8 @@ tags: Ajax
 今天在做附件Demo的时候，发现form表单的submit按钮会自动刷新页面，但在很多情况下，页面的刷新会很大程度影响体验。于是想到用Ajax来代替submit向服务端发送数据，网络上的说法是通过JQuery的`serialize()`方法序列化表单，但实验之后发现该方法只能传递一般的参数，上传的文件并不能被序列化传递到服务端。
 
 继续查找资料发现可以使用formData方法来使用Ajax请求向服务端上传form表单附件：
+<!--more-->
+
 HTML代码：
 ```html
 <form action="http://localhost:8080/file/servlet/UploadHandleServlet"

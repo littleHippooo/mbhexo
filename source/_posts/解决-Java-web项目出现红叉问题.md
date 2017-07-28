@@ -6,6 +6,7 @@ tags: Java
 Java web出现红叉有好几种情况所致，最基本的代码编写错误以及jar包问题这里不再赘述。
 
 1.查看web项目 Java Resources/Libraries目录下Apache Tomcat版本是否为当前Tomcat版本；
+<!--more-->
 
 ![91613780-file_1487993810122_dc52.png](https://www.tuchuang001.com/images/2017/06/11/91613780-file_1487993810122_dc52.png)
 

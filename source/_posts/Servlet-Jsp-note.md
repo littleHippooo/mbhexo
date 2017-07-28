@@ -1,6 +1,6 @@
 ---
 title: Servlet Jsp note
-date: 2016-03-01 14:08:25
+date: 2016-02-28 14:08:25
 tags: servlet&jsp
 password: 465af3ec97365f9e17081f9ea40590e27472f946
 ---
@@ -18,6 +18,7 @@ public class HiServlet extends HttpServlet{
     }
 }
 ```
+<!--more-->
 配置文件WebRoot→WEB-INF→web.xml下添加：
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
