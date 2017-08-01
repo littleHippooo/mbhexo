@@ -679,4 +679,802 @@ KING
 
 已选择14行。
 ```
+**子查询**
 
+子查询通常是将其查询出来的结果集提供给其他SQL语句使用，通常嵌套在实际要运行的SQL语句之中。
+
+1、子查询在WHERE子句中。
+
+在WHERE查询条件中的限制条件不是一个确定的值，而是来自于另外一个查询的结果。比如查看工资比CLARK高的员工信息：
+```sql
+SQL> select ename,job,sal from emp
+  2  where sal > (select sal from emp
+  3  where ename = 'CLARK');
+
+ENAME      JOB              SAL
+---------- --------- ----------
+JONES      MANAGER         2975
+BLAKE      MANAGER         2850
+SCOTT      ANALYST         3000
+KING       PRESIDENT       5000
+FORD       ANALYST         3000
+```
+根据返回结果的不同，子查询可分为**单行单列子查询**、**多行单列子查询**及**多行多列子查询**。
+
+![fe7d2ccfeb41d286d5473aa20ba87622.png](https://www.tuchuang001.com/images/2017/07/31/fe7d2ccfeb41d286d5473aa20ba87622.png)
+
+如果子查询返回多行，主查询中要使用多行比较操作符，包括IN、ALL、ANY。其中ALL和ANY不能单独使用，需要配合单行比较操作符>、>=、<、<= 一起使用。
+
+例如查询出部门中有SALESMAN但职位不是SALESMAN的员工的信息：
+```sql
+SQL> select ename,job,sal from emp
+  2  where deptno in
+  3  (select deptno from emp
+  4  where job = 'SALESMAN')
+  5  and job <> 'SALESMAN';
+
+ENAME      JOB              SAL
+---------- --------- ----------
+JAMES      CLERK            950
+BLAKE      MANAGER         2850
+```
+由于子句`select deptno from emp where job = 'SALESMAN'`查询结果为多行单列：
+```sql
+SQL> select deptno from emp
+  2  where job = 'SALESMAN';
+
+    DEPTNO
+----------
+        30
+        30
+        30
+        30
+```
+所以不能用=，而用IN。
+
+查看所有比SALESMAN和CLERK职位工资都要高的员工信息：
+```sql
+SQL> select ename,job,sal from emp
+  2  where sal > all(
+  3  select sal from emp
+  4  where job in('SALESMAN','CLERK'));
+
+ENAME      JOB              SAL
+---------- --------- ----------
+CLARK      MANAGER         2450
+BLAKE      MANAGER         2850
+JONES      MANAGER         2975
+SCOTT      ANALYST         3000
+FORD       ANALYST         3000
+KING       PRESIDENT       5000
+```
+EXISTS关键字:
+
+用在过滤条件中，该关键字后面跟一个子查询只要子查询能查询至少一条数据，EXISTS就返回TRUE。
+
+例如列出那些有员工的部门信息：
+```sql
+SQL> select d.deptno,d.dname from dept d
+  2  where exists(select 1 from
+  3  emp e where e.deptno = d.deptno);
+
+    DEPTNO DNAME
+---------- --------------
+        10 ACCOUNTING
+        20 RESEARCH
+        30 SALES
+```
+2、子查询在HAVING部分
+
+子查询不仅可以出现在WHERE子句中，还可以出现在HAVING部分。
+
+例如查询列出最低薪水高于30号部门的最低薪水的部门信息：
+```sql
+SQL> select deptno,min(sal) from emp
+  2  group by deptno having min(sal) >
+  3  (select min(sal) from emp
+  4  where deptno = 30);
+
+    DEPTNO   MIN(SAL)
+---------- ----------
+        50       3000
+        10       1300
+```
+3、子查询在FROM部分
+
+在查询语句中，FROM子句用来指定要查询的表。如果要在一个子查询的结果中继续查询，则子查询出现在FROM 子句中，这个子查询也称作行内视图或者匿名视图。这时，把子查询当作视图对待，但视图没有名字，只能在当前的SQL语句中有效。
+
+查询出薪水比本部门平均薪水高的员工信息：
+```sql
+SQL> select e.ename,e.job,e.sal from emp e,
+  2  (select deptno,avg(sal) avg_sal from emp group by deptno) d
+  3  where e.deptno = d.deptno
+  4  and e.sal > d.avg_sal
+  5  order by e.deptno;
+
+ENAME      JOB              SAL
+---------- --------- ----------
+KING       PRESIDENT       5000
+JONES      MANAGER         2975
+FORD       ANALYST         3000
+ALLEN      SALESMAN        1600
+BLAKE      MANAGER         2850
+```
+4、子查询在SELECT部分
+
+把子查询放在SELECT子句部分，可以认为是外连接的另一种表现形式，使用更灵活：
+```sql
+SQL> select e.ename,e.job,e.sal,
+  2  (select d.deptno from dept d
+  3  where d.deptno = e.deptno) deptno
+  4  from emp e;
+
+ENAME      JOB              SAL     DEPTNO
+---------- --------- ---------- ----------
+SMITH      CLERK            800         20
+ALLEN      SALESMAN        1600         30
+WARD       SALESMAN        1250         30
+JONES      MANAGER         2975         20
+MARTIN     SALESMAN        1250         30
+BLAKE      MANAGER         2850         30
+CLARK      MANAGER         2450         10
+SCOTT      ANALYST         3000
+KING       PRESIDENT       5000         10
+TURNER     SALESMAN        1500         30
+ADAMS      CLERK           1100         20
+JAMES      CLERK            950         30
+FORD       ANALYST         3000         20
+MILLER     CLERK           1300         10
+```
+可以看出，即使不满足where条件的SCOTT也被列出来了，所以，相当于外连接。
+
+5、DDL中使用子查询：
+
+创建表可以将一个查询的结果集创建为一张表。
+
+创建一个10号部门员工信息表 ：
+```sql
+SQL> create table emp_10
+  2  as
+  3  select * from emp
+  4  where deptno = 10;
+
+表已创建。
+
+SQL> select * from emp_10;
+
+     EMPNO ENAME      JOB              MGR HIREDATE              SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- -------------- ---------- ---------- ----------
+      7782 CLARK      MANAGER         7839 09-6月 -81           2450                    10
+      7839 KING       PRESIDENT            17-11月-81           5000                    10
+      7934 MILLER     CLERK           7782 23-1月 -82           1300                    10
+```
+## 分页查询
+
+分页是将查询的结果集分批显示目的视为了解决时间，性能，资源消耗，和用户需求。当查询结果集条目数非常多时。通常会使用分页。分页在标准SQL中没有定义，所以不同的数据库管理系统对于分页的语句也是不一样的。
+
+ROWNUM：ROWNUM被称作伪列，用于返回标识行数据顺序的数字。该关键字不是所有数据库都有的。
+
+ROWNUM在SELECT被当作一个字段去使用，他不是表中真实的字段，当我们从表中查询出一条数据后，该字段就会为这一条记录编一个行号，从1开始，自动递增。ROWNUM默认值为1。在使用ROWNUM对结果集进行编号时不要使用ROWNUM做>1以上的数字的判断，否则该结果集将得不到任何记录。除非ROWNUM从1开始(包含1)。
+
+例如：
+```sql
+
+    ROWNUM ENAME      JOB
+---------- ---------- ---------
+         1 SMITH      CLERK
+         2 ALLEN      SALESMAN
+         3 WARD       SALESMAN
+         4 JONES      MANAGER
+         5 MARTIN     SALESMAN
+         6 BLAKE      MANAGER
+         7 CLARK      MANAGER
+         8 SCOTT      ANALYST
+         9 KING       PRESIDENT
+        10 TURNER     SALESMAN
+        11 ADAMS      CLERK
+        12 JAMES      CLERK
+        13 FORD       ANALYST
+        14 MILLER     CLERK
+```
+ROWNUM只能从1计数，不能从结果集中直接截取。下面的查询语句将没有结果：
+```sql
+SQL> select rownum,ename,job from emp
+  2  where rownum between 6 and 10;
+
+未选定行
+```
+注意区分下面语句，此处ROWNUM可以不从1开始，因为他已经生成一张表了：
+```sql
+SQL> select * from
+  2  (select rownum rn,ename,job from emp)
+  3  where rn between 6 and 10;
+
+        RN ENAME      JOB
+---------- ---------- ---------
+         6 BLAKE      MANAGER
+         7 CLARK      MANAGER
+         8 SCOTT      ANALYST
+         9 KING       PRESIDENT
+        10 TURNER     SALESMAN
+```
+按照工资从高到低排序后，取6到10名：
+```sql
+SQL> select * from
+  2  (select rownum rn,ename,job,sal from emp
+  3  order by sal desc) t
+  4  where t.rn between 6 and 10;
+
+        RN ENAME      JOB              SAL
+---------- ---------- --------- ----------
+         9 KING       PRESIDENT       5000
+         8 SCOTT      ANALYST         3000
+         6 BLAKE      MANAGER         2850
+         7 CLARK      MANAGER         2450
+        10 TURNER     SALESMAN        1500
+```
+上面的写法是先编号后排序的，所以上面这种写法得出的序号是不对的。而应该先排序再编号，再根据编号取范围（嵌套两层，先排序，排序结果再编号）：
+```sql
+SQL> select * from
+  2  (select rownum rn,ename,job,sal from
+  3  (select * from emp order by sal desc)) t
+  4  where t.rn between 6 and 10;
+
+        RN ENAME      JOB              SAL
+---------- ---------- --------- ----------
+         6 CLARK      MANAGER         2450
+         7 ALLEN      SALESMAN        1600
+         8 TURNER     SALESMAN        1500
+         9 MILLER     CLERK           1300
+        10 WARD       SALESMAN        1250
+```
+## 排序函数
+可以根据指定的字段进行分组，再根据指定的字段排序后生成一个组内编号。
+
+1、ROW_NUMBER：生成组内**连续且唯一**的数字
+
+查看公司每个部门的工资排名，按照部门分组，按照工资降序排列生成编号：
+```sql
+SQL> select ename,deptno,sal,
+  2  row_number() over(
+  3  partition by deptno
+  4  order by sal desc) rank from emp;
+
+ENAME          DEPTNO        SAL       RANK
+---------- ---------- ---------- ----------
+KING               10       5000          1
+CLARK              10       2450          2
+MILLER             10       1300          3
+FORD               20       3000          1
+JONES              20       2975          2
+ADAMS              20       1100          3
+SMITH              20        800          4
+BLAKE              30       2850          1
+ALLEN              30       1600          2
+TURNER             30       1500          3
+WARD               30       1250          4
+MARTIN             30       1250          5
+JAMES              30        950          6
+SCOTT              50       3000          1
+```
+2、RANK函数：生成**不连续不唯一**的数字排序字段相同的记录，得到的数字一样后续内容会根据重复的行数自动跳号。比如：
+```sql
+SQL> select ename,deptno,sal,
+  2  rank() over(
+  3  partition by deptno
+  4  order by sal desc) rank from emp;
+
+ENAME          DEPTNO        SAL       RANK
+---------- ---------- ---------- ----------
+KING               10       5000          1
+CLARK              10       2450          2
+MILLER             10       1300          3
+FORD               20       3000          1
+JONES              20       2975          2
+ADAMS              20       1100          3
+SMITH              20        800          4
+BLAKE              30       2850          1
+ALLEN              30       1600          2
+TURNER             30       1500          3
+WARD               30       1250          4
+MARTIN             30       1250          4
+JAMES              30        950          6
+SCOTT              50       3000          1
+```
+3、DENSE_RANK()：函数生成**连续但不唯一**的数字：
+```sql
+SQL> select ename,deptno,sal,
+  2  dense_rank() over(
+  3  partition by deptno
+  4  order by sal desc) rank from emp;
+
+ENAME          DEPTNO        SAL       RANK
+---------- ---------- ---------- ----------
+KING               10       5000          1
+CLARK              10       2450          2
+MILLER             10       1300          3
+FORD               20       3000          1
+JONES              20       2975          2
+ADAMS              20       1100          3
+SMITH              20        800          4
+BLAKE              30       2850          1
+ALLEN              30       1600          2
+TURNER             30       1500          3
+WARD               30       1250          4
+MARTIN             30       1250          4
+JAMES              30        950          5
+SCOTT              50       3000          1
+```
+## 高级分组函数
+
+## 集合操作
+1、UNION和UNION ALL
+
+用来获取两个或两个以上结果集的并集（结果集的列必须一一对应）：
+
+- UNION操作符会自动去掉合并后的重复记录。
+
+- UNION ALL返回两个结果集中的所有行，包括重复的行。
+
+- UNION操作符对查询结果排序，UNION ALL不排序。
+
+合并职位是’MANAGER’的员工和薪水大于2500的员工集合，查看两种方式的结果差别：
+
+UNION：
+```sql
+SQL> select ename,job,sal from emp
+  2  where job = 'MANAGER'
+  3  UNION
+  4  select ename,job,sal from emp
+  5  where sal > 2500;
+
+ENAME      JOB              SAL
+---------- --------- ----------
+BLAKE      MANAGER         2850
+CLARK      MANAGER         2450
+FORD       ANALYST         3000
+JONES      MANAGER         2975
+KING       PRESIDENT       5000
+SCOTT      ANALYST         3000
+```
+UNION ALL：
+```sql
+SQL> select ename,job,sal from emp
+  2  where job = 'MANAGER'
+  3  UNION ALL
+  4  select ename,job,sal from emp
+  5  where sal > 2500;
+
+ENAME      JOB              SAL
+---------- --------- ----------
+JONES      MANAGER         2975
+BLAKE      MANAGER         2850
+CLARK      MANAGER         2450
+JONES      MANAGER         2975
+BLAKE      MANAGER         2850
+SCOTT      ANALYST         3000
+KING       PRESIDENT       5000
+FORD       ANALYST         3000
+```
+2、INTERSECT（[ˌɪntəˈsekt]，相交）
+
+INTERSECT函数获得两个结果集的交集，只有同时存在于两个结果集中的数据，才被显示输出。使用INTERSECT操作符后的结果集会以第一列的数据作升序排列。
+```sql
+SQL> select ename,job,sal from emp
+  2  where job = 'MANAGER'
+  3  INTERSECT
+  4  select ename,job,sal from emp
+  5  where sal > 2500;
+
+ENAME      JOB              SAL
+---------- --------- ----------
+BLAKE      MANAGER         2850
+JONES      MANAGER         2975
+```
+3、MINUS（英[ˈmaɪnəs]，减去）
+
+MINUS函数获取两个结果集的差集。只有在第一个结果集中存在，在第二个结果集中不存在的数据，才能够被显示出来。也就是结果集一减去结果集二的结果。
+```sql
+SQL> select ename,job,sal from emp
+  2  where job = 'MANAGER'
+  3  MINUS
+  4  select ename,job,sal from emp
+  5  where sal > 2500;
+
+ENAME      JOB              SAL
+---------- --------- ----------
+CLARK      MANAGER         2450
+```
+## 视图
+视图(VIEW)也被称作虚表，即虚拟的表，是一组数据的逻辑表示，其本质是对应于一条SELECT语句，结果集被赋予一个名字，即视图名字。视图本身并不包含任何数据，它只包含映射到基表的一个查询语句，当基表数据发生变化，视图数据也随之变化。
+
+作用：
+
+1、重用子查询。SELECT语句中的FROM子句中，我们常会使用一个子查询，然后将结果当作表再进行查询工作，若很多SELECT语句中都要用到该子查询，就可以将这个子查询定义为一个试图进行重用，这样也可以简化SQL语句的复杂度。
+
+2、限制数据访问，可以隐藏真实的表中字段信息，表的名字，字段的名字，这样可以避免访问敏感信息等。
+
+根据视图所对应的子查询种类分为几种类型：
+
+- SELECT语句是基于单表建立的，且不包含任何函数运算、表达式或分组函数，叫做**简单视图**，此时视图是基表的子集；
+
+- SELECT语句同样是基于单表，但包含了单行函数、表达式、分组函数或GROUP BY子句，叫做**复杂视图**；
+
+- SELECT语句是基于多个表的，叫做**连接视图**。
+
+创建一个简单视图V_EMP_10，来显示部门10中的员工的编码、姓名和薪水：
+```sql
+SQL> create view v_emp_10
+  2  as
+  3  select empno,ename,sal
+  4  from emp where deptno = 10;
+
+视图已创建。
+
+SQL> desc v_emp_10;
+ 名称                                      是否为空? 类型
+ ----------------------------------------- -------- ----------------------------
+ EMPNO                                     NOT NULL NUMBER(4)
+ ENAME                                              VARCHAR2(10)
+ SAL                                                NUMBER(7,2)
+ ```
+**修改视图**
+
+由于视图自身没有结构，完全取决于对应的查询语句，所以修改视图就是替换对应的查询语句。
+```sql
+SQL> create or replace view v_emp_10
+  2  as
+  3  select empno,ename name,sal salary,deptno
+  4  from emp where deptno = 20;
+
+视图已创建。
+
+SQL> desc v_emp_10;
+ 名称                                      是否为空? 类型
+ ----------------------------------------- -------- ----------------------------
+ EMPNO                                     NOT NULL NUMBER(4)
+ NAME                                               VARCHAR2(10)
+ SALARY                                             NUMBER(7,2)
+ DEPTNO                                             NUMBER(2)                                            NUMBER(2)
+ ```
+ 对视图进行DML操作就是对视图数据来源的基表进行操作。只能对简单试图进行DML操作，复杂视图不允许DML操作，即视图定义中包含了函数、表达式、分组语句、DISTINCT关键字或ROWNUM伪列，不允许执行DML操作。
+
+ 由于视图只能看到emp表中的三个字段，所以就算向视图中所有字段插入值，那么实际插入emp表中时，除了这几个字段外，其他视图看不见的字段全部插入字段默认值NULL。
+ ```sql
+ SQL> insert into v_emp_10 values(7935,'KangKang',4500,20);
+
+已创建 1 行。
+
+SQL> select * from emp where ename = 'KangKang';
+
+     EMPNO ENAME      JOB              MGR HIREDATE              SAL       COMM     DEPTNO
+---------- ---------- --------- ---------- -------------- ---------- ---------- ----------
+      7935 KangKang                                             4500                    20
+```
+下面这条语句，通过视图插入到EMP表中，但是因为部门号是10，而不是视图中的20，所以视图看不见，无法再对这个对象进行修改，这就对基表数据产生了污染，修改视图数据同样可能存在将视图数据修改后，导致视图无法再查看到它们。
+```sql
+SQL> insert into v_emp_10 values(7936,'Jane',4000,10);
+
+已创建 1 行。
+
+SQL> select * from v_emp_10;
+
+     EMPNO NAME           SALARY     DEPTNO
+---------- ---------- ---------- ----------
+      7935 KangKang         4500         20
+      7369 SMITH             800         20
+      7566 JONES            2975         20
+      7876 ADAMS            1100         20
+      7902 FORD             3000         20
+```
+**创建具有CHECK OPTION约束的视图**
+
+可以为视图添加CHECK OPTION选项，这样对视图进行DML操作时，视图会检查操作完毕后对该记录是否可见，可见不允许操作。
+```sql
+SQL> create or replace view v_emp_10
+  2  as
+  3  select empno,ename name,sal salary,deptno
+  4  from emp where deptno = 20
+  5  with check option;
+
+视图已创建。
+
+SQL> insert into v_emp_10 values(7937,'Maria',3000,10);
+insert into v_emp_10 values(7937,'Maria',3000,10)
+            *
+第 1 行出现错误:
+ORA-01402: 视图 WITH CHECK OPTION where 子句违规
+```
+**创建具有READ ONLY约束的视图**
+
+当视图被设置为READ ONLY后，不允许对该视图进行DML操作，其为只读的。
+```sql
+SQL> create or replace view v_emp_10
+  2  as
+  3  select empno,ename name,sal salary,deptno
+  4  from emp where deptno = 20
+  5  with read only;
+
+视图已创建。
+
+SQL> insert into v_emp_10 values(7937,'Maria',3000,20);
+insert into v_emp_10 values(7937,'Maria',3000,20)
+*
+第 1 行出现错误:
+ORA-42399: 无法对只读视图执行 DML 操作
+```
+**复杂视图**
+
+对应的SELECT语句中含有函数，表达式，分组，连接查询。
+
+创建一个显示每个部门薪水情况的视图：
+```sql
+SQL> create view v_emp_sal
+  2  as
+  3  select d.deptno,d.dname,
+  4  avg(e.sal) avg_sal,
+  5  sum(e.sal) sum_sal,
+  6  max(e.sal) max_sal,
+  7  min(e.sal) min_sal
+  8  from emp e,dept d
+  9  where e.deptno = d.deptno
+ 10  group by d.deptno,d.dname;
+
+视图已创建。
+
+SQL> select * from  v_emp_sal;
+
+    DEPTNO DNAME             AVG_SAL    SUM_SAL    MAX_SAL    MIN_SAL
+---------- -------------- ---------- ---------- ---------- ----------
+        10 ACCOUNTING         3187.5      12750       5000       1300
+        20 RESEARCH             2475      12375       4500        800
+        30 SALES          1566.66667       9400       2850        950
+```
+复杂视图不能进行DML操作。
+
+当不再需要视图的定义，可以使用DROP VIEW语句删除视图：
+```sql
+SQL> drop view v_emp_10;
+
+视图已删除。
+```
+## 序列
+序列是一个数据库对象作用是根据指定的规则生成一组数字，每次返回一个数字。常用于为表中的主键提供值。
+
+主键：通常每张表的第一个字段就是主键，主键字段的值要求在整张表中不能为空，且值不能重复。目的是用于唯一标识每一个记录。
+
+创建一个序列，起始数据是100，步进是1：
+```sql
+SQL> create sequence emp_seq
+  2  start with 100
+  3  increment by 1;
+
+序列已创建。
+```
+序列有两个伪列
+
+- NEXTVAL：使序列生成一个数字，第一次使用时，返回的是START WITH指定的值。需要注意，序列不可逆，一旦获取下一个数字后，就不能得到上一个数字了。
+
+- CURRVAL：获取序列最后一次生成的数字，可以调用多次，不会造成序列生成下一个数字。CURRVAL必须要在序列创建完毕后，至少调用过一侧NEXTVAL输出生成一个数字后才可以使用。
+
+测试让序列生成一个数字：
+```sql
+SQL> select emp_seq.nextval from dual;
+
+   NEXTVAL
+----------
+       100
+
+SQL> select emp_seq.nextval from dual;
+
+   NEXTVAL
+----------
+       101
+```
+每运行一次，数字增加10。
+
+获取序列最后生成的数字：
+```sql
+SQL> select emp_seq.currval from dual;
+
+   CURRVAL
+----------
+       101
+```
+删除序列的语法如下：
+```sql
+SQL> drop sequence emp_seq;
+
+序列已删除。
+```
+## 索引
+索引也是数据库对象，用来提高检索效率，排序效率有效的使用会带来很好的效果。数据库管理系统自行维护索引的算法，我们只需要指定何时为某表的某字段添加即可。
+
+为emp表的ENAME字段添加索引：
+```sql
+SQL> create index idx_emp_ename on emp(ename);
+
+索引已创建。
+```
+复合索引也叫多列索引，是基于多个列的索引。如果经常在ORDER BY子句中使用job和sal作为排序依据，可以建立复合索引：
+```sql
+SQL> create index idx_emp_jobsal on emp(job,sal);
+
+索引已创建。
+```
+当做下面的查询时，会自动应用索引idx_emp_jobsal：
+```sql
+SQL> select empno,ename,job,sal from emp
+  2  order by job,sal;
+```
+删除索引：
+```sql
+SQL> drop index idx_emp_jobsal;
+
+索引已删除。
+```
+合理使用索引提升查询效率：
+
+1. 为经常出现在WHERE子句中的列创建索引。
+
+2. 为经常出现在ORDER BY、DISTINCT后面的字段建立索引。如果建立的复合索引，索引的字段顺序要和这些关键字后面的字段顺序一致。
+
+3. 为经常作为表的连接条件的列上创建索引。
+
+4. 不要在经常做DML操作的表上建立索引。
+
+5. 不要在小表上建立索引。
+
+6. 限制表上的索引数目，索引并不是越多越好。
+
+7. 删除很少被使用的、不合理的索引。
+
+## 约束
+约束的类型：
+
+- 非空约束(Not Null)，简称NN。
+
+- 唯一性约束(Unique)，简称UK。
+
+- 主键约束(Primary Key)，简称PK。
+
+- 外键约束(Foreign Key)，简称FK。
+
+- 检查约束(Check)，简称CK。
+
+**非空约束**
+
+建表时添加非空约束：
+```sql
+SQL> create table employees(
+  2  eid number(6),
+  3  name varchar2(30) not null,
+  4  salary number(7,2),
+  5  hiredate date constraint employees_hiredate_nn not null);
+
+表已创建。
+
+SQL> desc employees;
+ 名称                                      是否为空? 类型
+ ----------------------------------------- -------- ----------------------------
+ EID                                                NUMBER(6)
+ NAME                                      NOT NULL VARCHAR2(30)
+ SALARY                                             NUMBER(7,2)
+ HIREDATE                                  NOT NULL DATE
+ ```
+ 取消非空约束：
+ ```sql
+ SQL> alter table employees modify(hiredate date null);
+
+表已更改。
+
+SQL> desc employees;
+ 名称                                      是否为空? 类型
+ ----------------------------------------- -------- ----------------------------
+ EID                                                NUMBER(6)
+ NAME                                      NOT NULL DATE
+ SALARY                                             NUMBER(7,2)
+ HIREDATE                                           DATE
+ ```
+**唯一性约束**
+
+唯一性(Unique)约束条件用于保证字段或者字段的组合不出现重复值。当给表的某个列定义了唯一约束条件，该列的值不允许重复，但允许是NULL值。
+
+建表的时候添加唯一性约束：
+```sql
+SQL> create table employees1(
+  2  eid number(6) unique,
+  3  name varchar2(30),
+  4  email varchar(50),
+  5  salary number(7,2),
+  6  hiredate date,
+  7  constraint employees1_email_uk unique(email));
+
+表已创建。
+```
+**主键约束**
+
+主键(Primary Key)约束条件从功能上看相当于非空（NOT NULL）且唯一（UNIQUE）的组合。主键字段可以是单字段或多字段组合，即：在主键约束下的单字段或者多字段组合上不允许有空值，也不允许有重复值。
+
+主键可以用来在表中唯一的确定一行数据。一个表上只允许建立一个主键，而其它约束条件则没有明确的个数限制。
+
+主键选取的原则：
+
+- 主键应是对系统无意义的数据。
+
+- 永远也不要更新主键，让主键除了唯一标识一行之外，再无其他的用途。
+
+- 主键不应包含动态变化的数据，如时间戳。
+
+- 主键应自动生成，不要人为干预，以免使它带有除了唯一标识一行以外的意义。
+
+- 主键尽量建立在单列上。
+
+建表的时候添加主键约束：
+```sql
+SQL> create table employees2(
+  2  eid number(6) primary key,
+  3  name varchar(30),
+  4  email varchar2(30),
+  5  salary number(7,2),
+  6  hiredate date);
+
+表已创建。
+
+SQL> desc employees2;
+ 名称                                      是否为空? 类型
+ ----------------------------------------- -------- ----------------------------
+ EID                                       NOT NULL NUMBER(6)
+ NAME                                               VARCHAR2(30)
+ EMAIL                                              VARCHAR2(30)
+ SALARY                                             NUMBER(7,2)
+ HIREDATE                                           DATE
+ ```
+ 建表后添加主键，首先创建一张没有主键的表：
+ ```sql
+ SQL> create table employees3(
+  2  eid number(6),
+  3  name varchar2(30),
+  4  email varchar2(50),
+  5  salary number(7,2),
+  6  hiredate date);
+
+表已创建。
+```
+再添加主键：
+```sql
+SQL> alter table employees3
+  2  add constraint emplpoyees3_eid_pk primary key(eid);
+
+表已更改。
+```
+**外键约束**
+
+外键约束条件定义在两个表的字段或一个表的两个字段上，用于保证相关两个字段的关系。比如emp表的deptno列参照dept表的deptno列，则dept称作主表或父表，emp表称作从表或子表。
+```sql
+SQL> create table employees4(
+  2  eid number(6),
+  3  name varchar2(30),
+  4  salary number(7,2),
+  5  deptno number(4));
+
+表已创建。
+
+SQL> alter table employees4
+  2  add constraint employees4_deptno_fk
+  3  foreign key(deptno) references dept(deptno);
+
+表已更改。
+```
+**检查约束**
+
+检查(Check)约束条件用来强制在字段上的每个值都要满足Check中定义的条件。当定义了Check约束的列新增或修改数据时，数据必须符合Check约束中定义的条件。
+
+员工的薪水必须大于2000元，增加检查约束：
+```sql
+SQL> alter table employees4
+  2  add constraint employees4_salary_check
+  3  check (salary > 2000);
+
+表已更改。
+```
