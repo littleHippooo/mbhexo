@@ -29,6 +29,20 @@ BootstrapValidator是一款基于jQuery的Bootstrap表单校验插件，提供�
 对`form`元素绑定校验规则：
 ```javascript
 $("form").bootstrapValidator({
+    // 指定不验证的情况
+    // 值可设置为以下三种类型：
+    // 1、String  ':disabled, :hidden, :not(:visible)'
+    // 2、Array  默认值  [':disabled', ':hidden', ':not(:visible)']
+    // 3、带回调函数  
+    //  [':disabled', ':hidden', function($field, validator) {
+            // $field 当前验证字段dom节点
+            // validator 验证实例对象 
+            // 可以再次自定义不要验证的规则
+            // 必须要return，return true or false; 
+            return !$field.is(':visible');
+        }]
+    // 
+    excluded: [':disabled', ':hidden', ':not(:visible)'],
     // 生效规则
     // enabled:字段值发生变化就触发验证
     // disabled/submitted:点击提交时触发验证
