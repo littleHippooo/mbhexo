@@ -38,6 +38,7 @@ seo: false
 # subtitle: Subtitle
 index_with_subtitle: true
 
+loading_class: line-scale-pulse-out
 # ---------------------------------------------------------------
 # Menu Settings
 # ---------------------------------------------------------------

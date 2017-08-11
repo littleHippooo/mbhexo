@@ -126,7 +126,7 @@
 			  <img src="{{ url_for( theme.avatar | default(theme.images + '/avatar.gif') ) }}" class="author__avatar" alt="MrBird" itemprop="image"></div>
 			<div class="author__content">
 			  <h3 class="author__name" itemprop="name">MrBird's Blog</h3>
-			  <p class="author__bio" itemprop="description">A programmer, likes freedom like birds, just keep blogging</p></div>
+			  <p class="author__bio" itemprop="description">A simple blog, code repository, just keep blogging</p></div>
 			<div class="author__urls-wrapper">
 			  <button class="btn btn--inverse">Follow</button>
 			  <ul class="author__urls social-icons">

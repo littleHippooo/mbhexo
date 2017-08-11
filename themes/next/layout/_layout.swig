@@ -8,7 +8,6 @@
 <html class="{{ html_class | lower }}" lang="{{ config.language }}">
 <head>
   <meta name="google-site-verification" content="7Tau9WyVgxnsEY9oYedu9g0U6_8akOX3wiKbaYcrg9A" />
-  <meta name="baidu-site-verification" content="EVwLiaxdxX" />
   <link href="{{ url_for(theme.css) }}/animsition.min.css" rel="stylesheet" type="text/css" />
   <link href="{{ url_for(theme.css) }}/xps13.css" rel="stylesheet" type="text/css" />
   <script type="text/javascript" src="{{ url_for(theme.js) }}/jquery-1.11.3.min.js"></script>
@@ -27,7 +26,7 @@
 			linkElement: '.animsition-link',
 			loading: true,
 			loadingParentElement: 'html', //animsition wrapper element
-			loadingClass: 'line-scale-pulse-out-rapid',
+			loadingClass: '{{ theme.loading_class }}',
 			loadingInner: '',
 			timeout: false,
 			timeoutCountdown: 5000,
