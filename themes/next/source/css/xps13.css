@@ -98,4 +98,7 @@
 		width: 800px !important;
 		top: 20% !important;
 	}
+	.tag-cloud {
+		width: 1200px !important;
+	}
 }
