@@ -3,7 +3,7 @@ title: Spring表单校验
 date: 2017-01-22 19:27:05
 tags: [Spring]
 ---
-从Spring 3.0开始，Spring对Java校验API（Java Validation API，又称JSR-303）提供了支持。在Spring MVC中要使用Java校验API的话，并不需要什么额外的配置。只要保证在类路径下包 含这个Java API的实现即可，比如Hibernate Validator。
+从Spring 3.0开始，Spring对Java校验API（Java Validation API，又称JSR-303）提供了支持。在Spring MVC中要使用Java校验API的话，并不需要什么额外的配置。只要保证在类路径下包含这个Java API的实现即可，比如Hibernate Validator。
 
 引入hibernate-validator：
 ```xml
@@ -234,7 +234,7 @@ name.msg=\u7528\u6237\u540D\u957F\u5EA6\u4E3A{min}\u5230{max}\u4E2A\u5B57\u7B26
 password.msg=\u5BC6\u7801\u957F\u5EA6\u4E3A{min}\u5230{max}\u4E2A\u5B57\u7B26
 email.msg=\u90AE\u7BB1\u683C\u5F0F\u4E0D\u5408\u6CD5
 ```
-ValidationMessages.properties文件中每条信息的key值对应于注解中message属性占位符的 值。同时，最小和最大长度在ValidationMessages.properties文件中有自己的占位符——\{min\}和\{max\}——它们会引用@Size注解上所设置的min和max属性。
+ValidationMessages.properties文件中每条信息的key值对应于注解中message属性占位符的 值。同时，最小和最大长度在ValidationMessages.properties文件中有自己的占位符——`{min}`和`{max}`——它们会引用`@Size`注解上所设置的min和max属性。
 ## Spring JSP库    
 为了使用Spring JSP库，需要在JSP页首加入：
 ```html
@@ -403,13 +403,13 @@ ValidationMessages.properties文件中每条信息的key值对应于注解中mes
 </body>
 </html>
 ```
-<sf:form>会渲染会一个HTML <form>标签，但它也会通过`commandName`属性构建针对某个模型对象的上下文信息。这里设为form（待会在controller中传递到此页面）。
+`<sf:form>`会渲染为一个HTML`<form>`标签，也可以通过`commandName`属性构建针对某个模型对象的上下文信息。这里设为form（待会在controller中传递到此页面）。
 
 `cssClass`属性可以给标签加上样式Class，用于在CSS中对其选中并修改样式。
 
-`path`属性指向实体类form对应的属性名称。如果将<sf:errors/>标签的path属性设置为*的话，其将显示所有不满足校验的提示信息。
+`path`属性指向实体类form对应的属性名称。如果将`<sf:errors/>`标签的path属性设置为*的话，其将显示所有不满足校验的提示信息。
 
-`cssErrorClass`属性指定校验不通过时候除了<sf:errors/>标签外的标签样式。
+`cssErrorClass`属性指定校验不通过时候除了`<sf:errors/>`标签外的标签样式。
 ## 编写controller  
 Regester控制器如下所示： 
 ```java
