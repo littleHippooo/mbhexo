@@ -28,7 +28,7 @@ if (result == JFileChooser.APPROVE_OPTION) {
 <!--more-->
 如图：
 
-![48583782-file_1487994021089_12e8f.png](https://www.tuchuang001.com/images/2017/06/11/48583782-file_1487994021089_12e8f.png)
+![48583782-file_1487994021089_12e8f.png](img/48583782-file_1487994021089_12e8f.png)
 
 更换图标：
 
@@ -44,4 +44,4 @@ int result = fc.showSaveDialog(jf);
 ```
 效果如图所示：
 
-![38808095-file_1487994049419_48d4.png](https://www.tuchuang001.com/images/2017/06/11/38808095-file_1487994049419_48d4.png)
+![38808095-file_1487994049419_48d4.png](img/38808095-file_1487994049419_48d4.png)

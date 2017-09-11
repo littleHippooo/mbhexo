@@ -142,10 +142,10 @@ register.jsp：
 
 访问http://localhost:8080/spring/index/：
 
-![90459534-file_1487996599483_17008.png](https://www.tuchuang001.com/images/2017/06/13/90459534-file_1487996599483_17008.png)
+![90459534-file_1487996599483_17008.png](img/90459534-file_1487996599483_17008.png)
 
 访问http://localhost:8080/spring/registerindex/
 
-![27916834-file_1487996620195_6f6b.png](https://www.tuchuang001.com/images/2017/06/13/27916834-file_1487996620195_6f6b.png)
+![27916834-file_1487996620195_6f6b.png](img/27916834-file_1487996620195_6f6b.png)
 
 可以看到，头部和尾部是固定的，变的只是body部分。

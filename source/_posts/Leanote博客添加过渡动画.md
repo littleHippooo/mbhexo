@@ -50,7 +50,7 @@ $(document).ready(function() {
 [Loader.css](https://connoratherton.com/loaders)是一个纯CSS加载动画插件。Animsition插件自带的加载动画不太美观，所以使用该插件替换。
 首先从[https://github.com/ConnorAtherton/loaders.css](https://github.com/ConnorAtherton/loaders.css)上下载插件包，解压后打开loaders.css-master/demo/demo.html可看到许多美观的加载动画。选择一个自己喜欢的动画，然后F12查看其HTML源代码，比如：
 
-![46142895.png](https://www.tuchuang001.com/images/2017/06/11/46142895.png)
+![46142895.png](img/46142895.png)
 
 从源码中可知道，这个动画对应的class名称为`line-scale-pulse-out-rapid`
 
@@ -180,6 +180,6 @@ addLoading: function(n) {
 ```
 将上面的步骤依次做完后，在加载包含较多图片的博客或者网络不佳的情况下，我们可以看到如下的加载动画：
 
-![30506168.gif](https://www.tuchuang001.com/images/2017/06/11/30506168.gif)
+![30506168.gif](img/30506168.gif)
 
 Animsition插件还有添加覆盖物overlay功能，博主没有使用这个功能，所以不再介绍，具体可查阅官方API。

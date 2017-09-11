@@ -20,7 +20,7 @@ create table T_ROLE(
 
 eclipse文件路径：  
 
-![12570185-file_1487995631058_e4f2.png](https://www.tuchuang001.com/images/2017/06/14/12570185-file_1487995631058_e4f2.png)
+![12570185-file_1487995631058_e4f2.png](img/12570185-file_1487995631058_e4f2.png)
 
 各文件说明：
 <table>

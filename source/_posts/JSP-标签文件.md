@@ -26,7 +26,7 @@ Today is:<mt:firstTag/>
 ```
 部署到Tomcat中，启动服务，访问该jsp，页面显示：
 
-![outputImagefileId58e623fcab6441770f003177.png](https://www.tuchuang001.com/images/2017/06/14/outputImagefileId58e623fcab6441770f003177.png)
+![outputImagefileId58e623fcab6441770f003177.png](img/outputImagefileId58e623fcab6441770f003177.png)
 
 That' all.
 
@@ -217,7 +217,7 @@ included.tag文件：
 ```
 启动访问，页面显示：
 
-![12953061-file_1487995461665_125ce.png](https://www.tuchuang001.com/images/2017/06/14/12953061-file_1487995461665_125ce.png)
+![12953061-file_1487995461665_125ce.png](img/12953061-file_1487995461665_125ce.png)
 
 ### taglib指令
 该指令的作用就是在一个标签文件中使用另外一个标签，如现有taglibDemo.tag：
@@ -280,7 +280,7 @@ jsp中测试：
 ```
 页面显示：
 
-![17067936-file_1487995485314_d54.png](https://www.tuchuang001.com/images/2017/06/14/17067936-file_1487995485314_d54.png)
+![17067936-file_1487995485314_d54.png](img/17067936-file_1487995485314_d54.png)
 ### variable指令
 用于定义标签文件的变量，常用的属性有：
 <table>
@@ -345,4 +345,4 @@ In short format: ${shortDate}
 ```
 测试，页面显示：
 
-![71683354-file_1487995510634_89ad.png](https://www.tuchuang001.com/images/2017/06/14/71683354-file_1487995510634_89ad.png)
+![71683354-file_1487995510634_89ad.png](img/71683354-file_1487995510634_89ad.png)

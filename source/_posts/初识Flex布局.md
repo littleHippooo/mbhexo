@@ -18,7 +18,7 @@ div {
 ```
 对于一个Flex容器，其存在两个轴。水平方向的称为**主轴**（main axis），竖直方向的称为**交叉轴**（cross axis）。如下图所示：
 
-![02fcf9af33dde7a084d0d80fa5dd73ba.png](https://www.tuchuang001.com/images/2017/07/24/02fcf9af33dde7a084d0d80fa5dd73ba.png)
+![02fcf9af33dde7a084d0d80fa5dd73ba.png](img/02fcf9af33dde7a084d0d80fa5dd73ba.png)
 
 FlexBox主要包含12个属性，其中Flex容器6个，Flex项目6个。
 ## Flex容器属性

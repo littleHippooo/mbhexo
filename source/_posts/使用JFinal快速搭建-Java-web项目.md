@@ -136,4 +136,4 @@ public class JfinalController extends Controller{
 ```
 至此，一个简单的Java web项目搭建完了，将项目部署到Tomcat中，并启动，在浏览器中输入访问路径：localhost:8080/Jfinal/：
 
-![20673055.gif](https://www.tuchuang001.com/images/2017/06/11/20673055.gif)
+![20673055.gif](img/20673055.gif)

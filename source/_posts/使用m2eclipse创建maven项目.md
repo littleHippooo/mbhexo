@@ -6,7 +6,7 @@ tags: maven
 ## 新建maven项目
 新建一个maven project，填写Group Id，Artifact Id：   
 
-![16134997-file_1487994560154_1694e.png](https://www.tuchuang001.com/images/2017/06/15/16134997-file_1487994560154_1694e.png)
+![16134997-file_1487994560154_1694e.png](img/16134997-file_1487994560154_1694e.png)
 
 点击finish后项目目录下自动生成了pom.xml文件（Project Object Model，项目对象模型）：
 <!--more-->
@@ -63,7 +63,7 @@ public class HelloMaven {
 ```
 进行maven进行编译，右击项目→Run As→Maven build...：    
 
-![96208298-file_1487994585491_62a8.png](https://www.tuchuang001.com/images/2017/06/15/96208298-file_1487994585491_62a8.png)
+![96208298-file_1487994585491_62a8.png](img/96208298-file_1487994585491_62a8.png)
 
 然后点击run：
 ```xml

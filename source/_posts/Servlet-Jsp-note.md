@@ -43,16 +43,16 @@ public class HiServlet extends HttpServlet{
 ```
 启动Tomcat，在浏览器中输入：http://localhost:8088/servlet/hi 得到页面：
 
-![b0dde66fad3c3567754137ec57cf7390.png](https://www.tuchuang001.com/images/2017/07/26/b0dde66fad3c3567754137ec57cf7390.png)
+![b0dde66fad3c3567754137ec57cf7390.png](img/b0dde66fad3c3567754137ec57cf7390.png)
 
 程序执行的过程：
 
-![6b441c2e7b01c764e9ca3609e6d00187.md.png](https://www.tuchuang001.com/images/2017/07/26/6b441c2e7b01c764e9ca3609e6d00187.md.png)
+![6b441c2e7b01c764e9ca3609e6d00187.md.png](img/6b441c2e7b01c764e9ca3609e6d00187.md.png)
 
 ## Servlet运行的原理
 原理图（执行过程）：
 
-![a506160290d386cbd8113bb4ecc1d02c.png](https://www.tuchuang001.com/images/2017/07/26/a506160290d386cbd8113bb4ecc1d02c.png)
+![a506160290d386cbd8113bb4ecc1d02c.png](img/a506160290d386cbd8113bb4ecc1d02c.png)
 
 具体过程描述：
 
@@ -85,7 +85,7 @@ public class HiServlet extends HttpServlet{
 
 2. get请求使用URL传值，即数据会附着在URL上传递给服务器，如：
 
- ![b6d04a13a7817fd5041763d44d0bf372.png](https://www.tuchuang001.com/images/2017/07/26/b6d04a13a7817fd5041763d44d0bf372.png)
+ ![b6d04a13a7817fd5041763d44d0bf372.png](img/b6d04a13a7817fd5041763d44d0bf372.png)
 
 3. 只能传递较少的数据
 
@@ -213,7 +213,7 @@ response.sendRedirect(String url);
 
 转发的过程：
 
-![6070e8ba0fc449e3c63b1f2179da65c3.png](https://www.tuchuang001.com/images/2017/07/26/6070e8ba0fc449e3c63b1f2179da65c3.png)
+![6070e8ba0fc449e3c63b1f2179da65c3.png](img/6070e8ba0fc449e3c63b1f2179da65c3.png)
 
 1.先绑订数据到request对象：
 ```java
@@ -295,7 +295,7 @@ public class LifeServlet extends HttpServlet{
 ```
 生命周期相关的几个接口与类：
 
-![0a527e4e2dfd05240703d57cc8ecd578.md.png](https://www.tuchuang001.com/images/2017/07/26/0a527e4e2dfd05240703d57cc8ecd578.md.png)
+![0a527e4e2dfd05240703d57cc8ecd578.md.png](img/0a527e4e2dfd05240703d57cc8ecd578.md.png)
 
 ## ServletContext
 Servlet上下文，WEB容器在启动时，它会为每个WEB应用程序都创建一个对应的ServletContext对象，它代表当前web应用，是一个全局的环境变量。该应用中的任何组件，在任何时候都可以访问到该对象，所以Servlet上下文具有唯一性。
@@ -332,11 +332,11 @@ public class FirstServlet extends HttpServlet{
 ```
 SecondServlet内容和FirstServlet一致。配置略。访问[http://localhost:8080/servlet/first](http://localhost:8080/servlet/first)：
 
-![ce96cf34ec76b9b07b2cf1cf1b8b1c3a.png](https://www.tuchuang001.com/images/2017/07/26/ce96cf34ec76b9b07b2cf1cf1b8b1c3a.png)
+![ce96cf34ec76b9b07b2cf1cf1b8b1c3a.png](img/ce96cf34ec76b9b07b2cf1cf1b8b1c3a.png)
 
 访问[http://localhost:8080/servlet/second](http://localhost:8080/servlet/second)：
 
-![704ce84f776ad12cc122184933b2235f.png](https://www.tuchuang001.com/images/2017/07/26/704ce84f776ad12cc122184933b2235f.png)
+![704ce84f776ad12cc122184933b2235f.png](img/704ce84f776ad12cc122184933b2235f.png)
 
 可见它们获取到的是同一个ServletContext，换句话说ServletContext只有一份。
 
@@ -366,7 +366,7 @@ JSP作为简化Servlet开发的一种技术，实质上最终依然要转变为S
 
 当有多个过滤器的时候，过滤的先后按照xml文件中mapping的先后顺序执行，具体过程如下图所示：
 
-![6c6a2aadb04e81a2528758b88c26ed30.png](https://www.tuchuang001.com/images/2017/07/27/6c6a2aadb04e81a2528758b88c26ed30.png)
+![6c6a2aadb04e81a2528758b88c26ed30.png](img/6c6a2aadb04e81a2528758b88c26ed30.png)
 
 上图展示了多个过滤器的执行流程，过滤器1的doFilter的code1 →过滤器2的doFilter的code1 →service()方法→过滤器2的doFilter的code2 →过滤器1的doFilter的code2 →返回给客户端。在这个动作的传递过程中一定要写`chain.doFilter()`。
 

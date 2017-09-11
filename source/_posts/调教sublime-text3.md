@@ -11,15 +11,15 @@ Sublime Text 3 是一款编辑器软件，自带语法高亮，代码提示，�
 ## 安装主题
 Sublime Text包含很多优秀的第三方主题，不过个人还是比较喜欢[Boxy Theme](https://github.com/ihodev/sublime-boxy)。在Command Palette中输入install，选择Package Control: install Package：
 
-![0dbde8ff58e3737611256ccf2b2bd1ba.png](https://www.tuchuang001.com/images/2017/06/29/0dbde8ff58e3737611256ccf2b2bd1ba.png)
+![0dbde8ff58e3737611256ccf2b2bd1ba.png](img/0dbde8ff58e3737611256ccf2b2bd1ba.png)
 
 点击Enter呼出Package Control后输入Boxy Theme后点击Enter即可安装。控制台提示安装成功后，使用快捷键`Ctrl+Shift+P`呼出Command Palette，输入boxy，选择Boxy Theme:Activation即可在Boxy Theme自带的几款主题中进行切换：
 
-![ae239d9946016dda0e9247b769fd36e0.png](https://www.tuchuang001.com/images/2017/06/29/ae239d9946016dda0e9247b769fd36e0.png)
+![ae239d9946016dda0e9247b769fd36e0.png](img/ae239d9946016dda0e9247b769fd36e0.png)
 
 个人比较喜欢Yesterday这款主题：
 
-![5dcc47e86698448a0f5ed6d0b0dca108.png](https://www.tuchuang001.com/images/2017/06/29/5dcc47e86698448a0f5ed6d0b0dca108.png)
+![5dcc47e86698448a0f5ed6d0b0dca108.png](img/5dcc47e86698448a0f5ed6d0b0dca108.png)
 
 Yesterday相关配置（Preferences→settings）：
 ```javascript
@@ -51,10 +51,10 @@ Yesterday相关配置（Preferences→settings）：
 ```
 还可以安装与该主题配套的[Mono File Icons](https://packagecontrol.io/packages/Boxy%20Theme%20Addon%20-%20Mono%20File%20Icons)插件，用于美化不同格式文件的图标样式。安装方法同上，不再赘述。效果如下：
 
-![d093750824d1c06fead594bb60f327fa.png](https://www.tuchuang001.com/images/2017/06/29/d093750824d1c06fead594bb60f327fa.png)
+![d093750824d1c06fead594bb60f327fa.png](img/d093750824d1c06fead594bb60f327fa.png)
 
 ## 图标替换
-![52aeb15c4be79cabfe03fd569b828968.png](https://www.tuchuang001.com/images/2017/06/29/52aeb15c4be79cabfe03fd569b828968.png)
+![52aeb15c4be79cabfe03fd569b828968.png](img/52aeb15c4be79cabfe03fd569b828968.png)
 
 可以在[Dribbble](https://dribbble.com/)中搜索Sublime Text，然后下载喜欢的图标。不过大多数素材都是Mac的icns格式的，可以在[https://iconverticons.com/online/](https://iconverticons.com/online/)网站中在线转换为windows中的ico格式。
 ## 安装插件
@@ -74,11 +74,11 @@ Yesterday相关配置（Preferences→settings）：
 ```
 或者直接在Command Palette中输入auto，选择第一项：
 
-![0c35a056e4abff8b27b63b9ff3bb5692.png](https://www.tuchuang001.com/images/2017/06/29/0c35a056e4abff8b27b63b9ff3bb5692.png)
+![0c35a056e4abff8b27b63b9ff3bb5692.png](img/0c35a056e4abff8b27b63b9ff3bb5692.png)
 
 效果如下：
 
-![437d80a472f5004a2309600dcf909ee3.gif](https://www.tuchuang001.com/images/2017/06/29/437d80a472f5004a2309600dcf909ee3.gif)
+![437d80a472f5004a2309600dcf909ee3.gif](img/437d80a472f5004a2309600dcf909ee3.gif)
 
 ### QuoteHTML
 [QuoteHTML](https://packagecontrol.io/packages/QuoteHTML)可将HTML片段转换为字符串片段，在操作DOM的时候非常方便，省去了自己手动拼接的时间。
@@ -95,11 +95,11 @@ Yesterday相关配置（Preferences→settings）：
 ```
 在Command Palette中输入q：
 
-![64673fe81165fafd458a12e66fbebfac.png](https://www.tuchuang001.com/images/2017/06/29/64673fe81165fafd458a12e66fbebfac.png)
+![64673fe81165fafd458a12e66fbebfac.png](img/64673fe81165fafd458a12e66fbebfac.png)
 
 可根据实际需求自由选择，这里选择第二项然后敲击Enter，效果如下：
 
-![b82439f2c987456a5a57bf1a46dfe83b.png](https://www.tuchuang001.com/images/2017/06/29/b82439f2c987456a5a57bf1a46dfe83b.png)
+![b82439f2c987456a5a57bf1a46dfe83b.png](img/b82439f2c987456a5a57bf1a46dfe83b.png)
 
 真是极其方便的说！也可以自己设置快捷键。
 ### JsFormat
@@ -117,7 +117,7 @@ Yesterday相关配置（Preferences→settings）：
 ```
 或者在Command Palette中输入format：
 
-![dc31197b6966ca7d1c64f331413a12ec.png](https://www.tuchuang001.com/images/2017/06/29/dc31197b6966ca7d1c64f331413a12ec.png)
+![dc31197b6966ca7d1c64f331413a12ec.png](img/dc31197b6966ca7d1c64f331413a12ec.png)
 
 值得一提的是，它也可以格式化JSON数据。
 ### CSSFormat
@@ -125,25 +125,25 @@ Yesterday相关配置（Preferences→settings）：
 
 也可以在Command Palette中输入format css并按下Enter来格式化CSS代码：
 
-![5c41df13847e48da70dc2a6d2361d2ad.png](https://www.tuchuang001.com/images/2017/06/29/5c41df13847e48da70dc2a6d2361d2ad.png)
+![5c41df13847e48da70dc2a6d2361d2ad.png](img/5c41df13847e48da70dc2a6d2361d2ad.png)
 
 ### Color​Helper
 [ColorHelper]()提供CSS颜色预览，提供颜色转换，并允许在调色板中存储和访问喜爱的颜色。安装该插件后，CSS中颜色属性值前会出现一个相应颜色的小方块，如下图所示：
 
-![113cf5b84f29b009ac817101a66ff9c9.png](https://www.tuchuang001.com/images/2017/06/29/113cf5b84f29b009ac817101a66ff9c9.png)
+![113cf5b84f29b009ac817101a66ff9c9.png](img/113cf5b84f29b009ac817101a66ff9c9.png)
 
 点击小方块，可以进行颜色格式的转换，如16进制转RGB,RGBA,HSL和HSLA：
 
-![d073ac0487bb58e967e0cfa9373f05f5.png](https://www.tuchuang001.com/images/2017/06/29/d073ac0487bb58e967e0cfa9373f05f5.png)
+![d073ac0487bb58e967e0cfa9373f05f5.png](img/d073ac0487bb58e967e0cfa9373f05f5.png)
 
 也可以在调色板中获取自己喜欢的颜色，并插入：
 
-![dbed09b1b2206c44b8e34fcd3d273390.png](https://www.tuchuang001.com/images/2017/06/29/dbed09b1b2206c44b8e34fcd3d273390.png)
+![dbed09b1b2206c44b8e34fcd3d273390.png](img/dbed09b1b2206c44b8e34fcd3d273390.png)
 
 ### Better Completion
 相比Sublime Text 3自带的代码补全功能，[Better Completion](https://packagecontrol.io/packages/Better%20Completion)可以提供更好自动补全功能，支持JavaScript，jQuery，Lodash，Underscore，HTML5，CSS3和Bootstrap等。安装完后在Command Palette输入sbc，然后按下Enter键：
 
-![84136c105aaaa472d34925a48bba9cb3.png](https://www.tuchuang001.com/images/2017/06/29/84136c105aaaa472d34925a48bba9cb3.png)
+![84136c105aaaa472d34925a48bba9cb3.png](img/84136c105aaaa472d34925a48bba9cb3.png)
 
 在弹出的文件中输入如下配置，并且将那些需要开启自动补全功能语言的选项后的false改为true：
 ```javascript
@@ -186,21 +186,21 @@ Yesterday相关配置（Preferences→settings）：
 ```
 jQuery自动补全的效果图如下：
 
-![8844e213d90ea331b4ec233557be6f40.png](https://www.tuchuang001.com/images/2017/06/29/8844e213d90ea331b4ec233557be6f40.png)
+![8844e213d90ea331b4ec233557be6f40.png](img/8844e213d90ea331b4ec233557be6f40.png)
 
 ### Modific
 [Modific](https://packagecontrol.io/packages/Modific)突出显示行自上次提交以来的更改情况（支持Git，SVN等版本控制工具）。安装完后，如果在版本控制管理目录下修改了文件行，新增的部分以三角标显示，修改的部分以菱形显示，如下图所示：
 
-![6b1061aa0d544014885ae9caee37283a.png](https://www.tuchuang001.com/images/2017/06/29/6b1061aa0d544014885ae9caee37283a.png)
+![6b1061aa0d544014885ae9caee37283a.png](img/6b1061aa0d544014885ae9caee37283a.png)
 
 ### WakaTime
 [WakaTime](https://packagecontrol.io/packages/WakaTime)插件用于在Dashboard中显示你这周的编程时间，编写代码种类占比等信息。安装完插件后，在Sublime Text编辑器下方会要求您输入密匙并按下Enter即可，密匙获取地址：[https://wakatime.com/settings/account#apikey](https://wakatime.com/settings/account#apikey)：
 
-![c545caa405ef49dd306580c6e99ce209.png](https://www.tuchuang001.com/images/2017/06/29/c545caa405ef49dd306580c6e99ce209.png)
+![c545caa405ef49dd306580c6e99ce209.png](img/c545caa405ef49dd306580c6e99ce209.png)
 
 在编写一段时间后，就可以去[https://wakatime.com/dashboard](https://wakatime.com/dashboard)中查看你的编码情况啦：
 
-![826112355e2feb19d4e8f2f44e5de7a3.png](https://www.tuchuang001.com/images/2017/06/29/826112355e2feb19d4e8f2f44e5de7a3.png)
+![826112355e2feb19d4e8f2f44e5de7a3.png](img/826112355e2feb19d4e8f2f44e5de7a3.png)
 
 ## 常用快捷键
 这里只列出了Sublime Text在window中一些比较常用的自带快捷键：

@@ -36,7 +36,7 @@ context.fillRect(0,0,250,150);
 ```
 显示效果：
 
-![91720573-file_1493711272073_6945.png](https://www.tuchuang001.com/images/2017/06/11/91720573-file_1493711272073_6945.png)
+![91720573-file_1493711272073_6945.png](img/91720573-file_1493711272073_6945.png)
 ## 径向渐变
 径向渐变指的是沿着圆形的半径方向向外扩散的渐变方式。绘制径向渐变使用的是图形上下文的`createRadialGradient`方法来创建`gradient`对象，方法签名如下：
 ```javascript
@@ -58,6 +58,6 @@ context.fill();
 ```
 显示效果：
 
-![38414071-file_1493712408433_17eca.png](https://www.tuchuang001.com/images/2017/06/11/38414071-file_1493712408433_17eca.png)
+![38414071-file_1493712408433_17eca.png](img/38414071-file_1493712408433_17eca.png)
 
 > [《HTML5与CSS3权威指南》](https://book.douban.com/subject/26774474/)读书笔记

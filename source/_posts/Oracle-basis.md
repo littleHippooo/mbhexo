@@ -701,7 +701,7 @@ FORD       ANALYST         3000
 ```
 根据返回结果的不同，子查询可分为**单行单列子查询**、**多行单列子查询**及**多行多列子查询**。
 
-![fe7d2ccfeb41d286d5473aa20ba87622.png](https://www.tuchuang001.com/images/2017/07/31/fe7d2ccfeb41d286d5473aa20ba87622.png)
+![fe7d2ccfeb41d286d5473aa20ba87622.png](img/fe7d2ccfeb41d286d5473aa20ba87622.png)
 
 如果子查询返回多行，主查询中要使用多行比较操作符，包括IN、ALL、ANY。其中ALL和ANY不能单独使用，需要配合单行比较操作符>、>=、<、<= 一起使用。
 

@@ -713,7 +713,7 @@ public String deny(){
 ## 测试
 最终，工程的目录结构为：
 
-![30421015-file_1488435913481_11db7.png](https://www.tuchuang001.com/images/2017/06/13/30421015-file_1488435913481_11db7.png)
+![30421015-file_1488435913481_11db7.png](img/30421015-file_1488435913481_11db7.png)
 
 spring security.xml最终配置如下：
 ```xml
@@ -785,15 +785,15 @@ spring security.xml最终配置如下：
 ```
 启动工程，访问：http://localhost:8080/spring-security/login 
 
-![47298958-file_1487996693373_ac23.png](https://www.tuchuang001.com/images/2017/06/13/47298958-file_1487996693373_ac23.png)
+![47298958-file_1487996693373_ac23.png](img/47298958-file_1487996693373_ac23.png)
 
 当登录失败时，页面如下：
 
-![41595291-file_1487996714125_5670.png](https://www.tuchuang001.com/images/2017/06/13/41595291-file_1487996714125_5670.png)
+![41595291-file_1487996714125_5670.png](img/41595291-file_1487996714125_5670.png)
 
 admin成功登录后：
 
-![74906915-file_1487996735917_4f76.png](https://www.tuchuang001.com/images/2017/06/13/74906915-file_1487996735917_4f76.png)
+![74906915-file_1487996735917_4f76.png](img/74906915-file_1487996735917_4f76.png)
 
 控制台输出：
 ```xml
@@ -802,15 +802,15 @@ admin[ROLE_ADMIN, ROLE_USER]
 ```
 点击admin.jsp：
 
-![49887609-file_1487996760103_2fc7.png](https://www.tuchuang001.com/images/2017/06/13/49887609-file_1487996760103_2fc7.png)
+![49887609-file_1487996760103_2fc7.png](img/49887609-file_1487996760103_2fc7.png)
 
 点击logout回到登陆页面，使用user登录：
 
-![87434140-file_1487996785624_ce45.png](https://www.tuchuang001.com/images/2017/06/13/87434140-file_1487996785624_ce45.png)
+![87434140-file_1487996785624_ce45.png](img/87434140-file_1487996785624_ce45.png)
 
 点击admin.jsp：
 
-![98435752-file_1487996804588_a6ef.png](https://www.tuchuang001.com/images/2017/06/13/98435752-file_1487996804588_a6ef.png)
+![98435752-file_1487996804588_a6ef.png](img/98435752-file_1487996804588_a6ef.png)
 
 访问受限。
 

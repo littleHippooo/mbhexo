@@ -494,7 +494,7 @@ files: {
 ### callback验证
 callback用于校验验证码等类型，比如要实现下面这样的效果：
 
-![578a01ef884cd58e02669a5ed868d593.png](https://www.tuchuang001.com/images/2017/07/14/578a01ef884cd58e02669a5ed868d593.png)
+![578a01ef884cd58e02669a5ed868d593.png](img/578a01ef884cd58e02669a5ed868d593.png)
 
 HTML代码：
 ```html

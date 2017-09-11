@@ -9,7 +9,7 @@ tags: Spring
 
 <!--more-->
 
-![14194492-file_1487994485619_4dfe.png](https://www.tuchuang001.com/images/2017/06/16/14194492-file_1487994485619_4dfe.png)
+![14194492-file_1487994485619_4dfe.png](img/14194492-file_1487994485619_4dfe.png)
 
 1.Spring对Bean进行实例化；
 

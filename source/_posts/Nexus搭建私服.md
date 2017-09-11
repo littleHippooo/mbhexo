@@ -8,19 +8,19 @@ tags: maven
 
 解压后找到bin/jsw目录下选择对于的操作系统文件夹：  
 
-![19865483-file_1487995065115_181e8.png](https://www.tuchuang001.com/images/2017/06/15/19865483-file_1487995065115_181e8.png)
+![19865483-file_1487995065115_181e8.png](img/19865483-file_1487995065115_181e8.png)
 
 <!--more--> 
 如windows-x86-64，双击start-nexus.bat即可启动nexus，启动后浏览器访问loaclhost:8081/nexus/：
 
-![79775439-file_1487995089844_127eb.png](https://www.tuchuang001.com/images/2017/06/15/79775439-file_1487995089844_127eb.png)
+![79775439-file_1487995089844_127eb.png](img/79775439-file_1487995089844_127eb.png)
 
 点击右上角Log In登录，管理员账号密码 admin，admin123。
 ## Nexus仓库和仓库组
 ### Nexus内置仓库
 点击左侧的Repositories可看到： 
 
-![92574541-file_1487995113580_1670c.png](https://www.tuchuang001.com/images/2017/06/15/92574541-file_1487995113580_1670c.png)
+![92574541-file_1487995113580_1670c.png](img/92574541-file_1487995113580_1670c.png)
 
 类型分为：group（仓库组），proxy（代理），hosted（宿主），virtual（虚拟）：
 
@@ -40,13 +40,13 @@ tags: maven
 
 上述的几种仓库类型关系如下图所示：  
 
-![22119072-file_1487995134996_3555.png](https://www.tuchuang001.com/images/2017/06/15/22119072-file_1487995134996_3555.png)
+![22119072-file_1487995134996_3555.png](img/22119072-file_1487995134996_3555.png)
 
 maven可以直接从宿主仓库和代理仓库下载构件，代理仓库会间接地从远程仓库下载并缓存构件。为了方便，maven可以从仓库组下载构件，仓库组没有实际的内容，它会转向其包含的宿主仓库或者代理仓库获得实际的构件。
 ### 创建Nexus宿主仓库
 点击Repositories界面的Add按钮，选择Hosted Repository：    
 
-![55892256-file_1487995155963_8fa.png](https://www.tuchuang001.com/images/2017/06/15/55892256-file_1487995155963_8fa.png)
+![55892256-file_1487995155963_8fa.png](img/55892256-file_1487995155963_8fa.png)
 
 `Repository ID`：仓库id，该值会被作为仓库路径的最后一项内容
 

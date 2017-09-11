@@ -15,7 +15,7 @@ tags: Git
 <!--more-->
 ## 分支的新建与切换
 假如公司网站项目已经开发了一段时间，并且使用Git提交了几次更新，提交历史如下图所示：
-![5432564e4dd112954c149fc91f973bba.png](https://www.tuchuang001.com/images/2017/06/26/5432564e4dd112954c149fc91f973bba.png)
+![5432564e4dd112954c149fc91f973bba.png](img/5432564e4dd112954c149fc91f973bba.png)
 
 为了开发新功能，新建分支develop并切换到该分支：
 ```bash
@@ -30,7 +30,7 @@ $ git checkout -b develop
 Switched to a new branch 'develop'
 ```
 执行上述命令后，仓库历史大致如下所示：
-![2f061c2f3e462687b28b9181a293e63b.png](https://www.tuchuang001.com/images/2017/06/26/2f061c2f3e462687b28b9181a293e63b.png)
+![2f061c2f3e462687b28b9181a293e63b.png](img/2f061c2f3e462687b28b9181a293e63b.png)
 
 Git新建了一个分支指针develop，然后将HEAD指向develop。
 
@@ -46,7 +46,7 @@ $ git commit -a -m "add About.html page"
  create mode 100644 About.html
 ```
 此时，仓库历史如下图所示：
-![c28f6d6e343ef712f51239bfce4ab129.png](https://www.tuchuang001.com/images/2017/06/26/c28f6d6e343ef712f51239bfce4ab129.png)
+![c28f6d6e343ef712f51239bfce4ab129.png](img/c28f6d6e343ef712f51239bfce4ab129.png)
 
 这时候接到测试组公司网站主页index.html的Bug反馈，于是将分支切换回主分支master，然后新建分支bugFix，修复Bug，并提交该修复：
 ```bash
@@ -63,7 +63,7 @@ $ git  commit -a -m "update index.html page"
  1 file changed, 2 insertions(+), 2 deletions(-)
 ```
 此时，仓库历史如下图所示：
-![12f41c03972a7c9871d69712579e25f9.png](https://www.tuchuang001.com/images/2017/06/26/12f41c03972a7c9871d69712579e25f9.png)
+![12f41c03972a7c9871d69712579e25f9.png](img/12f41c03972a7c9871d69712579e25f9.png)
 
 假如确定Bug修复后，可以切换会master分支，然后将bugFix和master分支合并：
 ```bash
@@ -81,7 +81,7 @@ $ git branch -d bugFix
 Deleted branch bugFix (was 11a3074).
 ```
 合并master与bugFix，并删除bugFix分支后，仓库历史如下图所示：
-[![4ee819ce53cf59c857757dc157e3cd31.png](https://www.tuchuang001.com/images/2017/06/26/4ee819ce53cf59c857757dc157e3cd31.png)](https://www.tuchuang001.com/image/LzrIW)
+![4ee819ce53cf59c857757dc157e3cd31.png](img/4ee819ce53cf59c857757dc157e3cd31.png)
 
 Bug修复后，切换回develop分支继续开发新的功能，并且提交：
 ```
@@ -95,7 +95,7 @@ $ git commit -a -m "add copyright"
  1 file changed, 1 insertion(+)
 ```
 此时，仓库历史如下图所示：
-![e71eda52e1bd88d44e52b369dc10f720.png](https://www.tuchuang001.com/images/2017/06/26/e71eda52e1bd88d44e52b369dc10f720.png)
+![e71eda52e1bd88d44e52b369dc10f720.png](img/e71eda52e1bd88d44e52b369dc10f720.png)
 
 ## 分支合并
 和合并master分支与bugFix分支那样，合并master与develop分支过程也差不多：
@@ -111,7 +111,7 @@ Merge made by the 'recursive' strategy.
 由于master指向的C4并不是develop指向C5的直接祖先C2，所以合并方式不是“Fast forward”，Git 会用两个分支的末端（C4 和 C5）以及它们的共同祖先（C2）进行一次简单的三方合并计算。
 
 合并master和develop后，仓库历史如下图所示：
-![e9af22e3bc67f2f3bca32ac05f761577.png](https://www.tuchuang001.com/images/2017/06/26/e9af22e3bc67f2f3bca32ac05f761577.png)
+![e9af22e3bc67f2f3bca32ac05f761577.png](img/e9af22e3bc67f2f3bca32ac05f761577.png)
 
 ## 解决合并冲突
 假如在不同分支中都对同一个文件进行了修改，那么合并的时候就会发生冲突。比如在master分支和develop分支上都修改了About.html页面，然后进行分支合并：

@@ -240,7 +240,7 @@ public class EmpServiceImpl implements EmpService{
 ## 测试
 最终，工程的目录结构为：
 
-![89189315-file_1488546005738_6d3f.png](https://www.tuchuang001.com/images/2017/06/12/89189315-file_1488546005738_6d3f.png)
+![89189315-file_1488546005738_6d3f.png](img/89189315-file_1488546005738_6d3f.png)
 
 测试创建Emp：
 ```java
@@ -267,7 +267,7 @@ public class TestController {
 ```
 启动项目，访问：http://localhost:8080/ssm/insert
 
-![32476822-file_1488545104560_1069.png](https://www.tuchuang001.com/images/2017/06/12/32476822-file_1488545104560_1069.png)
+![32476822-file_1488545104560_1069.png](img/32476822-file_1488545104560_1069.png)
 
 查询数据库：
 ```sql
@@ -296,7 +296,7 @@ public String getEmp(){
 ```
 访问：http://localhost:8080/ssm/get
 
-![84649163-file_1488545236002_ea32.png](https://www.tuchuang001.com/images/2017/06/12/84649163-file_1488545236002_ea32.png)
+![84649163-file_1488545236002_ea32.png](img/84649163-file_1488545236002_ea32.png)
 
 测试updateEmp：
 ```java
@@ -316,7 +316,7 @@ public String updateEmp(){
 ```
 访问：http://localhost:8080/ssm/update
 
-![3565206-file_1488545321451_16da5.png](https://www.tuchuang001.com/images/2017/06/12/3565206-file_1488545321451_16da5.png)
+![3565206-file_1488545321451_16da5.png](img/3565206-file_1488545321451_16da5.png)
 
 查询数据库：
 ```sql
@@ -346,7 +346,7 @@ public String deleteEmp(){
 ```
 访问：http://localhost:8080/ssm/delete
 
-![43281827-file_1488545421908_7d93.png](https://www.tuchuang001.com/images/2017/06/12/43281827-file_1488545421908_7d93.png)
+![43281827-file_1488545421908_7d93.png](img/43281827-file_1488545421908_7d93.png)
 
 查询数据库：
 ```sql

@@ -55,23 +55,23 @@ Student     zs           =  new Student();
 ```
 ## 引用数据类型与基本数据类型的区别
 
-![f6ed665be83d527a307e9eba18cb7251.png](https://www.tuchuang001.com/images/2017/07/25/f6ed665be83d527a307e9eba18cb7251.png)
+![f6ed665be83d527a307e9eba18cb7251.png](img/f6ed665be83d527a307e9eba18cb7251.png)
 
 ## 引用数据类型与基本数据类型划等号的区别
 
-![5e209cc08f45453c7168e0c6f38ce7c6.png](https://www.tuchuang001.com/images/2017/07/25/5e209cc08f45453c7168e0c6f38ce7c6.png)
+![5e209cc08f45453c7168e0c6f38ce7c6.png](img/5e209cc08f45453c7168e0c6f38ce7c6.png)
 
 ## Null与NullPointerException的演示
 
-![589fc07f311fa50083c03d60fb846919.png](https://www.tuchuang001.com/images/2017/07/25/589fc07f311fa50083c03d60fb846919.png)
+![589fc07f311fa50083c03d60fb846919.png](img/589fc07f311fa50083c03d60fb846919.png)
 
 ## 基本数据类型数组
 
-![f8ebe847dc920a599795c6242dd3d74e.png](https://www.tuchuang001.com/images/2017/07/25/f8ebe847dc920a599795c6242dd3d74e.png)
+![f8ebe847dc920a599795c6242dd3d74e.png](img/f8ebe847dc920a599795c6242dd3d74e.png)
 
 ## 引用类型数组
 
-![2335c0694419c4f1656eb581354466ad.png](https://www.tuchuang001.com/images/2017/07/25/2335c0694419c4f1656eb581354466ad.png)
+![2335c0694419c4f1656eb581354466ad.png](img/2335c0694419c4f1656eb581354466ad.png)
 
 ## Java内存的管理
 **堆**

@@ -12,7 +12,7 @@ maven仓库分为两类：本地仓库和远程仓库。
 maven远程仓库还可进一步分类：
 
 <!--more-->
-![16184712-file_1487994665746_7075.png](https://www.tuchuang001.com/images/2017/06/15/16184712-file_1487994665746_7075.png)
+![16184712-file_1487994665746_7075.png](img/16184712-file_1487994665746_7075.png)
 
 ## 本地仓库
 默认maven会在c盘创建一个.m2的本地仓库，如果要修改本地仓库地址，可以修改setting.xml文件：
@@ -197,14 +197,14 @@ checksumPolicy元素用来配置当下载构件时，maven检验和验证失败�
 
 1.The Centrl Repository：[http://search.maven.org/](http://search.maven.org/)
 
-![12271665-file_1487994710522_16de0.png](https://www.tuchuang001.com/images/2017/06/15/12271665-file_1487994710522_16de0.png)
+![12271665-file_1487994710522_16de0.png](img/12271665-file_1487994710522_16de0.png)
 
 2.Maven Repository：[http://www.mvnrepository.com/](http://www.mvnrepository.com/)
 
-![7463955-file_1487994731601_75b0.png](https://www.tuchuang001.com/images/2017/06/15/7463955-file_1487994731601_75b0.png)
+![7463955-file_1487994731601_75b0.png](img/7463955-file_1487994731601_75b0.png)
 
 3.Nexus Repository Manager：[https://repository.sonatype.org/#welcome](https://repository.sonatype.org/#welcome)
 
-![outputImagefileId58e65bffab6441770f003cf9.png](https://www.tuchuang001.com/images/2017/06/15/outputImagefileId58e65bffab6441770f003cf9.png)
+![outputImagefileId58e65bffab6441770f003cf9.png](img/outputImagefileId58e65bffab6441770f003cf9.png)
 
 > [《Maven实战》](https://book.douban.com/subject/5345682/)读书笔记  

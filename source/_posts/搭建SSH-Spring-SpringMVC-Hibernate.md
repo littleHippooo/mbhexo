@@ -206,7 +206,7 @@ public class EmpDaoImpl implements EmpDao{
 ## 测试
 最终，工程的目录结构为：
 
-![88573480-file_1488531143826_15b09.png](https://www.tuchuang001.com/images/2017/06/12/88573480-file_1488531143826_15b09.png)
+![88573480-file_1488531143826_15b09.png](img/88573480-file_1488531143826_15b09.png)
 
 applicationContext.xml完整配置如下：
 ```xml
@@ -318,7 +318,7 @@ public class TestController {
 ```
 启动工程，访问：http://localhost:8080/ssh/saveEmp
 
-![63449431-file_1488531700557_18429.png](https://www.tuchuang001.com/images/2017/06/12/63449431-file_1488531700557_18429.png)
+![63449431-file_1488531700557_18429.png](img/63449431-file_1488531700557_18429.png)
 
 查询数据库：
 ```sql

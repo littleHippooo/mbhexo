@@ -450,4 +450,4 @@ public class LeanoteController {
 ```
 部署项目，访问：http://localhost:8080/spring/registerindex：   
 
-![65384397-file_1487996138511_af03.gif](https://www.tuchuang001.com/images/2017/06/13/65384397-file_1487996138511_af03.gif)
+![65384397-file_1487996138511_af03.gif](img/65384397-file_1487996138511_af03.gif)

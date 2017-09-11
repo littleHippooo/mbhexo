@@ -8,7 +8,7 @@ tags: [Leanote,theme]
 
 主题预览图如下所示：
 
-![54999990-file_1487997191856_69e5.png](https://www.tuchuang001.com/images/2017/06/13/54999990-file_1487997191856_69e5.png)
+![54999990-file_1487997191856_69e5.png](img/54999990-file_1487997191856_69e5.png)
 
 该主题可自行修改，这里做几点介绍。     
 ## 修改图片
@@ -109,7 +109,7 @@ title为歌曲名，artist为歌手名，mp3为音乐连接，cover为专辑封�
 ## 弹出层
 页面弹出层使用的是sweetAlert.js插件。当删除评论以及未登录状况下点击博文的评论和点赞按钮即可触发，如：
 
-![67095376-file_1487997218085_ff4e.png](https://www.tuchuang001.com/images/2017/06/13/67095376-file_1487997218085_ff4e.png) 
+![67095376-file_1487997218085_ff4e.png](img/67095376-file_1487997218085_ff4e.png) 
 
 相应API可查看sweetAlert插件官网。在主题share_comment.js文件中可找到相关代码。
 

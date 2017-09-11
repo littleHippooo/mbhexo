@@ -26,7 +26,7 @@ border-image-slice: [ <number> | <percentage>]{1,4}
 ```
 属性值可以为number，也可以是percentage。如果是percentage方式，则是相对于图片的尺寸。比如有如下一个边框图片：
 
-![ef7e418ec860a6a9a6ce9dbf8a058434.png](https://www.tuchuang001.com/images/2017/07/17/ef7e418ec860a6a9a6ce9dbf8a058434.png)
+![ef7e418ec860a6a9a6ce9dbf8a058434.png](img/ef7e418ec860a6a9a6ce9dbf8a058434.png)
 
 每一个小方块的尺寸是27px，那么此图片的长宽尺寸是(27*3)像素。使用如下代码进行切割：
 ```css
@@ -34,7 +34,7 @@ border-image-slice:27px 27px 27px 27px;
 ```
 结果如下图所示：
 
-![34a58685d3967e3afe7634c8cd1fd754.gif](https://www.tuchuang001.com/images/2017/07/17/34a58685d3967e3afe7634c8cd1fd754.gif)
+![34a58685d3967e3afe7634c8cd1fd754.gif](img/34a58685d3967e3afe7634c8cd1fd754.gif)
 
 图片被切割后，会被划分为九个区域，这个九个区域会与元素的九个区域是一一对应的。
 ### border-image-width

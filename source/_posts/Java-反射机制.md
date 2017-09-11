@@ -30,7 +30,7 @@ public void test1(){
 
 2.利用类创建对象。内存中有一个String对象，方法区中还有类的信息！通过Class对象可以获取类的相关信息。
 
-![54136091-file_1487994424894_c44a.png](https://www.tuchuang001.com/images/2017/06/16/54136091-file_1487994424894_c44a.png)
+![54136091-file_1487994424894_c44a.png](img/54136091-file_1487994424894_c44a.png)
 ## 动态获取类的信息
 ### 动态获取类的方法信息
 Foo类（package：demo）：    

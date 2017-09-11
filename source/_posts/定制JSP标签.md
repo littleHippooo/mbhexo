@@ -48,7 +48,7 @@ public class MyFirstTag implements SimpleTag{
 ### 注册标签
 在WEB-INF文件夹下新建一个tlds文件夹，然后在该文件夹下新建一个mytags.tld文件：
 
-![61698718-file_1487995283924_450a.png](https://www.tuchuang001.com/images/2017/06/14/61698718-file_1487995283924_450a.png)
+![61698718-file_1487995283924_450a.png](img/61698718-file_1487995283924_450a.png)
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -134,7 +134,7 @@ public class DateFormatTag extends SimpleTagSupport{
 ```
 两种方式给fmt属性赋值，启动tomcat访问该jsp页面，页面显示：
 
-![45952923-file_1487995311914_bed9.png](https://www.tuchuang001.com/images/2017/06/14/45952923-file_1487995311914_bed9.png)
+![45952923-file_1487995311914_bed9.png](img/45952923-file_1487995311914_bed9.png)
 ## JspFragment    
 JspFragment就是一段不包含scriplet的jsp代码段，JspFragment类有两个方法：`getJspContext`和`invoke`。
 
@@ -196,7 +196,7 @@ public class SelectTag extends SimpleTagSupport{
 ```
 启动tomcat，访问该jsp页面，页面显示：
 
-![55526526-file_1487995334267_a4a6.png](https://www.tuchuang001.com/images/2017/06/14/55526526-file_1487995334267_a4a6.png)
+![55526526-file_1487995334267_a4a6.png](img/55526526-file_1487995334267_a4a6.png)
 
 查看源码：
 ```html
@@ -260,6 +260,6 @@ function-signature表示该函数的静态Java方法签名。
 ```
 启动tomcat，访问该jsp，页面显示：
 
-![76202290-file_1487995364195_6063.png](https://www.tuchuang001.com/images/2017/06/14/76202290-file_1487995364195_6063.png)
+![76202290-file_1487995364195_6063.png](img/76202290-file_1487995364195_6063.png)
 
 > [《Servlet和JSP学习指南》](https://book.douban.com/subject/22994746/)学习笔记 

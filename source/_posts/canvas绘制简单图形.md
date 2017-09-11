@@ -73,7 +73,7 @@ context.strokeRect(50,50,150,150);
 ```
 结果：
 
-![91969758-file_1493260613916_104f4.png](https://www.tuchuang001.com/images/2017/06/11/91969758-file_1493260613916_104f4.png)
+![91969758-file_1493260613916_104f4.png](img/91969758-file_1493260613916_104f4.png)
 
 关于矩形，还有一个`clearRect`方法，用于清除指定矩形区域像素：
 ```javascript
@@ -85,7 +85,7 @@ context.clearRect(50,50,50,50);
 ```
 效果：
 
-![1632300-file_1493260859763_12aee.png](https://www.tuchuang001.com/images/2017/06/11/1632300-file_1493260859763_12aee.png)
+![1632300-file_1493260859763_12aee.png](img/1632300-file_1493260859763_12aee.png)
 ## 绘制圆形，扇形，椭圆
 绘制圆形主要多了开始创建路径beginPath和关闭路径closePath这两个过程。
 
@@ -130,7 +130,7 @@ for(var i = 0;i < 6; i++){
 
 效果如下图所示：
 
-![95422784-file_1493263542834_3beb.png](https://www.tuchuang001.com/images/2017/06/11/95422784-file_1493263542834_3beb.png)
+![95422784-file_1493263542834_3beb.png](img/95422784-file_1493263542834_3beb.png)
 
 假如不关闭路径会怎样呢？将上面的代码改为：
 ```javascript
@@ -145,13 +145,13 @@ for(var i = 0;i < 6; i++){
 ```
 效果如下图所示：
 
-![15979544-file_1493263698000_173b3.png](https://www.tuchuang001.com/images/2017/06/11/15979544-file_1493263698000_173b3.png)
+![15979544-file_1493263698000_173b3.png](img/15979544-file_1493263698000_173b3.png)
 
 不关闭路径将会导致再绘制第二个圆的时候，第一个圆会根据之前的路径再次绘制一次。所以在这个例子中，第一个圆绘制了5次，第二个圆绘制了4次，以此类推，以至于第一个圆的颜色最深。
 
 关于弧度的参考可见下图：
 
-![45074720-file_1493274183652_16575.png](https://www.tuchuang001.com/images/2017/06/11/45074720-file_1493274183652_16575.png)
+![45074720-file_1493274183652_16575.png](img/45074720-file_1493274183652_16575.png)
 
 顺时针和逆时针的差别举个例子说明：
 
@@ -167,11 +167,11 @@ context.stroke();
 ```
 效果如下图：
 
-![70222083-file_1493274496615_14f08.png](https://www.tuchuang001.com/images/2017/06/11/70222083-file_1493274496615_14f08.png)
+![70222083-file_1493274496615_14f08.png](img/70222083-file_1493274496615_14f08.png)
 
 将false改为true，即逆时针时：
 
-![1276531-file_1493274564090_487c.png](https://www.tuchuang001.com/images/2017/06/11/1276531-file_1493274564090_487c.png)
+![1276531-file_1493274564090_487c.png](img/1276531-file_1493274564090_487c.png)
 
 椭圆的绘制公式如下：
 ```javascript
@@ -189,7 +189,7 @@ context.fill();
 ```
 效果图：
 
-![69962080-file_1493275424748_cf65.png](https://www.tuchuang001.com/images/2017/06/11/69962080-file_1493275424748_cf65.png)
+![69962080-file_1493275424748_cf65.png](img/69962080-file_1493275424748_cf65.png)
 ## 绘制直线
 与绘制直线有关的方法主要有两个：
 ```javascript
@@ -221,7 +221,7 @@ context.stroke();
 ```
 效果图：
 
-![88820416-file_1493276100892_3dd7.png](https://www.tuchuang001.com/images/2017/06/11/88820416-file_1493276100892_3dd7.png)
+![88820416-file_1493276100892_3dd7.png](img/88820416-file_1493276100892_3dd7.png)
 
 图形上下文的`lineCap`属性可为直线添加线帽，可用的属性有：
 
@@ -243,7 +243,7 @@ context.stroke();
 ```
 效果：
 
-![35700189-file_1493277408167_904a.png](https://www.tuchuang001.com/images/2017/06/11/35700189-file_1493277408167_904a.png)
+![35700189-file_1493277408167_904a.png](img/35700189-file_1493277408167_904a.png)
 
 图形上下文的`lineJoin`属性指定两条线交汇处的形状，可用的值有：
 
@@ -266,7 +266,7 @@ context.stroke();
 ```
 效果图：
 
-![67976196-file_1493277665849_12c77.png](https://www.tuchuang001.com/images/2017/06/11/67976196-file_1493277665849_12c77.png)
+![67976196-file_1493277665849_12c77.png](img/67976196-file_1493277665849_12c77.png)
 
 图形上下文的`setLineDash`方法可设置虚线的样式：
 ```javascript
@@ -312,7 +312,7 @@ context.stroke();
 ```
 效果：
 
-![83425817-file_1493285860047_7f6.png](https://www.tuchuang001.com/images/2017/06/11/83425817-file_1493285860047_7f6.png)
+![83425817-file_1493285860047_7f6.png](img/83425817-file_1493285860047_7f6.png)
 
 ## 绘制曲线
 绘制曲线使用`arcTo`方法：
@@ -321,7 +321,7 @@ context.fillRect(x1,y1,x2,y2,radiusX[radiusY,rotation]);
 ```
 关于坐标参数，可以参考下面这张图：
 
-![38665772-file_1493291085586_168b6.png](https://www.tuchuang001.com/images/2017/06/11/38665772-file_1493291085586_168b6.png)
+![38665772-file_1493291085586_168b6.png](img/38665772-file_1493291085586_168b6.png)
 
 其中x0，y0为当前点的坐标，x1，y1为绘制圆弧时使用的控制坐标，x2，y2为重点坐标。radiusX为圆弧的半径。radiusY和rotation为隐藏参数，前者表示纵向半径，后者表示顺时针旋转角度。
 
@@ -341,7 +341,7 @@ context.stroke();
 ```
 效果图：
 
-![7099713-file_1493291886094_1339b.png](https://www.tuchuang001.com/images/2017/06/11/7099713-file_1493291886094_1339b.png)
+![7099713-file_1493291886094_1339b.png](img/7099713-file_1493291886094_1339b.png)
 
 图形上下文的`bezierCurveTo`方法用以三次绘制贝塞尔曲线。
 ```javascript
@@ -360,7 +360,7 @@ context.stroke();
 ```
 效果图：
 
-![5121381-file_1493293040079_8366.png](https://www.tuchuang001.com/images/2017/06/11/5121381-file_1493293040079_8366.png)
+![5121381-file_1493293040079_8366.png](img/5121381-file_1493293040079_8366.png)
 
 贝塞尔曲线在线生成工具：http://www.j--d.com/bezier
 
@@ -381,6 +381,6 @@ context.stroke();
 ```
 效果图：
 
-![e4bd00a2b1d87c18a6b1b433bf58d8d2.png](https://www.tuchuang001.com/images/2017/06/11/e4bd00a2b1d87c18a6b1b433bf58d8d2.png)
+![e4bd00a2b1d87c18a6b1b433bf58d8d2.png](img/e4bd00a2b1d87c18a6b1b433bf58d8d2.png)
 
 > [《HTML5与CSS3权威指南》](https://book.douban.com/subject/26774474/)读书笔记

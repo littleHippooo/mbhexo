@@ -131,7 +131,7 @@ EDITOR = "\"D:\\Program Files (x86)\\Notepad++\\notepad++.exe\""
 ```
 界面弹出：
 
-![7997296-file_1487997498567_17ef5.png](https://www.tuchuang001.com/images/2017/06/13/7997296-file_1487997498567_17ef5.png)
+![7997296-file_1487997498567_17ef5.png](img/7997296-file_1487997498567_17ef5.png)
 
 在编辑器中修改content内容后，保存并退出编辑器，变量就会被重新解析然后加载回shell：
 ```bash

@@ -8,12 +8,11 @@ Java web出现红叉有好几种情况所致，最基本的代码编写错误以
 1.查看web项目 Java Resources/Libraries目录下Apache Tomcat版本是否为当前Tomcat版本；
 <!--more-->
 
-![91613780-file_1487993810122_dc52.png](https://www.tuchuang001.com/images/2017/06/11/91613780-file_1487993810122_dc52.png)
+![91613780-file_1487993810122_dc52.png](img/91613780-file_1487993810122_dc52.png)
 
 2.查看web项目 Java Resources/Libraries目录下JRE System Library jre版本是否为当前系统所安装版本；
-<!--more-->
 
-![52222063-file_1487993832666_170d0.png](https://www.tuchuang001.com/images/2017/06/11/52222063-file_1487993832666_170d0.png)
+![52222063-file_1487993832666_170d0.png](img/52222063-file_1487993832666_170d0.png)
 
 3.在修改完上面两项还是没有解决问题的时候，我们再去eclipse workspace目录下找到</br>项目名
 /.settings/org.eclipse.wst.common.project.facet.core.xml文件，用编辑器打开：

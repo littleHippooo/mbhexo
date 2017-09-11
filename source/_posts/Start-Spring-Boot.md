@@ -45,7 +45,7 @@ Spring Boot是在Spring框架上创建的一个全新的框架，其设计目的
 
 等IntelliJ IDEA下载好依赖后，在External Libraries中可以看到这些依赖：
 
-![7895607-file_1487997043797_184f3.png](https://www.tuchuang001.com/images/2017/06/13/7895607-file_1487997043797_184f3.png)
+![7895607-file_1487997043797_184f3.png](img/7895607-file_1487997043797_184f3.png)
 
 可以看出，Spring Boot已经导入整个springframework依赖，以及autoconfigure，logging，slf4j，jackson和tomcat插件等，非常方便。
 ## 编写控制器
@@ -75,7 +75,7 @@ public class Application {
 ## 测试运行
 在IntelliJ IDEA中选择Run → Edit Configurations → Spring Boot：
 
-![77518425-file_1487997066981_ba04.png](https://www.tuchuang001.com/images/2017/06/13/77518425-file_1487997066981_ba04.png)
+![77518425-file_1487997066981_ba04.png](img/77518425-file_1487997066981_ba04.png)
 
 选择Main class和Working directory。
 
@@ -96,7 +96,7 @@ Started Application in 6.685 seconds (JVM running for 8.385)
 ```
 在浏览器中输入http://localhost:8080/页面显示如下：
 
-![32461988-file_1487997084955_130a2.png](https://www.tuchuang001.com/images/2017/06/13/32461988-file_1487997084955_130a2.png)
+![32461988-file_1487997084955_130a2.png](img/32461988-file_1487997084955_130a2.png)
 ## 打包发布
 在pom.xml中增加打包插件:spring-boot-maven-plugin，并增加一行打包配置<packaging>jar</packaging>：
 ```xml
@@ -120,7 +120,7 @@ Started Application in 6.685 seconds (JVM running for 8.385)
 ```
 然后打开Run → Edit Configurations → Maven：   
 
-![83857571-file_1487997110796_178de.png](https://www.tuchuang001.com/images/2017/06/13/83857571-file_1487997110796_178de.png)
+![83857571-file_1487997110796_178de.png](img/83857571-file_1487997110796_178de.png)
 
 点击run生成jar包：
 ```bash

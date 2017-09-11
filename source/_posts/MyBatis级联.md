@@ -14,7 +14,7 @@ MyBatis中的级联分为3种：association，collection和discriminator：
 为了学习这些东东，设计一个模型关系：  
 <!--more-->
 
-![89371248-file_1487995784939_c58d.png](https://www.tuchuang001.com/images/2017/06/14/89371248-file_1487995784939_c58d.png)
+![89371248-file_1487995784939_c58d.png](img/89371248-file_1487995784939_c58d.png)
 
 根据模型新建库表：
 ```sql

@@ -119,7 +119,7 @@ public class FileDemo5 {
 ```
 结果：   
 
-![39195276-file_1488010595193_b26e.png](https://www.tuchuang001.com/images/2017/06/14/39195276-file_1488010595193_b26e.png)
+![39195276-file_1488010595193_b26e.png](img/39195276-file_1488010595193_b26e.png)
 ## 删除目录
 只能删除空目录。
 ```java

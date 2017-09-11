@@ -45,7 +45,7 @@ div#sidebar *[href] {color: black;} /* specificity = 0,1,1,1 */
 ```
 最终显示如下图所示：
 
-![12850410-file_1491624696068_151ff.png](https://www.tuchuang001.com/images/2017/06/11/12850410-file_1491624696068_151ff.png)
+![12850410-file_1491624696068_151ff.png](img/12850410-file_1491624696068_151ff.png)
 ## 内联样式特殊性
 特殊性值的第一位是为内联样式保留的，每个内联样式的特殊性都为`1,0,0,0`，比如下面的`h1`元素将显示为绿色：
 ```html
@@ -80,7 +80,7 @@ h1#meadow {color: red}
 ```
 显示如下图所示：
 
-![15715845-file_1491625597713_fdef.png](https://www.tuchuang001.com/images/2017/06/11/15715845-file_1491625597713_fdef.png)
+![15715845-file_1491625597713_fdef.png](img/15715845-file_1491625597713_fdef.png)
 
 结果证明了0特殊性比无特殊性要强。
 

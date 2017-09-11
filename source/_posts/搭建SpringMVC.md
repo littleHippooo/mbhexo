@@ -6,30 +6,30 @@ tags: [Spring,SpringMVC]
 ## guide    
 下图展示了请求在Spring MVC中的过程： 
 
-![61421927-file_1487995885091_155c0.png](https://www.tuchuang001.com/images/2017/06/14/61421927-file_1487995885091_155c0.png)
+![61421927-file_1487995885091_155c0.png](img/61421927-file_1487995885091_155c0.png)
 <!--more-->
 ## 环境准备
 使用Maven构建Spring web MVC project。
 
 新建Maven Project（选中skip archetype selection）:
 
-![54799225-file_1487995908075_78ae.png](https://www.tuchuang001.com/images/2017/06/14/54799225-file_1487995908075_78ae.png)
+![54799225-file_1487995908075_78ae.png](img/54799225-file_1487995908075_78ae.png)
 
 点击next，然后填写Group Id和Artifact Id，打包方式为war：
 
-![4638414-file_1487995925131_1755.png](https://www.tuchuang001.com/images/2017/06/14/4638414-file_1487995925131_1755.png)
+![4638414-file_1487995925131_1755.png](img/4638414-file_1487995925131_1755.png)
 
 finish后，右击项目，选择properties，选中Deployment Assembly，移除选中的路径：
 
-![96972067-file_1487995947158_17c09.png](https://www.tuchuang001.com/images/2017/06/14/96972067-file_1487995947158_17c09.png)
+![96972067-file_1487995947158_17c09.png](img/96972067-file_1487995947158_17c09.png)
 
 apply后选择Project Facets，勾选Dynamic Web Module，点击下方的Further configuration avaiable：
 
-![8414943-file_1487995975157_12a66.png](https://www.tuchuang001.com/images/2017/06/14/8414943-file_1487995975157_12a66.png)
+![8414943-file_1487995975157_12a66.png](img/8414943-file_1487995975157_12a66.png)
 
 如下填写后确定即可：
 
-![30244108-file_1487995997301_14006.png](https://www.tuchuang001.com/images/2017/06/14/30244108-file_1487995997301_14006.png)
+![30244108-file_1487995997301_14006.png](img/30244108-file_1487995997301_14006.png)
 
 准备好后，在pom中引入依赖以及配置tomcat插件：
 ```xml
@@ -163,7 +163,7 @@ public class IndexController {
 ```
 一切准备就绪，启动项目，访问http://localhost:8080/mvc-xml/index：
 
-![44103047-file_1487996019915_57b6.png](https://www.tuchuang001.com/images/2017/06/14/44103047-file_1487996019915_57b6.png) 
+![44103047-file_1487996019915_57b6.png](img/44103047-file_1487996019915_57b6.png) 
 ## JavaConfig配置搭建
 
 配置DispatcherServlet：

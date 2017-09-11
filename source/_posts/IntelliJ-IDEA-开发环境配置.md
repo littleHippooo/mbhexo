@@ -12,7 +12,7 @@ IntelliJ IDEA 主要用于支持 Java、Scala、Groovy 等语言的开发工具�
 2.打开IntelliJ IDEA的设置界面，选择Version Control → Git：  
 <!--more--> 
 
-![52448752-file_1487996960325_16c4d.png](https://www.tuchuang001.com/images/2017/06/13/52448752-file_1487996960325_16c4d.png)
+![52448752-file_1487996960325_16c4d.png](img/52448752-file_1487996960325_16c4d.png)
 
 将Path to Git executable设置为Git安装路径。
 ## 配置GitHub
@@ -20,7 +20,7 @@ IntelliJ IDEA 主要用于支持 Java、Scala、Groovy 等语言的开发工具�
 
 2.填写账号密码，并测试是否登陆成功： 
 
-![88866569-file_1487996981862_5d9d.png](https://www.tuchuang001.com/images/2017/06/13/88866569-file_1487996981862_5d9d.png)
+![88866569-file_1487996981862_5d9d.png](img/88866569-file_1487996981862_5d9d.png)
 ## 配置Maven
 1.首先配置Maven本地资源库存放路径(拷贝Maven自带settings.xml，打开修改存放路径)：
 ```xml
@@ -28,6 +28,6 @@ IntelliJ IDEA 主要用于支持 Java、Scala、Groovy 等语言的开发工具�
 ```
 2.打开IntelliJ IDEA的设置界面，选择Build,Execution,Deployment → Build Tools → Maven：
 
-![26342026-file_1487997004200_5258.png](https://www.tuchuang001.com/images/2017/06/13/26342026-file_1487997004200_5258.png)
+![26342026-file_1487997004200_5258.png](img/26342026-file_1487997004200_5258.png)
 
 选择相应settings.xml文件即可。  

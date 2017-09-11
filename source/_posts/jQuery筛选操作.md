@@ -314,13 +314,13 @@ $("#term-1").nextUntil("#term-3").css("color", "blue");
 ```
 效果如图：
 
-![80432505-file_1493884618635_964b.png](https://www.tuchuang001.com/images/2017/06/11/80432505-file_1493884618635_964b.png)
+![80432505-file_1493884618635_964b.png](img/80432505-file_1493884618635_964b.png)
 
 找到跟随 `<dt id="term-1">` 的`<dd>`同胞元素，直到 `<dt id="term-3">`，并为它们设置蓝色文本颜色：
 ```javascript
 $("#term-1").nextUntil("#term-3",'dd').css("color", "blue");
 ```
-![35503396-file_1493884703667_655a.png](https://www.tuchuang001.com/images/2017/06/11/35503396-file_1493884703667_655a.png)
+![35503396-file_1493884703667_655a.png](img/35503396-file_1493884703667_655a.png)
 获得**被定位**的最近祖先元素。这些定位包括`relative`，`absolute`或`fixed`。
 
 例如，有如下html：
@@ -618,11 +618,11 @@ $('ul.first').find('.foo').css('background-color', 'red')
 
 效果如下图所示：
 
-![75829396-file_1493894656006_1843e.png](https://www.tuchuang001.com/images/2017/06/11/75829396-file_1493894656006_1843e.png)
+![75829396-file_1493894656006_1843e.png](img/75829396-file_1493894656006_1843e.png)
 
 如果去除`end()`函数，会因找不到`<li class="bar">list item 3</li>`，添加绿色背景色失败。去除`end()`效果如下：
 
-![59593815-file_1493894788985_f6f3.png](https://www.tuchuang001.com/images/2017/06/11/59593815-file_1493894788985_f6f3.png)
+![59593815-file_1493894788985_f6f3.png](img/59593815-file_1493894788985_f6f3.png)
 
 一般为了视觉上的对称，上面的代码末端也加上`end()`：
 ```javascript

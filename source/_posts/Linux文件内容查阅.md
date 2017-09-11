@@ -111,7 +111,7 @@ root@ubuntu:~# nl -b a /etc/legal
 
 使用more查阅/etc/ltrace.conf，页面最后一行会显示出目前显示的百分比：
 
-![62680087-file_1491985160081_c33f.png](https://www.tuchuang001.com/images/2017/06/11/62680087-file_1491985160081_c33f.png)
+![62680087-file_1491985160081_c33f.png](img/62680087-file_1491985160081_c33f.png)
 
 还可以在最后一行输入一些有用的指令：
 ```bash

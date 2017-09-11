@@ -25,4 +25,4 @@ if @getConfig "screenShake.disabled"
 ```
 附上一张效果图：
 
-![44215495-file_1487994346574_e1c1.gif](https://www.tuchuang001.com/images/2017/06/11/44215495-file_1487994346574_e1c1.gif)
+![44215495-file_1487994346574_e1c1.gif](img/44215495-file_1487994346574_e1c1.gif)
