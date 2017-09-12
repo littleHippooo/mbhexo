@@ -3,6 +3,7 @@
 <script type="text/javascript" src="{{ url_for(theme.js) }}/sha1.js"></script>
 <script>
 	(function(){
+		debugger;
 		if('{{ page.password }}'){
 			var test = prompt('请输入密码','');
 			if(test){

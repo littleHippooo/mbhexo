@@ -80,7 +80,7 @@ $(document).ready(function () {
   sidebarToggleLines.push(sidebarToggleLine3rd);
 
   var SIDEBAR_WIDTH = '300px';
-  var SIDEBAR_DISPLAY_DURATION = 200;
+  var SIDEBAR_DISPLAY_DURATION = 0;
 
   var sidebarToggleMotion = {
     toggleEl: $('.sidebar-toggle'),
@@ -284,7 +284,7 @@ $(document).ready(function () {
 
     sidebar: function (integrator) {
       if (CONFIG.sidebar.display === 'always') {
-        NexT.utils.displaySidebar();
+        //NexT.utils.displaySidebar();
       }
       integrator.next();
     }

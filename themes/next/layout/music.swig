@@ -597,17 +597,17 @@ function showMusic() {
         theme: '#FF9966',
         mode: 'order',
         music: [
-		   {"title":"Nerve","author":"Half Moon Run","url":"https://m1.jixun.moe/18303210/320000/a1b3796e1bb5f15d7d1ddd1c11286f607320eade027140e5dceeb2c1250203b4","pic":"https://www.tuchuang001.com/images/2017/07/16/239b4dc0a176a1c8d21ce64f1d9774e5.jpg"},
-		   {"title":"Weather","author":"Novo Amor","url":"https://m1.jixun.moe/28381440/320000/b1bf207f5a3b0cd967cd2452b3163873eb58b3e5310eeea95268fda0a33d1256","pic":"https://www.tuchuang001.com/images/2017/07/16/14fb9673bc50bac0126dae96929d4028.jpg"},
-       {"title":"Yellow","author":"Jem","url":"https://m1.jixun.moe/5133273/320000/ad746648e4b9f3eff4a0db882ce67d8f436f3f195104fed41a3ce530601130b8","pic":"https://www.tuchuang001.com/images/2017/07/16/eee249ac328a4f9172bfdcaae1293e59.png"},
-       {"title":"I Won't Fight It (Hushed)","author":"Andrew Belle","url":"https://m1.jixun.moe/29483186/320000/736ec191543f609e8e7c50ec03efe6dc386ecbd333bd7a9c9e8b457c65697bc9","pic":"https://www.tuchuang001.com/images/2017/07/16/a636c31895d80283fe7933d4cbe5f60e.jpg"},
-       {"title":"You There","author":"Aquilo","url":"https://m1.jixun.moe/28391404/320000/4c30b217899a9580ae2e30874ada10e4c996fa652914794b49102038af51fe88","pic":"https://www.tuchuang001.com/images/2017/07/16/9e96aecb226efc6f0c067a2abe5923ac.jpg"},
-       {"title":"I Gave It All","author":"Aquilo","url":"https://m1.jixun.moe/29722689/320000/9af672362be89461fd1db0131b325de326f3e1c0bcb6213c536807e21c6a95a7","pic":"https://www.tuchuang001.com/images/2017/07/16/be216fe6e9cba6297058ab936d102f1c.jpg"},
-       {"title":"Best Of Us Go Down","author":"Aquilo","url":"https://m1.jixun.moe/402070265/320000/1a0c19d2f8c3cb96f47c68a4d391c5b6a4ae05d2feed50c78cb85f176bb547be","pic":"https://www.tuchuang001.com/images/2017/07/16/e9c067c3bd301152d1fec4e6ede9c855.jpg"},
-       {"title":"Anchor","author":"Novo Amor","url":"https://m1.jixun.moe/35956873/320000/1cbead7f8f270d035615feccbcfa294715f8ee66f38a6a3c6927dfb8aba0e7cb","pic":"https://www.tuchuang001.com/images/2017/07/16/9a5a9f405de3e3d2320ca466a143b471.jpg"},
-       {"title":"This Woman's Work","author":"Greg Laswell","url":"https://m1.jixun.moe/18016001/320000/7cdaf57e6558c182f96d7bb9888af9ce688c7b6942ae32fd7cc12060fb65df28","pic":"https://www.tuchuang001.com/images/2017/07/16/4255cbef0ca3a977afb4fae52b4bc9ec.jpg"},
+		   {"title":"Nerve","author":"Half Moon Run","url":"https://m1.jixun.moe/18303210/320000/a1b3796e1bb5f15d7d1ddd1c11286f607320eade027140e5dceeb2c1250203b4","pic":"../images/239b4dc0a176a1c8d21ce64f1d9774e5.jpg"},
+		   {"title":"Weather","author":"Novo Amor","url":"https://m1.jixun.moe/28381440/320000/b1bf207f5a3b0cd967cd2452b3163873eb58b3e5310eeea95268fda0a33d1256","pic":"../images/14fb9673bc50bac0126dae96929d4028.jpg"},
+       {"title":"Yellow","author":"Jem","url":"https://m1.jixun.moe/5133273/320000/ad746648e4b9f3eff4a0db882ce67d8f436f3f195104fed41a3ce530601130b8","pic":"../images/eee249ac328a4f9172bfdcaae1293e59.png"},
+       {"title":"I Won't Fight It (Hushed)","author":"Andrew Belle","url":"https://m1.jixun.moe/29483186/320000/736ec191543f609e8e7c50ec03efe6dc386ecbd333bd7a9c9e8b457c65697bc9","pic":"../images/a636c31895d80283fe7933d4cbe5f60e.jpg"},
+       {"title":"You There","author":"Aquilo","url":"https://m1.jixun.moe/28391404/320000/4c30b217899a9580ae2e30874ada10e4c996fa652914794b49102038af51fe88","pic":"../images/9e96aecb226efc6f0c067a2abe5923ac.jpg"},
+       {"title":"I Gave It All","author":"Aquilo","url":"https://m1.jixun.moe/29722689/320000/9af672362be89461fd1db0131b325de326f3e1c0bcb6213c536807e21c6a95a7","pic":"../images/be216fe6e9cba6297058ab936d102f1c.jpg"},
+       {"title":"Best Of Us Go Down","author":"Aquilo","url":"https://m1.jixun.moe/402070265/320000/1a0c19d2f8c3cb96f47c68a4d391c5b6a4ae05d2feed50c78cb85f176bb547be","pic":"../images/e9c067c3bd301152d1fec4e6ede9c855.jpg"},
+       {"title":"Anchor","author":"Novo Amor","url":"https://m1.jixun.moe/35956873/320000/1cbead7f8f270d035615feccbcfa294715f8ee66f38a6a3c6927dfb8aba0e7cb","pic":"../images/9a5a9f405de3e3d2320ca466a143b471.jpg"},
+       {"title":"This Woman's Work","author":"Greg Laswell","url":"https://m1.jixun.moe/18016001/320000/7cdaf57e6558c182f96d7bb9888af9ce688c7b6942ae32fd7cc12060fb65df28","pic":"../images/4255cbef0ca3a977afb4fae52b4bc9ec.jpg"},
 
-       {"title":"Karate (Original Mix)","author":"Porsches","url":"https://m1.jixun.moe/35618204/320000/73325d542b6d5ce397906be230bb59e26e4db4e38cdc834fcd1968d6afd4343f","pic":"https://www.tuchuang001.com/images/2017/07/16/5a28b33af8493842ddd9d3c27548fd93.jpg"},
+       {"title":"Karate (Original Mix)","author":"Porsches","url":"https://m1.jixun.moe/35618204/320000/73325d542b6d5ce397906be230bb59e26e4db4e38cdc834fcd1968d6afd4343f","pic":"../images/5a28b33af8493842ddd9d3c27548fd93.jpg"},
 
 
 
