@@ -115,7 +115,7 @@ search:
 encrypt:
   pwdfile: encrypt_password   # this store the password in a file, the whole content of this file will be regarded as the password
     #password: 123456 # this set password here
-  replace_all_url: true # this will replace img url in all posts
+  replace_all_url: false # this will replace img url in all posts
   base_url: http://you img base url/  # this will connect with you img url in you post, except full url(start with http://)
   qiniu_ak: your qiniu access key 
   qiniu_sk: your qiniu secrect key 
