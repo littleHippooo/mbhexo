@@ -3,6 +3,8 @@ title: Oracle basis
 date: 2016-03-01 10:44:10
 tags: Oracle
 password: 465af3ec97365f9e17081f9ea40590e27472f946
+encrypt: true 
+enc_pwd: 6742530
 ---
 ## Oracle数据类型
 **NUMBER**

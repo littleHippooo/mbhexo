@@ -3,6 +3,8 @@ title: Java OOP1
 date: 2016-02-26 08:46:00
 tags: Java
 password: 465af3ec97365f9e17081f9ea40590e27472f946
+encrypt: true 
+enc_pwd: 6742530
 ---
 学习Java OOP的笔记。
 ## 方法（函数，过程）

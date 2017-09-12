@@ -1,24 +1,5 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<script type="text/javascript" src="{{ url_for(theme.js) }}/sha1.js"></script>
-<script>
-	(function(){
-		debugger;
-		if('{{ page.password }}'){
-			var test = prompt('请输入密码','');
-			if(test){
-				var sha = hex_sha1(test);
-				if(sha != '{{ page.password }}'){
-					alert('密码错误！');
-					history.back();
-				}
-			}else{
-				history.back();
-			}
-		}
-	})();
-</script>
-
 {% if theme.pace %}
   {% set pace_css_uri = url_for(theme.vendors._internal + '/pace/'+ theme.pace_theme +'.min.css?v=1.0.2') %}
   {% set pace_js_uri = url_for(theme.vendors._internal + '/pace/pace.min.js?v=1.0.2') %}

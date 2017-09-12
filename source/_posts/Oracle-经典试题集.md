@@ -3,6 +3,8 @@ title: Oracle 经典试题集
 date: 2016-03-02 09:18:12
 tags: Oracle
 password: 465af3ec97365f9e17081f9ea40590e27472f946
+encrypt: true 
+enc_pwd: 6742530
 ---
 一份很好的Oracle SQL试题集🙌。
 <!--more-->

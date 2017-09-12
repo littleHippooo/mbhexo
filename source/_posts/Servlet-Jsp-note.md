@@ -3,6 +3,8 @@ title: Servlet Jsp note
 date: 2016-02-28 14:08:25
 tags: servlet&jsp
 password: 465af3ec97365f9e17081f9ea40590e27472f946
+encrypt: true 
+enc_pwd: 6742530
 ---
 ## 什么是Servlet
 sun(oracle)公司制订的一种用来扩展web服务器功能的组件规范。使用Myeclipse创建一个web project，编写一个简单的servlet：src→com.postar.servlet（package）→HiServlet：

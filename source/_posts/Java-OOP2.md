@@ -3,6 +3,8 @@ title: Java OOP2
 date: 2016-02-27 15:50:07
 tags: Java
 password: 465af3ec97365f9e17081f9ea40590e27472f946
+encrypt: true 
+enc_pwd: 6742530
 ---
 ## 访问控制修饰符：（修饰成员变量和方法）
 
