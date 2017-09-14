@@ -122,16 +122,16 @@ encrypt:
   img_url_ttl: 3600  # 3600 second, the ttl for qiniu img url
   type: qiniu # or base64, if base64, the base_url, qiniu_ak, qiniu_sk and img_url_ttl is unnecessary
   template: ' <p>文章已加密，请输入密码解密 😜</p>
-          <input type="text" style=" border-radius: 3px; border-style: groove; height: 30px; width: 50%; cursor: auto; font-size: 102%; border-color: #fdfdfd; outline: none; text-overflow: initial; padding-left: 5px;">  
+              <input type="text" style=" border-radius: 3px; border-style: groove; height: 30px; width: 50%; cursor: auto; font-size: 102%; border-color: #fdfdfd; outline: none; text-overflow: initial; padding-left: 5px;">  
               <a class="nav-link" href="#" type="submit" value="decrypt" onclick="decrypt()" style="  display: inline-block; width: auto; margin-bottom: -10px; margin-left: 10px;margin-right:10px; height: 20px; padding: 2px 15px 6px 10px; border-radius: 4px; cursor: pointer; border-bottom: 4px solid #3aa373; font-size: 14px; color: #fff; background-color: #4fc08d;">decrypt</a>
               <div id="enc_error" style=" display: inline-block; color: #FF0033; font: large; "></div>
               <script> 
-        var onError = function(error) { 
-          $("#enc_error")[0].innerHTML = "password error !"; 
-        }; 
-                function decrypt() { 
-                    var passwd = $("#enc_passwd input")[0].value; 
-                    console.log(passwd); 
-                    doDecrypt(passwd, onError); 
-                } 
+              var onError = function(error) { 
+              $("#enc_error")[0].innerHTML = "wrong password!"; 
+              }; 
+              function decrypt() { 
+              var passwd = $("#enc_passwd input")[0].value; 
+              console.log(passwd); 
+              doDecrypt(passwd, onError); 
+              } 
               </script>' 
