@@ -64,7 +64,7 @@ jQuery选择器和CSS选择器一样，并在其基础上做出了拓展。
             </td>
             <td>
                 
-                    $(".test)选取所有class为test的元素
+                    $(".test")选取所有class为test的元素
                 
             </td>
         </tr>
@@ -223,7 +223,7 @@ jQuery选择器和CSS选择器一样，并在其基础上做出了拓展。
         </tr>
         <tr>
             <td>
-                $("prev~siblings)
+                $("prev~siblings")
             </td>
             <td>
                 
@@ -320,7 +320,7 @@ jQuery过滤选择器规则同CSS中的伪类选择器，都以一个冒号(:)�
             </td>
             <td>
                 
-                    $("input:not(myClass)")选取class不是myClass的&lt;input&gt;
+                    $("input:not(.myClass)")选取class不是myClass的&lt;input&gt;
                 
                 
                     元素
@@ -819,7 +819,7 @@ jQuery过滤选择器规则同CSS中的伪类选择器，都以一个冒号(:)�
         </tr>
         <tr>
             <td>
-                [attribute*=value]
+                [attribute\*=value]
             </td>
             <td>
                 
@@ -831,7 +831,7 @@ jQuery过滤选择器规则同CSS中的伪类选择器，都以一个冒号(:)�
             </td>
             <td>
                 
-                    $("div[title*=test]")选取属性title含有"test"的&lt;div&gt;
+                    $("div[title\*=test]")选取属性title含有"test"的&lt;div&gt;
                 
             </td>
         </tr>
