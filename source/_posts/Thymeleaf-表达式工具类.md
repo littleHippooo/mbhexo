@@ -1,7 +1,7 @@
 ---
 title: Thymeleaf 表达式工具类
 date: 2017-09-10 10:36:30
-tags: Thymelaf
+tags: Thymeleaf
 ---
 Thymeleaf默认提供了丰富的表达式工具类，这里列举一些常用的工具类。
 
