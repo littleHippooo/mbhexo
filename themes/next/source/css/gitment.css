@@ -124,6 +124,9 @@ a.gitment-header-issue-link:hover {
   margin-left: -60px;
 }
 
+.gitment-comment img {
+	margin: 0 !important;
+}
 .gitment-comment-avatar,
 .gitment-comment-avatar-img,
 .gitment-comment-avatar,

@@ -7,9 +7,9 @@ tags: [Thymeleaf,Spring]
 ```xml
 <!-- https://mvnrepository.com/artifact/org.thymeleaf/thymeleaf-spring4 -->
 <dependency>
-   <groupId>org.thymeleaf</groupId>
-   <artifactId>thymeleaf-spring4</artifactId>
-   <version>2.1.5.RELEASE</version>
+    <groupId>org.thymeleaf</groupId>
+    <artifactId>thymeleaf-spring4</artifactId>
+    <version>3.0.6.RELEASE</version>
 </dependency>
 ```
 <!--more-->

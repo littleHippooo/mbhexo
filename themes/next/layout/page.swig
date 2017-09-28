@@ -45,6 +45,7 @@
 		<a href="http://blog.leanote.com/althars" target="_blank"><i class="fa fa-fw fa-star"></i>Althars's blog</a>
 		<a href="https://libisky.com/" target="_blank"><i class="fa fa-fw fa-star"></i>LiBiSky's blog</a>
 		<a href="http://hao.iyangqiong.com/" target="_blank"><i class="fa fa-fw fa-star"></i>HaoWeb navigation</a>
+    <a href="http://blog.leanote.com/tikki/" target="_blank"><i class="fa fa-fw fa-star"></i>tikki's blog</a>
 	  </div>
 	{% elif page.type === "music" %}
 	

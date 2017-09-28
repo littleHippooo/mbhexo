@@ -40,3 +40,32 @@ home.welcome=\u4F60\u597D\uFF0C\u8FD9\u662F<b>\u4E3B\u9875</b>
 刷新页面如下：
 
 ![QQ截图20170911150956.png](img/QQ截图20170911150956.png)
+
+有些版本可能需要手动配置MessageConfiguration：
+```java
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.support.ResourceBundleMessageSource;
+
+@Configuration
+public class I18nConfiguration {
+    @Bean
+    public ResourceBundleMessageSource messageSource(){
+        ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
+        messageSource.setUseCodeAsDefaultMessage(true);
+        messageSource.setFallbackToSystemLocale(false);
+        messageSource.setBasenames("message");
+        messageSource.setDefaultEncoding("UTF-8");
+        messageSource.setCacheSeconds(2);
+        return messageSource;
+    }
+} 
+```
+我们还可以在properties文件中使用占位符：
+```xml
+home.welcome=hello,{0}
+```
+页面：
+```html
+<p data-th-utext="#{home.welcome(${user.name})}">home</p>
+```
