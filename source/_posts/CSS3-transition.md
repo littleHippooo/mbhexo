@@ -1,7 +1,7 @@
 ---
 title: CSS3 transition
 date: 2017-07-18 14:14:32
-tags: CSS3
+tags: [CSS3,CSS]
 ---
 transform呈现的是一种变形结果，而Transation呈现的是一种过渡，通俗点说就是一种动画转换过程，如渐显、渐弱、动画快慢等。transition可以和Transform同时使用。transition是一个复合属性，可以同时定义transition-property、transition-duration、transition-timing-function、transition-delay子属性值。
 <!--more-->

@@ -65,7 +65,7 @@ $ git  commit -a -m "update index.html page"
 此时，仓库历史如下图所示：
 ![12f41c03972a7c9871d69712579e25f9.png](img/12f41c03972a7c9871d69712579e25f9.png)
 
-假如确定Bug修复后，可以切换会master分支，然后将bugFix和master分支合并：
+假如确定Bug修复后，可以切换回master分支，然后将bugFix和master分支合并：
 ```bash
 $ git merge bugFix
 Updating e7ad858..11a3074

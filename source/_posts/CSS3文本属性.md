@@ -1,7 +1,7 @@
 ---
 title: CSS3文本属性
 date: 2017-06-04 09:32:13
-tags: CSS3
+tags: [CSS3,CSS]
 ---
 ## text-shadow
 该属性用于设置文字阴影效果，基本语法如下：

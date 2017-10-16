@@ -1,7 +1,7 @@
 ---
 title: CSS3 transform
 date: 2017-07-18 08:58:23
-tags: CSS3
+tags: [CSS3,CSS]
 ---
 transform属性能对元素对象进行变形操作，主要包括以下几种：旋转rotate、缩放scale、移动translate、倾斜skew以及矩阵变形matrix。基本语法：
 ```css

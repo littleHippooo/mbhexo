@@ -31,7 +31,7 @@ tar [-z|-j|-J] [xv] [-f 已有的tar格式文件名] [-C 目录]  <==解压缩
 
 压 缩：`tar -jcv -f filename.tar.bz2`要被压缩的文件或目录名称
 
-查 询：`ar -jtv -f filename.tar.bz2`
+查 询：`tar -jtv -f filename.tar.bz2`
 
 解压缩：`tar -jxv -f filename.tar.bz2 -C`欲解压缩的目录
 

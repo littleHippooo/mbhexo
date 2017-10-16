@@ -1,7 +1,7 @@
 ---
 title: 初识Flex布局
 date: 2017-07-21 15:17:29
-tags: CSS3
+tags: [CSS3,CSS]
 ---
 传统的CSS布局方法中，一般使用`float`属性和`display:table`来实现布局，但在使用的过程中总有种无法随心所欲的感觉，元素的位置摆放总是显得不是那么的直观，而Flexbox很好的解决了这个问题。Flexbox俗称弹性盒子模型，在开始使用Flexbox之前，首先要声明一个**Flex容器**（Flex Container）。而Flex容器中的元素称为**Flex项目**（Flex Item）。
 <!--more-->

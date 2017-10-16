@@ -1,7 +1,7 @@
 ---
 title: CSS3颜色属性
 date: 2017-06-05 10:25:37
-tags: CSS3
+tags: [CSS3,CSS]
 ---
 ## opacity
 `opacity`用来设置元素的透明度。取值范围为0~1，0表示完全透明，1表示不透明。

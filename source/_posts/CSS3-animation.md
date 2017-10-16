@@ -1,7 +1,7 @@
 ---
 title: CSS3 animation
 date: 2017-07-18 16:44:18
-tags: CSS3
+tags: [CSS3,CSS]
 ---
 CSS3的animation属性可以绘制各种复杂的动画，animation属性由以下8种属性的简写形式： animation-name，animation-duration，animation-timing-function，animation-delay，animation-iteration-count，animation-direction 和 animation-fill-mode。下面一一介绍这八种属性。
 <!--more-->
