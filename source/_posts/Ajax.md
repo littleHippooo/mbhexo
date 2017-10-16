@@ -157,7 +157,7 @@ load(url,data,function(response,status,xhr));
 ```javascript
 $("#result").load("test.html");
 ```
-### $.get()和$.post()
+### \$.get()和\$.post()
 
 `$.get()`方法使用 HTTP GET 请求从服务器加载数据。
 
@@ -245,7 +245,7 @@ $.get("get.php",{
 },"json");
 ```
 `$.post()`和`$.get()`类似，区别在于`$.post()`可发送的数据量更大。
-### $.ajax()
+### \$.ajax()
 语法：
 ```javascript
 $.ajax({name:value, name:value, ... })
