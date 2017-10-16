@@ -317,7 +317,7 @@ han: false
 
 # Gitment comments
 gitment:
-  enable: true
+  enable: false
   owner: wuyouzhuguli
   repo: Blog-Comments
   client_id: 5b26ca7149a3cb78da1e
