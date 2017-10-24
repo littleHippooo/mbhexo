@@ -1,6 +1,3 @@
-.tag-cloud {
-  width: 900px;
-}
 .tag-cloud-title {
   text-align: left;
   position: relative;
@@ -28,6 +25,12 @@
 	.tag-cloud a {
 		font-size: 15px !important;
 	}
+  .tag-cloud {
+    width: 900px;
+    +mobile() {
+      width: auto;
+    }
+  }
 }
 .tag-cloud a:before {
 	font-family: "FontAwesome";

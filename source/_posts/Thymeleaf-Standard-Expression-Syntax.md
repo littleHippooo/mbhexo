@@ -3,7 +3,7 @@ title: Thymeleaf 标准表达式语法
 date: 2017-09-06 18:54:39
 tags: Thymeleaf
 ---
-记录几个比较容易忘记的Thymeleaf标准表达式语法，例子基于Sprng MVC。
+记录几个比较容易忘记的Thymeleaf标准表达式语法，例子基于Spring MVC。
 ## 变量表达式${ }
 在控制器中往页面传递几个变量：
 ```java
