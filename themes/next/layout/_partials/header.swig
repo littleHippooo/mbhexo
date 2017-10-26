@@ -8,11 +8,15 @@
         </a>
       </div>
     {% endif %}
-
+    <style>
+    	@font-face {font-family: 'Lucida_Handwritdf74cd7e117c83';
+    	src: url('//cdn.webfont.youziku.com/webfonts/nomal/97411/47284/59f029dff629d81194592a90.gif?r=57305183482');
+    	src: url('//cdn.webfont.youziku.com/webfonts/nomal/97411/47284/59f029dff629d81194592a90.gif?r=57305183482?#iefix') format('embedded-opentype'),     url('//cdn.webfont.youziku.com/webfonts/nomal/97411/47284/59f029dff629d81194592a90.bmp?r=57305183482') format('woff'),     url('//cdn.webfont.youziku.com/webfonts/nomal/97411/47284/59f029dff629d81194592a90.jpg?r=57305183482') format('truetype'),     url('//cdn.webfont.youziku.com/webfonts/nomal/97411/47284/59f029dff629d81194592a90.png#Lucida_Handwriting') format('svg');   }.cssdf74cd7e117c83{font-family: 'Lucida_Handwritdf74cd7e117c83';}
+    </style>
     <div class="custom-logo-site-title">
       <a href="{{ config.root }}"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">MrBird</span>
+        <span class="site-title cssdf74cd7e117c83">MrBird</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
