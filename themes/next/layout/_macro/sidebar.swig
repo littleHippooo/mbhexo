@@ -173,7 +173,9 @@
 			</div>
 		  </div>
 		</div>
-		
+		<script>
+var $urls=$(".author__urls").find("a");$urls.each(function(){var $a=$(this);$a.mouseenter(function(){$a.css({"color":"#414547"})});$a.mouseleave(function(){$a.css({"color":""})})});
+    </script>
       </section>
       {% if display_toc and toc(page.content).length > 1 %}
       <!--noindex-->
