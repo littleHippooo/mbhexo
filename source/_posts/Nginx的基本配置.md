@@ -1,6 +1,6 @@
 ---
 title: Nginx的基本配置
-date: 2017-10-29 10:18:08
+date: 2017-10-18 10:18:08
 tags: Nginx
 ---
 Nginx配置文件主要分成四部分：main（全局设置）、http（HTTP的通用设置）、server（虚拟主机设置）、location（匹配URL路径）。还有一些其他的配置段，如event，upstream等。
@@ -9,124 +9,110 @@ Nginx配置文件主要分成四部分：main（全局设置）、http（HTTP的
 
 <!--more-->
 ```
-#user  nobody;
-worker_processes  1;
-
-#error_log  logs/error.log;
-#error_log  logs/error.log  notice;
-#error_log  logs/error.log  info;
-
-#pid        logs/nginx.pid;
-
+user       www www;  ## Default: nobody
+worker_processes  5;  ## Default: 1
+error_log  logs/error.log;
+pid        logs/nginx.pid;
+worker_rlimit_nofile 8192;
 
 events {
-    worker_connections  1024;
+  worker_connections  4096;  ## Default: 1024
 }
-
 
 http {
-    include       mime.types;
-    default_type  application/octet-stream;
+  include    conf/mime.types;
+  include    /etc/nginx/proxy.conf;
+  include    /etc/nginx/fastcgi.conf;
+  index    index.html index.htm index.php;
 
-    #log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
-    #                  '$status $body_bytes_sent "$http_referer" '
-    #                  '"$http_user_agent" "$http_x_forwarded_for"';
+  default_type application/octet-stream;
 
-    #access_log  logs/access.log  main;
+  log_format   main '$remote_addr - $remote_user [$time_local]  $status '
+                    '"$request" $body_bytes_sent "$http_referer" '
+                    '"$http_user_agent" "$http_x_forwarded_for"';
 
-    sendfile        on;
-    #tcp_nopush     on;
+  access_log   logs/access.log  main;
+  sendfile     on;
+  tcp_nopush   on;
+  server_names_hash_bucket_size 128; # this seems to be required for some vhosts
 
-    #keepalive_timeout  0;
-    keepalive_timeout  65;
+  server { # php/fastcgi
+    listen       80;
+    server_name  domain1.com www.domain1.com;
+    access_log   logs/domain1.access.log  main;
+    root         html;
 
-    #gzip  on;
+    location ~ \.php$ {
+      fastcgi_pass   127.0.0.1:1025;
+    }
+  }
 
-    server {
-        listen       80;
-        server_name  localhost;
+  server { # simple reverse-proxy
+    listen       80;
+    server_name  domain2.com www.domain2.com;
+    access_log   logs/domain2.access.log  main;
 
-        #charset koi8-r;
-
-        #access_log  logs/host.access.log  main;
-
-        location / {
-            root   html;
-            index  index.html index.htm;
-        }
-
-        #error_page  404              /404.html;
-
-        # redirect server error pages to the static page /50x.html
-        #
-        error_page   500 502 503 504  /50x.html;
-        location = /50x.html {
-            root   html;
-        }
-
-        # proxy the PHP scripts to Apache listening on 127.0.0.1:80
-        #
-        #location ~ \.php$ {
-        #    proxy_pass   http://127.0.0.1;
-        #}
-
-        # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
-        #
-        #location ~ \.php$ {
-        #    root           html;
-        #    fastcgi_pass   127.0.0.1:9000;
-        #    fastcgi_index  index.php;
-        #    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;
-        #    include        fastcgi_params;
-        #}
-
-        # deny access to .htaccess files, if Apache's document root
-        # concurs with nginx's one
-        #
-        #location ~ /\.ht {
-        #    deny  all;
-        #}
+    # serve static files
+    location ~ ^/(images|javascript|js|css|flash|media|static)/  {
+      root    /var/www/virtual/big.server.com/htdocs;
+      expires 30d;
     }
 
+    # pass requests for dynamic content to rails/turbogears/zope, et al
+    location / {
+      proxy_pass      http://127.0.0.1:8080;
+    }
+  }
 
-    # another virtual host using mix of IP-, name-, and port-based configuration
-    #
-    #server {
-    #    listen       8000;
-    #    listen       somename:8080;
-    #    server_name  somename  alias  another.alias;
+  upstream big_server_com {
+    server 127.0.0.3:8000 weight=5;
+    server 127.0.0.3:8001 weight=5;
+    server 192.168.0.1:8000;
+    server 192.168.0.1:8001;
+  }
 
-    #    location / {
-    #        root   html;
-    #        index  index.html index.htm;
-    #    }
-    #}
+  server { # simple load balancing
+    listen          80;
+    server_name     big.server.com;
+    access_log      logs/big.server.access.log main;
 
-
-    # HTTPS server
-    #
-    #server {
-    #    listen       443 ssl;
-    #    server_name  localhost;
-
-    #    ssl_certificate      cert.pem;
-    #    ssl_certificate_key  cert.key;
-
-    #    ssl_session_cache    shared:SSL:1m;
-    #    ssl_session_timeout  5m;
-
-    #    ssl_ciphers  HIGH:!aNULL:!MD5;
-    #    ssl_prefer_server_ciphers  on;
-
-    #    location / {
-    #        root   html;
-    #        index  index.html index.htm;
-    #    }
-    #}
-
+    location / {
+      proxy_pass      http://big_server_com;
+    }
+  }
 }
-
 ```
 ## main全局设置
 ### user
+用于指定运行Nginx的用户和组：
+```bash
+user user [group]
+```
+只有被设置的用户或者用户组成员才有权限启动Nginx服务。如果希望所有用户都可以启动Nginx，则只需将其注释掉或者指定为：
+```bash
+user nobody nobody
+```
+### worker_processes
+指定Nginx的工作进程的个数，可以设置为与 CPU 数量相同，基本语法：
+```bash
+worker_processes number|auto
+```
+设置为auto时，Nginx进程将自动检测。当worker_processes设置为1时：
+```bash
+# sbin/nginx 
+# ps -ef|grep nginx
+root      5882  1326  0 13:07 ?        00:00:00 nginx: master process sbin/nginx
+nobody    5883  5882  0 13:07 ?        00:00:00 nginx: worker process
+root      5885  5430  0 13:07 pts/1    00:00:00 grep --color=auto nginx
+```
+将worker_processes设置为3时：
+```bash
+# ps -ef|grep nginx
+root      5919  1326  0 13:09 ?        00:00:00 nginx: master process sbin/nginx
+nobody    5920  5919  0 13:09 ?        00:00:00 nginx: worker process
+nobody    5921  5919  0 13:09 ?        00:00:00 nginx: worker process
+nobody    5922  5919  0 13:09 ?        00:00:00 nginx: worker process
+root      5924  5430  0 13:09 pts/1    00:00:00 grep --color=auto nginx
+```
+worker_processes进程数变成了3个。
 
