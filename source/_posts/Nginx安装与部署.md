@@ -193,8 +193,6 @@ Nginx的默认端口号为80，在浏览器中输入[localhost/index.html](local
 
 2.平缓停止：允许Nginx服务将当前的网络请求处理完毕，但不再接受新请求，之后关闭连接，停止工作。相关的命令为：`kill -QUIT 进程号`；
 
-还有一种更为暴力的方法，即Linux下的强制停止进程命令：`kill -9 进程号`。
-
 停止Nginx服务，采用快速停止方式：
 ```bash
 # kill -TERM 74808
