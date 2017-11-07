@@ -8,7 +8,7 @@ Nginx配置文件主要分成四部分：main（全局设置）、http（HTTP的
 一个完整的Nginx配置如下：
 
 <!--more-->
-```
+```nginx
 user       www www;  ## Default: nobody
 worker_processes  5;  ## Default: 1
 error_log  logs/error.log;
@@ -87,20 +87,20 @@ http {
 ## Nginx基础配置指令
 ### user
 用于指定运行Nginx的用户和组：
-```bash
+```nginx
 user user [group]
 ```
 只有被设置的用户或者用户组成员才有权限启动Nginx服务。如果希望所有用户都可以启动Nginx，则只需将其注释掉或者指定为：
-```bash
+```nginx
 user nobody nobody
 ```
 ### worker_processes
 指定Nginx的工作进程的个数，可以设置为与 CPU 数量相同，基本语法：
-```bash
+```nginx
 worker_processes number|auto
 ```
 设置为auto时，Nginx进程将自动检测。当worker_processes设置为1时：
-```bash
+```nginx
 # sbin/nginx 
 # ps -ef|grep nginx
 root      5882  1326  0 13:07 ?        00:00:00 nginx: master process sbin/nginx
@@ -108,7 +108,7 @@ nobody    5883  5882  0 13:07 ?        00:00:00 nginx: worker process
 root      5885  5430  0 13:07 pts/1    00:00:00 grep --color=auto nginx
 ```
 将worker_processes设置为3时：
-```bash
+```nginx
 # ps -ef|grep nginx
 root      5919  1326  0 13:09 ?        00:00:00 nginx: master process sbin/nginx
 nobody    5920  5919  0 13:09 ?        00:00:00 nginx: worker process
@@ -119,13 +119,13 @@ root      5924  5430  0 13:09 pts/1    00:00:00 grep --color=auto nginx
 worker_processes进程数变成了3个。
 ### error_log
 用于配置错误日志的存放路径。http，server和location块也可配置error_log，区别在于级别不一样。基本语法：
-```bash
+```nginx
 error_log files|stderr [ debug | info | notice | warn | error | crit | alert | emerg ]
 ```
 debug级别最高，emerg级别最低。比如设置级别为warn后，warn，error，crit，alert和emerg级别的日志都会被记录。Nginx默认日志存放路径为：`logs/error.log`。
 ### pid
 pid指令用于指定存放Nginx主进程号存放文件的路径。默认的路径为：
-```bash
+```nginx
 # ./sbin/nginx 
 # cat logs/nginx.pid 
 101106
@@ -140,13 +140,13 @@ include指令用于引入第三方配置文件，比如常见的MIME类型等。
 该条指令目的是为了解决“惊群”的问题。“惊群”大致意思是：当某个时刻只有一个网络连接时，多个进程会被同时唤醒，但最终实际上只有一个进程可以获得连接，由于唤醒了别的不必要的进程，造成了性能的浪费。
 
 accept_mutex语法如下：
-```bash
+```nginx
 accept_mutex on | off
 ```
 默认为开启（on）状态，只能在events块中进行设置。
 ### multi_accept
 用于设置是否允许worker_process同时接受多个网络连接。语法如下：
-```bash
+```nginx
 multi_accept on | off
 ```
 其默认为关闭（off）状态，也就是说每个worker_process一次只能接收一个新到达的网络连接。
@@ -154,7 +154,7 @@ multi_accept on | off
 该指令只能在events模块中设置。
 ### use
 use指令用于选择事件的驱动模型。语法如下：
-```bash
+```nginx
 use method
 ```
 Nginx提供了多种事件驱动模型来处理网络消息，method可选的内容有：select，poll，kqueue，epoll，rtsig，/dev/poll和eventport。
@@ -162,18 +162,18 @@ Nginx提供了多种事件驱动模型来处理网络消息，method可选的内
 该指令只能在events模块中设置。
 ### worker_connentions
 用于设置每个worker_process最大的连接数。语法如下：
-```bash
+```nginx
 worker_process number
 ```
 该指令只能在events模块中设置。
 ### 指定MIME
 在配置文件中，可以看到如下两条配置：
-```bash
+```nginx
 include    conf/mime.types;
 default_type application/octet-stream;
 ```
 include指令引入了mime.types文件，其中mime.types内容如下：
-```xml
+```nginx
 types {
     text/html                             html htm shtml;
     text/css                              css;
@@ -213,13 +213,13 @@ types {
 error_log用于记录Nginx运行时的常规日志，而access_log（服务日志）是指Nginx服务器在响应各种前端请求的日志。包含两个指令：access_log和log_format。
 
 access_log的语法如下：
-```bash
+```nginx
 access_log ptah[format[buffer=size]]
 ```
 `path`用于指定该日志的存放路径，`format`为可选项，代指自定义服务日志的格式字符串。`size`为可选项，用于配置临时存放日志的内存缓存区大小。
 
 log_format的语法如下：
-```bash
+```nginx
 log_format name string ...
 ```
 `name`用于为该格式定义一个变量名，供access_log指令使用。`string`为格式字符串，比如：`$remote_addr - $remote_user [$time_local]  $status`其中`$remote_addr`等为Nginx预设的一些变量，常用的变量有：
@@ -329,19 +329,19 @@ log_format name string ...
 该指令只能在http模块中设置。
 ### sendfile & sendfile_max_chunk
 sendfile用于开启或关闭使用sendfile()传输文件。语法如下：
-```bash
+```nginx
 sendfile on | off
 ```
 可以在http，server或location中进行配置。
 
 sendfile_max_chunk用于设置Nginx进程中的每个worker_process每次调用sendfile()传输的数据量的最大值。默认值为0，表示没有限制。比如：
-```bash
+```nginx
 sendfile_max_chunk 128k
 ```
 该指令可以在http，server或location块中配置。
 ### keepalive_timeout
 用于设置Nginx服务器与用户建立会话连接保持的时间，语法如下：
-```bash
+```nginx
 keepalive_timeout timeout[header_timeout]
 ```
 `timeout`用于设置服务器端保持连接的时间；`header_timeout`为可选项，用于配置应答报文头部的Keep-Alive域的值。
@@ -349,7 +349,7 @@ keepalive_timeout timeout[header_timeout]
 该指令可以在http，server和location块中配置。
 ### keepalive_requests
 用于限制用户通过某一连接向服务器发送请求的次数，语法如下：
-```bash
+```nginx
 keepalive_requests number
 ```
 默认值为100，可以在http，server和location块中配置。
@@ -357,15 +357,15 @@ keepalive_requests number
 该指令用于配置监听。配置方法主要有三种：
 
 1、配置监听的IP地址：
-```bash
+```nginx
 listen address[:port] [default_server] [setfib=number] [backlog=number] [rcvbuf=size] [sndbuf=size] [deferred] [accept_filter=filter] [bind] [ssl]
 ```
 2、配置监听端口
-```bash
+```nginx
 listen port [default_server] [setfib=number] [backlog=number] [rcvbuf=size] [sndbuf=size] [deferred] [accept_filter=filter] [bind] [ipv6only=on|off] [ssl]
 ```
 3、配置UNIX Domain Socket
-```bash
+```nginx
 listen unix:path [default_server] [setfib=number] [backlog=number] [rcvbuf=size] [sndbuf=size] [deferred] [accept_filter=filter] [bind] [ssl]
 ```
 - `address`，IP地址，如果是IPv6的地址，需使用[]，比如[fe80
@@ -389,7 +389,7 @@ listen unix:path [default_server] [setfib=number] [backlog=number] [rcvbuf=size]
 - `ssl`，标识符，设置会话连接使用SSL模式进行。
 
 一些例子：
-```bash
+```nginx
 listen *:80 | *:8080;  #监听所有80端口和8080端口
 listen 192.168.1.10:8080; 　#监听具体IP和具体端口上的连接
 listen 8000;  #监听所有IP地址的8000端口，等同于 listen *:8000
@@ -401,19 +401,19 @@ Nginx配置文件中的每个server块对于一个虚拟主机配置，server_na
 **基于名称的虚拟主机配置**
 
 基于名称的虚拟主机配置时，server_name的语法如下：
-```bash
+```nginx
 server_name name ...
 ```
 name可以有一个或多个名称并列，用空格隔开。每个名称对应一个域名，由两段或者三段组成，之间由`.`隔开。比如：
-```bash
+```nginx
 server_name www.mrbird.cc mrbird.cc;
 ```
 1、在name中可以使用通配符`*`，通配符可用在三段式域名的头或尾，或两段式域名的尾部，比如：
-```bash
+```nginx
 server_name *.mrbird.cc mrbird.*;
 ```
 2、在name中还可以使用正则表达式。使用`~`作为正则表达式开始的标记，比如：
-```bash
+```nginx
 server_name ~^www\d+\.mrbird\.cc$;
 ```
 此时比如通过`www1.mrbird.cc`可以访问Nginx服务，而`www.mrbird.cc`不可以。
@@ -421,7 +421,7 @@ server_name ~^www\d+\.mrbird\.cc$;
 name中的正则表达式支持字符串捕获功能，字符串捕获通过`( )`来拾取后面不紧跟其他的正则表达式的字符。一个正则表达式中可以存在多个不嵌套的小括号，这些内容会从左到右依次存放在变量`$1`、`$2`、`$3`......中。下文使用时就可直接使用这些变量，作用域为当前的server块。
 
 比如有如下的server_name配置：
-```bash
+```nginx
 server_name ~^www\.(.+)\.cc$;
 ```
 当通过`www.mrbird.cc`访问Nginx服务器时，将会被上面的正则表达式匹配成功，mrbird将会被捕获，并且赋值给$1。
@@ -443,7 +443,7 @@ server_name ~^www\.(.+)\.cc$;
 Linux操作系统支持IP别名的添加，配置基于IP的虚拟主机，即为Nginx服务器提供的每台虚拟主机配置一个不同的IP。
 
 查看当前网络配置：
-```bash
+```nginx
 # ifconfig
 ens33     Link encap:Ethernet  HWaddr 00:0c:29:25:f3:bb  
           inet addr:192.168.112.128  Bcast:192.168.112.255  Mask:255.255.255.0
@@ -464,7 +464,7 @@ lo        Link encap:Local Loopback
           RX bytes:2931450 (2.9 MB)  TX by
 ```
 ens33为正在使用的网卡，IP为`192.168.112.128`，给其添加两个IP别名`192.168.112.130`和`192.168.112.131`：
-```bash
+```nginx
 # ifconfig ens33:0 192.168.112.130 Mask 255.255.255.0 up 
 # ifconfig ens33:1 192.168.112.131 Mask 255.255.255.0 up 
 # ifconfig
@@ -497,7 +497,7 @@ lo        Link encap:Local Loopback
 关于给网卡添加多个IP别名可以参考[http://www.cnblogs.com/biaopei/p/7730517.html](http://www.cnblogs.com/biaopei/p/7730517.html)
 
 这时候就可以在Nginx配置文件中配置两台基于IP配置的虚拟主机了：
-```bash
+```nginx
 ...
   http {
   	...
@@ -514,7 +514,7 @@ lo        Link encap:Local Loopback
 ```
 ### location块
 location语法如下：
-```bash
+```nginx
 location [ = | ~ | ~* | ^~ ] uri { ... }
 ```
 uri是待匹配的请求字符串，可以是标准uri（不含正则表达式）和正则uri。
@@ -525,11 +525,85 @@ uri是待匹配的请求字符串，可以是标准uri（不含正则表达式�
 
 - `~*`用于表示uri包含正则表达式，不区分大小写。
 
-- `^~`用于标准uri前，要求Nginx服务器找到和请求字符串匹配度最高的标准uri对应的location后，立即用此location处理请求，而不再使用location块中的正则uri和
+- `^~`用于标准uri前，要求Nginx服务器找到和请求字符串匹配度最高的标准uri对应的location后，立即用此location处理请求，而不再使用location块中的正则uri和请求字符串做匹配。
+
+一个示例：
+```crmsh
+location  = / {
+  # 精确匹配 / ，主机名后面不能带任何字符串
+  [ configuration A ]
+}
+location  / {
+  # 因为所有的地址都以 / 开头，所以这条规则将匹配到所有请求
+  # 但是正则和最长字符串会优先匹配
+  [ configuration B ]
+}
+location /documents/ {
+  # 匹配任何以 /documents/ 开头的地址，匹配符合以后，还要继续往下搜索
+  # 只有后面的正则表达式没有匹配到时，这一条才会采用这一条
+  [ configuration C ]
+}
+location ~ /documents/Abc {
+  # 匹配任何以 /documents/Abc 开头的地址，匹配符合以后，还要继续往下搜索
+  # 只有后面的正则表达式没有匹配到时，这一条才会采用这一条
+  [ configuration CC ]
+}
+location ^~ /images/ {
+  # 匹配任何以 /images/ 开头的地址，匹配符合以后，停止往下搜索正则，采用这一条。
+  [ configuration D ]
+}
+location ~* \.(gif|jpg|jpeg)$ {
+  # 匹配所有以 gif,jpg或jpeg 结尾的请求
+  # 然而，所有请求 /images/ 下的图片会被 config D 处理，因为 ^~ 到达不了这一条正则
+  [ configuration E ]
+}
+location /images/ {
+  # 字符匹配到 /images/，继续往下，会发现 ^~ 存在
+  [ configuration F ]
+}
+location /images/abc {
+  # 最长字符匹配到 /images/abc，继续往下，会发现 ^~ 存在
+  # F与G的放置顺序是没有关系的
+  [ configuration G ]
+}
+location ~ /images/abc/ {
+  # 只有去掉 config D 才有效：先最长匹配 config G 开头的地址，继续往下搜索，匹配到这一条正则，采用
+    [ configuration H ]
+}
+```
+匹配的优先级：
+
+(location =) > (location 完整路径) > (location ^~ 路径) > (location ~,~\* 正则顺序) > (location 部分起始路径) > (/)
+
+按照上面的location写法，以下的匹配示例成立：
+
+- / -> config A
+精确完全匹配，即使/index.html也匹配不了。
+
+- /downloads/download.html -> config B
+匹配B以后，往下没有任何匹配，采用B。
+
+- /images/1.gif -> configuration D
+匹配到F，往下匹配到D，停止往下。
+
+- /images/abc/def -> config D
+最长匹配到G，往下匹配D，停止往下。
+你可以看到 任何以/images/开头的都会匹配到D并停止，FG写在这里是没有任何意义的，H是永远轮不到的，这里只是为了说明匹配顺序
+
+- /documents/document.html -> config C
+匹配到C，往下没有任何匹配，采用C。
+
+- /documents/1.jpg -> configuration E
+匹配到C，往下正则匹配到E。
+
+- /documents/Abc.jpg -> config CC
+最长匹配到C，往下正则顺序匹配到CC，不会往下到E。
+
+> 参考自： [seanlook's blog](http://seanlook.com/2015/05/17/nginx-location-rewrite/)
 
 ### root
 root用于配置根目录，比如有如下location配置：
-```bash
+```nginx
 location /data/ {
    root /locationtest1;
 }
@@ -539,7 +613,7 @@ location /data/ {
 该指令可在http，server或location块中配置。
 ### alias
 alias用于改变location接收到的URI请求路径。比如：
-```bash
+```nginx
 location ~ ^/data/(.+\.html)$ {
    alias /locationtest1/other/$1;
 }
@@ -548,7 +622,7 @@ location ~ ^/data/(.+\.html)$ {
 
 ### index
 index用于设置网站的默认首页。比如：
-```bash
+```nginx
 location ~ ^/data/(.+)/web/ $ {
    index index.$1.html index.html myindex.html
 }
@@ -556,7 +630,7 @@ location ~ ^/data/(.+)/web/ $ {
 当请求为/data/locationtest1/web/时，Nginx依次搜寻index.locationtest1.html、index.html和myindex.html页面，先找到哪个就用哪个。
 ### error_page
 该指令用于设置网站的错误页面。语法如下：
-```bash
+```nginx
 error_page code ... [=[response]] uri
 ```
 - `code`，要处理的HTTP错误码。
@@ -566,21 +640,21 @@ error_page code ... [=[response]] uri
 - `uri`，错误页面的路径或者网站地址。
 
 比如：
-```bash
+```nginx
 error_page 404 /404.html;
 ```
 Nginx使用`Nginx安装目录/html/404.html`页面响应404错误。
-```bash
+```nginx
 error_page 403 http://somewebsite.com/forbidden.html;
 ```
 Nginx使用`http://somewebsite.com/forbidden.html`页面响应403错误。
-```bash
+```nginx
 error_page 410 =301 /empty.gif;
 ```
 Nginx服务器产生410的HTTP消息时，使用`Nginx安装目录/html/empty.gif`返回给用户，HTTP的状态码为301。
 
 加入想要改变`Nginx安装目录/html/`这个默认的路径，可以添加一个locaiton块：
-```bash
+```nginx
 location /404.html {
    root /myserver/errorpages/;
 }
@@ -588,7 +662,7 @@ location /404.html {
 该指令可在http，server和location块中配置。
 ### 基于IP配置Nginx访问权限
 allow指令用于配置允许访问Nginx的客户端IP，语法如下：
-```bash
+```nginx
 allow address | CIDR | all
 ```
 - `address`，指定允许访问的IP，不支持多个值，如需要有多个IP设置，需要重复使用allow命令。
@@ -598,13 +672,13 @@ allow address | CIDR | all
 - `all`，代表允许所有的客户端访问。
 
 deny指令用于配置禁止访问Nginx的客户端IP，语法如下：
-```bash
+```nginx
 deny address | CIDR | all
 ```
 这两个指令可在http，server和location块中配置。
 ### 配置Nginx密码
 auth_basic指令用于开启或者关闭认证功能，语法如下：
-```bash
+```nginx
 auth_basic string | off
 ```
 - `stirng`，开启认证功能，并配置了验证时的信息。
@@ -612,7 +686,7 @@ auth_basic string | off
 - `off`，关闭认证。
 
 auth_basic_user_file指令指定了包含用户名和密码的信息文件路径，语法结构为：
-```bash
+```nginx
 auth_basic_user_file file
 ```
 如，在nignx.conf里配置如下：
@@ -620,7 +694,7 @@ auth_basic_user_file file
 ![mrbird_photo_20171101112512](img/mrbird_pohto_20171101114239.png)
 
 生产htpasswd文件：
-```bash
+```nginx
 # printf "mrbird:$(openssl passwd -crypt 123456)\n" >>conf/htpasswd
 # cat conf/htpasswd
 mrbird:vdV.OwMSzfJrQ
@@ -631,7 +705,7 @@ mrbird:vdV.OwMSzfJrQ
 
 ## 配置实例
 将conf/nginx.conf配置成如下：
-```bash
+```nginx
 worker_processes  1;
 
 error_log  logs/error.log;
@@ -701,7 +775,7 @@ http {
 
 ```
 构建一个静态网站，目录结构如下：
-```bash
+```nginx
 /myweb/
 ├── error
 │   └── 404.html
@@ -721,7 +795,7 @@ http {
         └── access.log
 ```
 启动Nginx服务：
-```bash
+```nginx
 # /nginx/sbin/nginx -t
 nginx: the configuration file /nginx/conf/nginx.conf syntax is ok
 nginx: configuration file /nginx/conf/nginx.conf test is successful

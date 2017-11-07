@@ -1,5 +1,5 @@
 ---
-title: JavaSript中的IIFE
+title: JavaScript中的IIFE
 date: 2017-07-11 18:49:23
 tags: JavaScript
 ---

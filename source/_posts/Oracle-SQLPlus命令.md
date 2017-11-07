@@ -437,7 +437,7 @@ USER 为 "SYSTEM"
 ```
 ### save命令
 该命令将SQL缓冲区的最近一条SQL或PL/SQL块保存到指定的文件中，语法如下：
-```
+```sql
  sav[e] [FILE] file_name[.ext] [CRE[ATE] | REP[LACE] | APP[END]]
 ```
 比如：
@@ -720,7 +720,7 @@ YOU?
 
 
 比如：打印输出scott.salgrade数据表中的记录，并设置标题：
-```sql
+```SQL
 SQL> set pagesize 8
 SQL> ttitle left '销售情况排行表'
 SQL> btitle left '打印日期2017年11月5日 打印人 MrBird'

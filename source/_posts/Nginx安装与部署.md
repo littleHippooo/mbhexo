@@ -7,7 +7,7 @@ tags: Nginx
 Nginx官网：[http://nginx.org/en/download.html](http://nginx.org/en/download.html)。网页提供了Nginx三种版本下载：开发版（Mainline Version）、稳定版（Stable Version）和过期版（Legacy Version）。Nignx提供Linux和Windows版本，这里使用的是Linux版本。此外，[http://nginx.org/download/](http://nginx.org/download/)提供了所有版本的Nginx下载。
 
 Nginx源码的编译需要GCC编译器：
-```bash
+```nginx
 # gcc --version
 gcc (Ubuntu 5.4.0-6ubuntu1~16.04.4) 5.4.0 20160609
 Copyright (C) 2015 Free Software Foundation, Inc.
@@ -16,7 +16,7 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 ```
 <!--more-->
 截止2017年10月15日，Nginx最新稳定版为1.12.2，下载并解压：
-```bash
+```nginx
 # mkdir nginx-download
 # cd nginx-download/
 # wget http://nginx.org/download/nginx-1.12.2.tar.gz
@@ -47,7 +47,7 @@ drwxr-xr-x 9 1001 1001   4096 Oct 26 14:05 src/
 
 ## Nginx编译与安装
 在解压路径下，运行命令`./configure --prefix=/nginx`（`configure`脚本支持的选项可参考附录）配置Nginx的安装目录并生成Makefile文件：
-```bash
+```nginx
 # ./configure --prefix=/nginx
 ...
 Configuration summary
@@ -71,7 +71,7 @@ Configuration summary
 
 ```
 过程中可能出现一些依赖库缺失问题，可参考下面的常见问题。生成了Makefile文件后，使用`make`命令进行编译：
-```bash
+```nginx
 # make
 make -f objs/Makefile
 make[1]: Entering directory '/temp/nginx-download/nginx-1.12.2'
@@ -93,7 +93,7 @@ sed -e "s|%%PREFIX%%|/nginx|" \
 make[1]: Leaving directory '/temp/nginx-download/nginx-1.12.2'
 ```
 编译顺利完成后，接着使用`make install`命令进行安装：
-```bash
+```nginx
 # make install
 make -f objs/Makefile install
 make[1]: Entering directory '/temp/nginx-download/nginx-1.12.2'
@@ -106,7 +106,7 @@ test -d '/nginx/logs' \
 make[1]: Leaving directory '/temp/nginx-download/nginx-1.12.2'
 ```
 将目录切换到/nginx下，并查看：
-```bash
+```nginx
 # cd /nginx/
 # ll
 total 24
@@ -135,7 +135,7 @@ nginx
 ## Nginx的启停
 ### Nginx常用命令
 nginx命令所支持的选项有：
-```bash
+```nginx
 # ./sbin/nginx -h
 nginx version: nginx/1.12.2
 Usage: nginx [-?hvVtTq] [-s signal] [-c filename] [-p prefix] [-g directives]
@@ -153,7 +153,7 @@ Options:
   -g directives : set global directives out of configuration file
 ```
 `-v`选项用来显示Nginx服务器的版本号，`-V`选项除了显示版本号，还显示其编译情况：
-```bash
+```nginx
 # ./sbin/nginx -v
 nginx version: nginx/1.12.2
 # ./sbin/nginx -V
@@ -162,7 +162,7 @@ built by gcc 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.4)
 configure arguments: --prefix=/nginx
 ```
 `-t`选项用于检查Nginx服务器配置文件是否有语法错误：
-```bash
+```nginx
 # ./sbin/nginx -t
 nginx: the configuration file /nginx/conf/nginx.conf syntax is ok
 nginx: configuration file /nginx/conf/nginx.conf test is successful
@@ -170,7 +170,7 @@ nginx: configuration file /nginx/conf/nginx.conf test is successful
 等。
 ### Nginx启动
 启动Nginx服务器很简单，只需要运行sbin下的nginx脚本就行了：
-```bash
+```nginx
 # ./sbin/nginx 
 # ps -ef|grep nginx
 root      74808   1308  0 14:47 ?        00:00:00 nginx: master process ./sbin/nginx
@@ -178,7 +178,7 @@ nobody    74809  74808  0 14:47 ?        00:00:00 nginx: worker process
 root      74811  71675  0 14:47 pts/4    00:00:00 grep --color=auto nginx
 ```
 可看到Nginx已经启动，包含了一个主进程（master process）和一个工作进程（worker process），主进程号为74808。启动Nginx服务后，也可以通过查看logs目录下的nginx.pid来查看主进程号：
-```bash
+```nginx
 # cat logs/nginx.pid 
 74808
 ```
@@ -194,7 +194,7 @@ Nginx的默认端口号为80，在浏览器中输入[localhost/index.html](local
 2.平缓停止：允许Nginx服务将当前的网络请求处理完毕，但不再接受新请求，之后关闭连接，停止工作。相关的命令为：`kill -QUIT 进程号`；
 
 停止Nginx服务，采用快速停止方式：
-```bash
+```nginx
 # kill -TERM 74808
 # ps -ef|grep nginx
 root      74998  71675  0 15:03 pts/4    00:00:00 grep --color=auto nginx
@@ -205,14 +205,14 @@ Nginx重启采用平滑重启的方式。Nginx服务进程号接收到重启信�
 有两种方式进行平滑重启：
 
 1.检查配置文件是否正确，如果正确进行重启：
-```bash
+```nginx
 # ./sbin/nginx -t
 nginx: the configuration file /nginx/conf/nginx.conf syntax is ok
 nginx: configuration file /nginx/conf/nginx.conf test is successful
 # ./sbin/nginx -s reload
 ```
 2.`kill -HUP 主进程号`:
-```bash
+```nginx
 # cat logs/nginx.pid 
 75011
 # kill -HUP 75011
@@ -226,7 +226,7 @@ option, or install the PCRE library into the system, or build the PCRE library
 statically from the source with nginx by using --with-pcre=<path> option.
 {% endnote %}
 解决办法：
-```bash
+```nginx
 sudo apt-get install libpcre3 libpcre3-dev
 ```
 **缺少zlib依赖库**
@@ -236,7 +236,7 @@ option, or install the zlib library into the system, or build the zlib library
 statically from the source with nginx by using --with-zlib=<path> option.
 {% endnote %}
 解决办法：
-```bash
+```nginx
 sudo apt-get install zlib1g-dev
 ```
 ### 其他问题
@@ -245,7 +245,7 @@ sudo apt-get install zlib1g-dev
 E: Unable to lock the administration directory (/var/lib/dpkg/), is another process using it?
 {% endnote %}
 解决办法：找到占用进程，然后kill：
-```bash
+```nginx
 ps -A|grep apt
  61213 ?        00:00:02 aptd
 kill -9 61213
@@ -440,6 +440,7 @@ kill -9 61213
 </table>
 
 ### configure模块选项
+以下是Nginx默认开启的模块，可以使用表格中的命令来关闭相应模块：
 
 <table> 
  <tbody> 
@@ -525,6 +526,8 @@ kill -9 61213
   </tr> 
  </tbody> 
 </table>
+
+以下是Nginx默认关闭的模块，可以使用表格中的命令来开启相应模块：
 
 <table> 
  <tbody> 
