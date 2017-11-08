@@ -1,7 +1,7 @@
 ---
 title: Oracle SQLPlus命令
 date: 2017-11-01 20:23:48
-tags: Oracle
+tags: [Oracle,DataBase]
 ---
 SQLPlus是一个被DBA和开发人员广泛使用的功能强大的Oracle工具，可以在各个平台上拥有操作的一致性。SQLPlus可以执行输入的SQL语句和SQL文件，通过SQLPlus可以和数据库进行对话。以下例子基于Oracle 11g。
 ## set命令设置运行环境

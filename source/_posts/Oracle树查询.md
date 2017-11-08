@@ -1,7 +1,7 @@
 ---
 title: Oracle树查询
 date: 2016-03-28 19:32:28
-tags: Oracle
+tags: [Oracle,DataBase]
 ---
 oracle树查询的最重要的就是select…start with…connect by…prior语法了。依托于该语法，我们可以将一个表形结构的以树的顺序列出来。在下面列述了oracle中树型查询的常用查询方式以及经常使用的与树查询相关的oracle特性函数等，在这里只涉及到一张表中的树查询方式而不涉及多表中的关联等。
 

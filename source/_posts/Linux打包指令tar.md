@@ -91,9 +91,22 @@ root@ubuntu:/temp# tar -zxv -f etc.tar.gz etc/shadow
 etc/shadow
 ```
 ## 打包某目录，但不含该目录下的某些文件
-比如我想打包/etc目录，但是不想包含目录下的ppp文件：
+比如我想打包/etc目录，但是不想包含目录下的ppp和qqq文件：
 ```bash
-root@ubuntu:/temp# tar -zcv -f etc.tar.gz --exclude=/etc/ppp /etc
+root@ubuntu:/temp# tar -zcv -f etc.tar.gz --exclude=/etc/ppp --exclude=/etc/qqq /etc
+```
+或者：
+```bash
+root@ubuntu:/temp# vi exclude-file
+```
+里面输入
+```bash
+/etc/ppp
+/etc/qqq
+```
+然后使用命令：
+```bash
+root@ubuntu:/temp# tar -zcvf etc.tar.gz --exclude-from exclude-file /etc
 ```
 ## 仅备份比某个时刻还要新的文件
 比如，仅备份比/etc/passwd文件新的文件（mtime）：
