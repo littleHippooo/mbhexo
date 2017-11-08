@@ -249,3 +249,15 @@ server {
 }
 ```
 当客户端访问[http://jump.myweb.info/reqsource](http://jump.myweb.info/reqsource)时，URL将被重写为[http://jump.myweb.name/reqsource](http://jump.myweb.name/reqsource)。
+```nginx
+server {
+   listen 80;
+   server_name jump1.myweb.name jump2.myweb.name;
+   if ($http_host ~* ^(.*)\.myweb\.name$) {
+      rewrite ^(.*) http://jump.myweb.name$1;
+      break;
+   }
+   ...
+}
+```
+当客户端访问[http://jump1.myweb.name/reponse](http://jump1.myweb.name/reponse)或者[http://jump2.myweb.name/reponse](http://jump2.myweb.name/reponse)时，URL都将被Nginx重写为[http://jump.myweb.name/reponse](http://jump.myweb.name/reponse)。
