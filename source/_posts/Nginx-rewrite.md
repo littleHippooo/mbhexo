@@ -229,7 +229,7 @@ uninitialized_variable_warn on | off
 
 ## rewrite实例
 ### 域名跳转
-```nginx
+```crmsh
 server {
    listen 80;
    server_name jump.myweb.name;
@@ -238,7 +238,7 @@ server {
 }
 ```
 比如客户端访问[http://jump.myweb.name](http://jump.myweb.name)时，URL将被重写为[http://jump.myweb.info](http://jump.myweb.info)。
-```nginx
+```crmsh
 server {
    listen 80;
    server_name jump.myweb.name jump.myweb.info
@@ -249,7 +249,7 @@ server {
 }
 ```
 当客户端访问[http://jump.myweb.info/reqsource](http://jump.myweb.info/reqsource)时，URL将被重写为[http://jump.myweb.name/reqsource](http://jump.myweb.name/reqsource)。
-```nginx
+```crmsh
 server {
    listen 80;
    server_name jump1.myweb.name jump2.myweb.name;
@@ -261,3 +261,42 @@ server {
 }
 ```
 当客户端访问[http://jump1.myweb.name/reponse](http://jump1.myweb.name/reponse)或者[http://jump2.myweb.name/reponse](http://jump2.myweb.name/reponse)时，URL都将被Nginx重写为[http://jump.myweb.name/reponse](http://jump.myweb.name/reponse)。
+### 目录合并
+```crmsh
+server {
+   listen 80;
+   server_name www.myweb.name;
+   location ^~ /server {
+      rewrite ^/server-([0-9]+)-([0-9]+)-([0-9]+)-([0-9]+)-([0-9]+)\.htm$ /server/$1/$2/$3/$4/$5.html last;
+      break;
+   }
+}
+...
+```
+此时如果客户端输入[http://www.myweb.name/server-12-34-56-78-9.htm](http://www.myweb.name/server-12-34-56-78-9.htm)即可访问到[http://www.myweb.name/server/12/34/56/78/9.html]([http://www.myweb.name/server/12/34/56/78/9.html)。这样做将多级目录下的资源文件请求转换为了目录计数少的资源请求，有利于SEO。
+### 防盗链
+防盗链的实现原理：通过HTTP协议中的请求头中的Referer头域，我们可以检测到访问目标资源的源地址，如果该地址不是自己站点的URL，就采取组织措施。
+
+Nginx配置中有一个指令`valid_referers`，如果Referer头域没有符合`valid_referers`配置的值，`$invalid_referer`变量的值将被赋值为1。`valid_referers`语法如下：
+```nginx
+valid_referers none | blocked | server_names | string ...;
+```
+ - `none`检测Referer头域不存在的情况。
+
+ - `blocked`检测Referer头域的值被防火墙或者代理服务器删除或伪装的情况。
+
+ - `server_names`设置URL。
+
+```crmsh
+server {
+   listen 80;
+   server_name www.myweb.name;
+   location ~* ^.+\.(gif|jpg|png|swf|flv|rar|zip)$ {
+      ...
+      valid_referers none blocked server_names *.myweb.com;
+      if ($invalid_referer) {
+         rewrite ^/ http://www.myweb.com/images/forbidden.png;
+      }
+   }
+...
+```
