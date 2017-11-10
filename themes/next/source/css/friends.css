@@ -1,15 +1,14 @@
 .friends-model {
 	position: relative;
     top: 3px;
-    left: 20px;
+    left: 1px;
     font-family: ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
-    font-size: 20px;
+    font-size: 19px;
     font-weight: 600;
     opacity: 0.9;
 }
 .friends-href {
 	display: block;
-    padding-left: 30px;
     margin: 15px 0px;
     min-height: 220px;
 }	

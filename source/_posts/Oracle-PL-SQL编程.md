@@ -343,6 +343,7 @@ SQL> declare
 {% endnote %}
 
 **2.打开游标**
+
 打开游标的语法格式如下：
 ```sql
 open cur_name[(para_value1[,para_value2]…)];
@@ -352,7 +353,9 @@ open cur_name[(para_value1[,para_value2]…)];
 open cur_emp('MANAGER');
 ```
 上面这条语句表示打开游标 cur_emp，然后给游标的“输入参数”赋值为“MANAGER”。当然这里可以省略“('MANAGER')”，这样表示“输入参数”的值仍然使用其初始值（即SALESMAN）。
+
 **3.读取游标**
+
 当打开一个游标之后，就可以读取游标中的数据了其语法格式如下：
 ```sql
 fetch cur_name into {variable};
@@ -362,6 +365,7 @@ fetch cur_name into {variable};
 - `variable`：%RECORD类型或者%ROWTYPE类型变量。
 
 **4.关闭游标**
+
 游标使用完毕后需要关闭，以释放系统资源，比如 SELECT 语句返回的结果集等。它的语法格式如下：
 ```sql
 close cur_name;
@@ -374,7 +378,7 @@ close cur_name;
 2. %notfound：布尔型属性，与%found 属性的功能相反。
 
 3. %rowcount：数字型属性，返回受SQL 语句影响的行数。
- 
+
 4. %isopen：布尔型属性，当游标已经打开时返回true，游标关闭时则为false。
 
 下面举个使用显式游标的例子：
@@ -534,6 +538,64 @@ SQL> declare
   end;
   /
 返回记录超过一行
+
+PL/SQL 过程已成功完成。
+```
+### 自定义异常
+Oracle的自定义异常就可以分为错误编号异常和业务逻辑异常两种。
+
+**1.错误编号异常**
+
+错误编号异常是指在Oracle系统发生错误时，系统会显示错误编号和相关描述信息的异常，比如：
+```sql
+SQL> insert into scott.dept values(10,'开发一部','福州');
+insert into scott.dept values(10,'开发一部','福州')
+*
+第 1 行出现错误:
+ORA-00001: 违反唯一约束条件 (SCOTT.PK_DEPT)
+```
+对于这种异常，首先在PL/SQL块的声明部分（DECLARE 部分）使用`EXCEPTION`类型定义一个异常变量名，然后使用语句`PRAGMA EXCEPTION_INIT`为“错误编号”关联这个异常变量名，接下来就可以像对待系统预定义异常一样处理了。比如：
+```sql
+SQL> set serveroutput on
+SQL> declare
+   primary_iterant exception;
+   pragma exception_init(primary_iterant,-00001);
+ begin
+   insert into scott.dept values(10,'开发一部','福州');
+ exception
+   when primary_iterant then
+     dbms_output.put_line('主键重复！');
+ end;
+ /
+主键重复！
+
+PL/SQL 过程已成功完成。
+```
+**2.业务异常**
+
+程序开发人员可以根据具体的业务逻辑规则自定义一个异常。业务逻辑异常是Oracle系统本身无法知道的，这样就需要有一个引发异常的机制，引发业务逻辑异常通常使用`RAISE` 语句来实现。
+
+比如，自定义一个异常变量，在向dept表中插入数据时，若判断loc字段的值为null，则使用raise语句引发异常：
+```sql
+SQL> set serveroutput on
+SQL> declare
+    null_exception exception;
+    dept_row scott.dept%rowtype;
+  begin
+    dept_row.deptno:=66;
+    dept_row.dname:='开发二部';
+    insert into scott.dept
+    values(dept_row.deptno,dept_row.dname,dept_row.loc);
+    if dept_row.loc is null then
+      raise null_exception;
+    end if;
+  exception
+    when null_exception then
+       dbms_output.put_line('loc字段不能为空！');
+    rollback;
+  end;
+  /
+loc字段不能为空！
 
 PL/SQL 过程已成功完成。
 ```

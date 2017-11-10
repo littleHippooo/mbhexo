@@ -15,7 +15,7 @@
   <title>{% block title %}{% endblock %}</title>
 </head>
 
-<body ondragstart="return false;" class="animsition"  style="padding-right: 290px;" lang="{{ page.lang || page.language || config.language }}">
+<body ondragstart="return false;" class="animsition" lang="{{ page.lang || page.language || config.language }}">
 <script type="text/javascript" src="{{ url_for(theme.js) }}/animsition.min.js"></script>
 <script>
 $("body").animsition({inClass:"fade-in",outClass:"fade-out",inDuration:400,outDuration:400,linkElement:".animsition-link",loading:true,loadingParentElement:"html",loadingClass:"{{ theme.loading_class }}",loadingInner:"",timeout:false,timeoutCountdown:5000,onLoadEvent:true,browser:["animation-duration","-webkit-animation-duration"],overlay:false,overlayClass:"animsition-overlay-slide",overlayParentElement:"html",transition:function(url){window.location.href=url}});
