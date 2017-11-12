@@ -100,6 +100,7 @@
 	}
 	.tag-cloud {
 		width: 1200px !important;
+		margin-left: -20px;
 	}
 	#sidebar {
 		width: 345px !important;
