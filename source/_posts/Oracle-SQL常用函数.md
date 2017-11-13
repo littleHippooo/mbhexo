@@ -1,7 +1,7 @@
 ---
 title: Oracle SQL常用函数
 date: 2016-09-06 10:35:24
-tags: [Oracle,DataBase]
+tags: [Oracle,DataBase,Oracle 11g]
 ---
 文中例子涉及到的表数据：
 ```sql

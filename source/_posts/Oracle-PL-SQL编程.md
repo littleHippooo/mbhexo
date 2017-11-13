@@ -1,7 +1,7 @@
 ---
 title: Oracle PL/SQL编程
 date: 2017-11-02 15:25:07
-tags: [DataBase,Oracle]
+tags: [DataBase,Oracle 11g,Oracle]
 ---
 PL/SQL(Procedural Language/SQL)是一种过程化语言，在PL/SQL 中可以通过IF 语句或LOOP 语句实现控制程序的执行流程，甚至可以定义变量，以便在语句之间传递数据信息，这样PL/SQL 语言就能够实现操控程序处理的细节过程。
 

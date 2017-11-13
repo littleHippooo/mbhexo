@@ -1,7 +1,7 @@
 ---
 title: Oracle数据库与实例
 date: 2016-09-03 19:34:42
-tags: [Oracle,DataBase]
+tags: [Oracle,DataBase,Oracle 11g]
 ---
 通常，“Oracle数据库”既指存储在硬盘上的内部存有数据的数据文件，也指用来管理这些数据文件的内存结构。实际上，“数据库”归属于数据文件，“实例”则归属于内存结构。
 
