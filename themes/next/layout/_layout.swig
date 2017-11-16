@@ -17,6 +17,7 @@
 
 <body ondragstart="return false;" class="animsition" lang="{{ page.lang || page.language || config.language }}">
 <script type="text/javascript" src="{{ url_for(theme.js) }}/animsition.min.js"></script>
+ <script type="text/javascript" src="{{ url_for(theme.js) }}/mo.min.js"></script>
 <script>
 $("body").animsition({inClass:"fade-in",outClass:"fade-out",inDuration:400,outDuration:400,linkElement:".animsition-link",loading:true,loadingParentElement:"html",loadingClass:"{{ theme.loading_class }}",loadingInner:"",timeout:false,timeoutCountdown:5000,onLoadEvent:true,browser:["animation-duration","-webkit-animation-duration"],overlay:false,overlayClass:"animsition-overlay-slide",overlayParentElement:"html",transition:function(url){window.location.href=url}});
 </script>
@@ -93,5 +94,17 @@ $("body").animsition({inClass:"fade-in",outClass:"fade-out",inDuration:400,outDu
 	$(function(){
 		$("a").not(".nav-link,.cloud-tie-join-count").addClass("animsition-link");
 	});
+	var burst1 = new mojs.Burst({
+	  left: 0, top: 0,
+	  radius: { 5: 40 },
+	  children: {
+	    shape: 'circle',
+	    fill: ['red', 'cyan', 'orange' ],
+	    fillOpacity: .8,
+	    radiusX: 3.5,
+	    radiusY: 3.5
+	  }
+	});
+document.addEventListener('click', function (e) { if(e.srcElement.href != null) return; burst1.tune({ x: e.pageX, y: e.pageY }).generate().replay();});
 </script>
 </html>

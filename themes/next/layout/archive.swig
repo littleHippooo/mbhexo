@@ -14,7 +14,6 @@
     <span class="archive-page-counter">
      There are <span style="font-weight:600;opacity:1">{{ site.posts.length }}</span> posts in total till now
     </span>
-
     {% for post in page.posts %}
 
       {# Show year #}
@@ -28,11 +27,16 @@
         </div>
       {% endif %}
       {# endshow #}
-
-      {{ post_template.render(post) }}
-
     {% endfor %}
+    <div class="post-header-div">
+    {% for post in page.posts %}
 
+      
+      
+      {{ post_template.render(post) }}
+     
+    {% endfor %}
+   </div>
   </section>
 
   {% include '_partials/pagination.swig' %}
