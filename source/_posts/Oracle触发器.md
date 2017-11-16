@@ -197,6 +197,7 @@ SQL> create or replace trigger tri_insert_view_emp_dept
 触发器已创建
 ```
 在上面触发器的主体代码中，如果新插入行的部门编号（deptno）不在dept 表中，则首先向dept表中插入关于新部门编号的数据行，然后再向emp 表中插入记录行，这是因为emp 表的外键值（emp.deptno）是dept 表的主键值（dept.deptno）。
+
 3.再次执行`insert into view_emp_dept values(7966,'Jane',70,'市场部','经理',sysdate);`：
 ```sql
 SQL> insert into view_emp_dept values(7966,'Jane',70,'市场部','经理',sysdate);
