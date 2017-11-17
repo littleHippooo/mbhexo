@@ -15,7 +15,7 @@
   <title>{% block title %}{% endblock %}</title>
 </head>
 
-<body ondragstart="return false;" class="animsition" lang="{{ page.lang || page.language || config.language }}">
+<body ondragstart="return false;" class="animsition" lang="{{ page.lang || page.language || config.language }}" style="overflow-x: hidden;">
 <script type="text/javascript" src="{{ url_for(theme.js) }}/animsition.min.js"></script>
  <script type="text/javascript" src="{{ url_for(theme.js) }}/mo.min.js"></script>
 <script>
@@ -50,7 +50,7 @@ $("body").animsition({inClass:"fade-in",outClass:"fade-out",inDuration:400,outDu
       </div>
     </main>
 
-    <footer id="footer" class="footer">
+    <footer id="footer" class="footer" onselectstart="return false">
       <div class="footer-inner">
         {% include '_partials/footer.swig' %}
         {% include '_third-party/analytics/busuanzi-counter.swig' %}
@@ -91,20 +91,6 @@ $("body").animsition({inClass:"fade-in",outClass:"fade-out",inDuration:400,outDu
   {% include '_third-party/exturl.swig' %}
 </body>
 <script>
-	$(function(){
-		$("a").not(".nav-link,.cloud-tie-join-count").addClass("animsition-link");
-	});
-	var burst1 = new mojs.Burst({
-	  left: 0, top: 0,
-	  radius: { 5: 40 },
-	  children: {
-	    shape: 'circle',
-	    fill: ['red', 'cyan', 'orange' ],
-	    fillOpacity: .8,
-	    radiusX: 3.5,
-	    radiusY: 3.5
-	  }
-	});
-document.addEventListener('click', function (e) { if(e.srcElement.href != null) return; burst1.tune({ x: e.pageX, y: e.pageY }).generate().replay();});
+	$(function(){$("a").not(".nav-link,.cloud-tie-join-count").addClass("animsition-link");});var burst1 = new mojs.Burst({left: 0, top: 0,radius: { 5: 40 },children: {shape: 'circle',fill: ['red', 'cyan', 'orange' ],fillOpacity: .8,radiusX: 3.5,radiusY: 3.5}});document.addEventListener('click', function (e) {if(e.target.href != null || e.target.className=='footer' || e.target.className=='copyright' || e.target.className=='author__urls social-icons' || e.target.className=='author__avatar' || e.target.className=='sidebar sidebar-active') return; burst1.tune({ x: e.pageX, y: e.pageY }).generate().replay();});
 </script>
 </html>

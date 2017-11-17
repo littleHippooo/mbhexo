@@ -64,7 +64,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: next
+theme: mrbird
 
 # Deployment #部署，将 lmintlcx 改成用户名
 deploy:
