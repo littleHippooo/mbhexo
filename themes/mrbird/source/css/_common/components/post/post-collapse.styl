@@ -2,7 +2,7 @@
 
 @media (max-width: 767px) {
   .posts-collapse {
-    margin: 0 20px;
+    margin: 0 20px !important;
 
     .post-title, .post-meta {
       display: block;
@@ -11,11 +11,17 @@
     }
   }
 }
-
+@media screen and (max-width: 1399px) and (min-width: 767px)
+{
+  .posts-collapse {
+    margin-left: -20px !important;
+     +mobile() {
+     }
+  }
+}
 .posts-collapse {
   position: relative;
   z-index: $zindex-1;
-  margin-left: -20px !important;
   &::after {
     content: " ";
     position: absolute;
@@ -138,7 +144,10 @@
 .posts-collapse .post-title a:hover {
 	color: #42b983;
 }
-.post-header-div {
+.post-header-div,.collection-tag-title-div {
   margin-left: 4%;
   border-left: 2px solid $whitesmoke;
+  + mobile(){
+      margin-left: 7%;
+  }
 }

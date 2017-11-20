@@ -13,10 +13,11 @@
       #}
       </{% if theme.seo %}h2{% else %}h1{% endif %}>
     </div>
-
-    {% for post in page.posts %}
-      {{ post_template.render(post) }}
-    {% endfor %}
+    <div class="collection-tag-title-div">
+	    {% for post in page.posts %}
+	      {{ post_template.render(post) }}
+	    {% endfor %}
+    </div>
   </div>
 
   {% include '_partials/pagination.swig' %}
