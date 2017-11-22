@@ -419,6 +419,7 @@
   line-height: 1;
   margin-bottom: 0.75em;
 }
+
 @media screen and (min-width:1400px) {
     .terminal .prompt {
         font-size: 15px; 
@@ -469,7 +470,38 @@
   left: 0;
 }
 .terminal{
-    font-size:12px;
+  font-size:12px;
+  position: relative;
+  padding: 42px 10px 10px;
+  border-radius: 4px;
+  background: #fefefe;
+  border: 1px solid #f9f9f9;
+}
+.terminal:before {
+    display: block;
+    content: ' ';
+    height: 38px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #f9f9f9;
+    padding: 0 10px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+.terminal:after {
+    content: " ";
+    position: absolute;
+    border-radius: 50%;
+    background: #fc625d;
+    width: 12px;
+    height: 12px;
+    top: 0;
+    left: 20px;
+    margin-top: 13px;
+    -webkit-box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
+    box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
 }
 @media screen and (max-width:812px) {
 .container{
