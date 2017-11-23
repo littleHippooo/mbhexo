@@ -15,11 +15,11 @@
   <title>{% block title %}{% endblock %}</title>
 </head>
 
-<body ondragstart="return false;" class="animsition" lang="{{ page.lang || page.language || config.language }}" style="overflow-x: hidden;">
+<body ondragstart="return false;" class="animsition" lang="{{ page.lang || page.language || config.language }}" style="overflow-x: hidden;padding-right: 290px">
 <script type="text/javascript" src="{{ url_for(theme.js) }}/animsition.min.js"></script>
  <script type="text/javascript" src="{{ url_for(theme.js) }}/mo.min.js"></script>
 <script>
-$("body").animsition({inClass:"fade-in",outClass:"fade-out",inDuration:400,outDuration:400,linkElement:".animsition-link",loading:true,loadingParentElement:"html",loadingClass:"{{ theme.loading_class }}",loadingInner:"",timeout:false,timeoutCountdown:5000,onLoadEvent:true,browser:["animation-duration","-webkit-animation-duration"],overlay:false,overlayClass:"animsition-overlay-slide",overlayParentElement:"html",transition:function(url){window.location.href=url}});
+$("body").animsition({inClass:"fade-in",outClass:"fade-out",inDuration:600,outDuration:600,linkElement:".animsition-link",loading:true,loadingParentElement:"html",loadingClass:"{{ theme.loading_class }}",loadingInner:"",timeout:false,timeoutCountdown:50,onLoadEvent:true,browser:["animation-duration","-webkit-animation-duration"],overlay:false,overlayClass:"animsition-overlay-slide",overlayParentElement:"html",transition:function(url){window.location.href=url}});
 </script>
   {% include '_third-party/analytics/index.swig' %}
 
@@ -91,6 +91,6 @@ $("body").animsition({inClass:"fade-in",outClass:"fade-out",inDuration:400,outDu
   {% include '_third-party/exturl.swig' %}
 </body>
 <script>
-	$(function(){$("a").not(".nav-link,.cloud-tie-join-count").addClass("animsition-link");});var burst1 = new mojs.Burst({left: 0, top: 0,radius: { 5: 40 },children: {shape: 'circle',fill: ['red', 'cyan', 'orange' ],fillOpacity: .8,radiusX: 3.5,radiusY: 3.5}});document.addEventListener('click', function (e) {if(e.target.href != null || e.target.className=='footer' || e.target.className=='copyright' || e.target.className=='author__urls social-icons' || e.target.className=='author__avatar' || e.target.className=='sidebar sidebar-active') return; burst1.tune({ x: e.pageX, y: e.pageY }).generate().replay();});
+  $(function(){$("a").not(".nav-link,.cloud-tie-join-count").addClass("animsition-link");});var burst1 = new mojs.Burst({left: 0, top: 0,radius: { 5: 40 },children: {shape: 'circle',fill: ['red', 'cyan', 'orange' ],fillOpacity: .8,radiusX: 3.5,radiusY: 3.5}});document.addEventListener('click', function (e) {if(e.target.href != null || e.target.className=='footer' || e.target.className=='copyright' || e.target.className=='author__urls social-icons' || e.target.className=='author__avatar' || e.target.className=='sidebar sidebar-active') return; burst1.tune({ x: e.pageX, y: e.pageY }).generate().replay();});
 </script>
 </html>

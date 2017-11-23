@@ -90,16 +90,6 @@ $(document).ready(function () {
       this.toggleEl.on('click', this.clickHandler.bind(this));
       this.toggleEl.on('mouseenter', this.mouseEnterHandler.bind(this));
       this.toggleEl.on('mouseleave', this.mouseLeaveHandler.bind(this));
-
-      $(document)
-        .on('sidebar.isShowing', function () {
-          NexT.utils.isDesktop() && $('body').velocity('stop').velocity(
-            {paddingRight: SIDEBAR_WIDTH},
-            SIDEBAR_DISPLAY_DURATION
-          );
-        })
-        .on('sidebar.isHiding', function () {
-        });
     },
     clickHandler: function () {
       this.isSidebarVisible ? this.hideSidebar() : this.showSidebar();

@@ -34,7 +34,7 @@
   },
   "devDependencies": {},
   "scripts": {
-	  "test-build": "hexo clean && hexo g && gulp build",
+	  "test": "hexo clean && hexo g && hexo s",
 	  "build": "hexo clean && hexo g && gulp build && hexo d"
   }
 }
