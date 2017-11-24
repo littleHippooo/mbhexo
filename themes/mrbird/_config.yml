@@ -300,7 +300,7 @@ highlight_theme: normal
 mathjax:
   enable: true
   per_page: false
-  cdn: //cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+  cdn: http://mathjax.josephjctang.com/MathJax.js?config=TeX-MML-AM_HTMLorMML
 
 
 # Han Support docs: https://hanzi.pro/
@@ -322,6 +322,14 @@ gitment:
   repo: Blog-Comments
   client_id: 5b26ca7149a3cb78da1e
   client_secret: dd0fb1af7fb9d5712b03e8fe07e55981a43d988d
+
+# Valine comments
+valine:
+  enable: false
+  app_id: SMcDFP1bN1jgb9Lo8JmtICHm-gzGzoHsz
+  app_key: dH4nrUrt3V5XiJiI6Qyejnbi
+
+
 
 # Disqus
 disqus:

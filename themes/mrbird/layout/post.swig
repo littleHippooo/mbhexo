@@ -43,6 +43,87 @@
           gitment.render('container');
         </script>
       {% endif %}
+      {% if theme.valine.enable && !page.password %}
+        <div id="comment-div"></div>
+        <style>
+        	.valine .vwrap .vcontrol .col.col-60 {
+			   text-align: left;
+			}
+			.valine .vlist .vcard .vhead, .valine .vlist .vcard section .vfooter {
+				text-align: left;
+			}
+			.vname {
+				color: #42b983 !important;
+			}
+			.valine .vinfo .col {
+				text-align: left;
+    			margin-left: -27rem;
+			}
+			div#comment-div {
+			    margin-bottom: -8rem;
+			}
+			.valine .vlist .vcard .vcontent .code, .valine .vlist .vcard .vcontent code, .valine .vlist .vcard .vcontent pre {
+				background: #fbfbfb;
+			}
+			.valine .vlist .vcard .vcontent a {
+				color: #42b983;
+			}
+			.valine .vlist .vcard .vimg {
+				border-radius: 3px;
+			}
+			.valine .vbtn {
+				border-radius: 2px;
+				padding: .3rem 1.25rem;
+			}
+			.valine .vbtn:active,.valine .vbtn:hover {
+				color: #42b983;
+				border-color: #42b983;
+				background-color: #fff
+			}
+			.valine .vwrap .vheader .vinput:focus {
+				border-bottom-color: #42b983;
+			}
+			.valine .vlist .vcard .vcontent.expand:before {
+				background: -webkit-gradient(linear,left top,left bottom,from(hsla(0,0%,100%,0)),to(hsla(0,0%,100%,.2)));
+				background: linear-gradient(180deg,hsla(0,0%,100%,0),hsla(0,0%,100%,.2))
+			}
+
+			.valine .vlist .vcard .vcontent.expand:after {
+				content: "点击展开";
+				font-size: .4rem;
+				text-align: right;				
+				left: -1rem;
+				background: hsla(0,0%,100%,.2)
+			}
+			.valine .vlist .vcard section .vfooter .vat {
+				color: #b3b3b3;
+			}
+			.valine .vlist .vcard section .vfooter .vat:hover {
+				color: #42b983;
+			}
+			.vcontent img {
+				margin: 0px;
+			}
+			.valine .info {
+				display: none;
+			}
+        </style>
+        <script type="text/javascript" src="{{ url_for(theme.js) }}/av.min.js"></script>
+        <script type="text/javascript" src="{{ url_for(theme.js) }}/Valine.min.js"></script>
+    	<script>
+    	new Valine({
+		    el: '#comment-div' ,
+		    notify: true, 
+		    verify: false, 
+		    appId: '{{ theme.valine.app_id}}',
+		    appKey: '{{ theme.valine.app_key}}',
+		    placeholder: '',
+		    path: window.location.pathname, 
+		    avatar: 'monsterid',
+		    guest_info:  ['nick','link']
+		});
+		</script>
+      {% endif %}
     </div>
   </div>
 
