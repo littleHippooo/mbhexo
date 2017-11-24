@@ -99,6 +99,12 @@ marked:
 sitemap:
   path: sitemap.xml
 
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
+
 # encrypt
 encrypt:
   pwdfile: encrypt_password   # this store the password in a file, the whole content of this file will be regarded as the password

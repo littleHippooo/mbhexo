@@ -23,6 +23,7 @@
     "hexo-generator-feed": "^1.2.0",
     "hexo-generator-index": "^0.2.1",
     "hexo-generator-search": "^2.1.1",
+    "hexo-generator-searchdb": "^1.0.8",
     "hexo-generator-sitemap": "^1.2.0",
     "hexo-generator-tag": "^0.2.0",
     "hexo-neat": "^1.0.4",
@@ -34,8 +35,7 @@
   },
   "devDependencies": {},
   "scripts": {
-	  "test": "hexo clean && hexo g && hexo s",
-	  "build": "hexo clean && hexo g && gulp build && hexo d"
+    "test": "hexo clean && hexo g && hexo s",
+    "build": "hexo clean && hexo g && gulp build && hexo d"
   }
 }
-
