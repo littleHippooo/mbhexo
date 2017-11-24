@@ -69,9 +69,7 @@ theme: mrbird
 # Deployment #部署，将 lmintlcx 改成用户名
 deploy:
   type: git
-  repo: https://github.com/wuyouzhuguli/wuyouzhuguli.github.io.git
-  username: wuyouzhuguli
-  email: 852252810@qq.com
+  repo: https://git.coding.net/laizhipeng/laizhipeng.coding.me.git
   branch: master
 
 # Extensions
@@ -98,20 +96,8 @@ marked:
   gfm: true
   breaks: false
 
-# hexo-admin authentification
-admin:
-  username: wuyouzhuguli
-  password_hash: $2a$10$5Dy/DYm9iaLv2rpk4Oc7D.RqneViK8YCiPeohzj8S2oBim/W3GheS
-  secret: my super secret phrase
-
 sitemap:
   path: sitemap.xml
-
-search:
-  path: search.xml
-  field: post
-  format: html
-  limit: 10000
 
 # encrypt
 encrypt:
