@@ -37,7 +37,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "hexo clean && hexo g && hexo s",
-    "build": "hexo clean && hexo g && gulp build && hexo d"
+    "t": "hexo clean && hexo g && hexo s",
+    "b": "hexo clean && hexo g && cp source/baidu_verify_EVwLiaxdxX.html public && gulp build && hexo d"
   }
 }
