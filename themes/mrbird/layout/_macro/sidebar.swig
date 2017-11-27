@@ -131,31 +131,31 @@
 			  <button class="btn btn--inverse">Follow</button>
 			  <ul class="author__urls social-icons">
 				<li>
-				  <a href="http://map.baidu.com/?newmap=1&s=s%26wd%3D%E7%A6%8F%E5%B7%9E%E5%B8%82%26c%3D300&from=alamap&tpl=mapcity" target="_blank" itemprop="url">
+				  <a href="http://map.baidu.com/?newmap=1&s=s%26wd%3D%E7%A6%8F%E5%B7%9E%E5%B8%82%26c%3D300&from=alamap&tpl=mapcity" target="_blank" itemprop="url" class="ignore-href">
 					<i class="fa fa-fw fa-map-marker" aria-hidden="true"></i>&nbsp;&nbsp;FuZhou,CN</a>
 				</li>  
 				<li>
-				  <a href="http://mrbird.leanote.com" target="_blank" itemprop="url">
+				  <a href="http://mrbird.leanote.com" target="_blank" itemprop="url" class="ignore-href">
 					<i class="fa fa-fw fa-chain" aria-hidden="true"></i>&nbsp;&nbsp;Website</a>
 				</li>
 				<li>
-				  <a href="/atom.xml" target="_blank" itemprop="url">
+				  <a href="/atom.xml" target="_blank" itemprop="url" class="ignore-href">
 					<i class="fa fa-fw fa-rss" aria-hidden="true"></i>&nbsp;&nbsp;RSS</a>
 				</li>
 				<li>
-				  <a href="/images/wechat.png" target="_blank" itemprop="sameAs">
+				  <a href="/images/wechat.png" target="_blank" itemprop="sameAs" class="ignore-href">
 					<i class="fa fa-fw fa-weixin" aria-hidden="true"></i>&nbsp;&nbsp;WeChat</a>
 				</li>
 				<li>
-				  <a href="https://www.facebook.com/mrbirdleanote" target="_blank" itemprop="sameAs">
+				  <a href="https://www.facebook.com/mrbirdleanote" target="_blank" itemprop="sameAs" class="ignore-href">
 					<i class="fa fa-fw fa-facebook-square" aria-hidden="true"></i>&nbsp;&nbsp;Facebook</a>
 				</li>
 				<li>
-				  <a href="http://weibo.com/mrbird123" target="_blank" itemprop="sameAs">
+				  <a href="http://weibo.com/mrbird123" target="_blank" itemprop="sameAs" class="ignore-href">
 					<i class="fa fa-fw fa-weibo" aria-hidden="true"></i>&nbsp;&nbsp;Weico</a>
 				</li>
 				<li>
-				  <a href="https://github.com/wuyouzhuguli" target="_blank" itemprop="sameAs">
+				  <a href="https://github.com/wuyouzhuguli" target="_blank" itemprop="sameAs" class="ignore-href">
 					<i class="fa fa-fw fa-github-alt" aria-hidden="true"></i>&nbsp;&nbsp;GitHub</a>
 				</li>
          <li>

@@ -325,7 +325,7 @@ gitment:
 
 # Valine comments
 valine:
-  enable: false
+  enable: true
   app_id: SMcDFP1bN1jgb9Lo8JmtICHm-gzGzoHsz
   app_key: dH4nrUrt3V5XiJiI6Qyejnbi
 

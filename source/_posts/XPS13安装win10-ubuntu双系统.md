@@ -1,5 +1,5 @@
 ---
-title: XPS13安装win10&ubuntu双系统
+title: XPS13安装win10 ubuntu双系统
 date: 2017-03-25 15:57:12
 tags: ubuntu
 ---

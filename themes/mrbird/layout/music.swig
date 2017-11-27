@@ -422,7 +422,7 @@
 
 @media screen and (min-width:1400px) {
     .terminal .prompt {
-        font-size: 15px; 
+        font-size: 14px; 
         line-height: 1.2em;
     }    
 }    

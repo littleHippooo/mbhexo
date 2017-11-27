@@ -68,9 +68,10 @@ theme: mrbird
 
 # Deployment #部署，将 lmintlcx 改成用户名
 deploy:
-  type: git
+- type: git
   repo: https://git.coding.net/laizhipeng/laizhipeng.coding.me.git
   branch: master
+- type: baidu_url_submitter ## 这是新加的
 
 # Extensions
 ## Plugins: http://hexo.io/plugins/
@@ -98,6 +99,15 @@ marked:
 
 sitemap:
   path: sitemap.xml
+
+baidusitemap:
+  path: baidusitemap.xml
+
+baidu_url_submit:
+  count: 0 ## 提交最新的一个链接
+  host: mrbird.cc ## 在百度站长平台中注册的域名
+  token: BVOWDhVZSuR0Juzc ## 请注意这是您的秘钥， 所以请不要把博客源代码发布在公众仓库里!
+  path: baidu_urls.txt ## 文本文档的地址， 新链接会保存在此文本文档里
 
 search:
   path: search.xml

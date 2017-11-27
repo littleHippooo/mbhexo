@@ -3,52 +3,53 @@
 		font-size: 16px !important;
 	}
 	.menu .menu-item a {
-		font-size: 17px !important;
+		font-size: 16px !important;
 	}
 	.site-meta .site-title {
-		font-size: 26px !important;
+		font-size: 23px !important;
+		color: #111;
 	}
 	.posts-expand .post-title-link {
-		font-size: 22px !important;
+		font-size: 20px !important;
 	}
     .posts-expand .post-title {
 		font-size: 22px !important;
 	}
 	.posts-expand .post-body h2 {
-		font-size: 19px !important;
+		font-size: 18px !important;
 	}
 	.posts-expand .post-body h3 {
 		font-size: 17px !important;
 	}
 	.posts-expand .post-meta {
-		font-size: 16px !important;
+		font-size: 15px !important;
 	}
 	.post-button .btn {
-		font-size: 16px !important;
+		font-size: 15px !important;
 	}
 	pre, .highlight {
 		font-size: 15px !important;
 	}
 	.footer {
-		font-size: 17px !important;
+		font-size: 16px !important;
+		padding: 15px 0 !important;
 	}
 	.page-archive .archive-page-counter {
-		font-size: 23px !important;
+		font-size: 22px !important;
 	}
 	.page-archive .archive-year {
-		font-size: 20px !important;
+		font-size: 19px !important;
 	}
 	.posts-collapse .post-title {
 		margin:6px 0px 6px 90px !important;
 		padding-bottom: 5px !important;
-		font-size: 18px !important;
 		letter-spacing: .4px !important;
 	}
 	.posts-collapse .post-title a{
-		font-size: 17px !important;
+		font-size: 16px !important;
 	}
 	.posts-collapse .post-meta {
-		font-size: 17px !important;
+		font-size: 16px !important;
 	}
     .sidebar-nav li	{
 		font-size: 18px !important;
@@ -67,24 +68,28 @@
 		margin-right: 15px;
 	}
 	.author__urls a {
-		font-size: 17px !important;
+		font-size: 16px !important;
+		padding-top: 3px !important;
 	}
 	.sidebar-sticky .author__name {
 		font-size: 1.5rem !important;
+	}
+	.sidebar-sticky {
+		padding: 30px 10px !important;
 	}
 	.author__avatar img {
 		padding: 7px;
 		max-width: 120px !important;
 	}
 	.tag-cloud a {
-		font-size: 19px !important;
-		width: 170px !important;
+		font-size: 17px !important;
+		width: 180px !important;
 	}
 	.tag-cloud-title {
-		font-size: 23px !important;
+		font-size: 22px !important;
 	}
 	.friends-model {
-		font-size: 23px !important;
+		font-size: 22px !important;
 	}
 	.friends-href a {
 		font-size: 19px !important;
@@ -104,5 +109,14 @@
 	}
 	#sidebar {
 		width: 345px !important;
+	}
+	.terminal {
+		padding: 55px 10px 10px !important;
+	}
+	.sidebar-sticky li, .sidebar-sticky p {
+		width: 83%;
+	}
+	.valine .vinfo .col {
+		margin-left: -37.5rem !important;
 	}
 }

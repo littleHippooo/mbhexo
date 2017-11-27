@@ -1,5 +1,5 @@
 ---
-title: Java Encryption & Decryption
+title: Java Encryption - Decryption
 date: 2016-09-03 19:44:14
 tags: Java
 ---
