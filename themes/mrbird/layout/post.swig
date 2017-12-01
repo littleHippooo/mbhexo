@@ -126,7 +126,10 @@
       {% endif %}
     </div>
   </div>
-
+  <script>
+  	var $bqinline = $("img[alt='bq-inline']");
+  	$bqinline.css({"width":"2.3rem","height":"2.3rem","display":"inline","vertical-align":"text-bottom"});
+  </script>
 {% endblock %}
 
 {% block sidebar %}

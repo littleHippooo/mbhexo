@@ -317,6 +317,9 @@
       {% else %}
         {{ post.content }}
       {% endif  %}
+      <script>
+        $(".post-body a").addClass("ignore-href");
+      </script>
     </div>
 
     <div>

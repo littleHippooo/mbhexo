@@ -472,7 +472,7 @@
 .terminal{
   font-size:12px;
   position: relative;
-  padding: 42px 10px 10px;
+  padding: 52px 10px 10px;
   border-radius: 4px;
   background: #fefefe;
   border: 1px solid #f9f9f9;
