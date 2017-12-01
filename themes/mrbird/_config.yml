@@ -300,7 +300,7 @@ highlight_theme: normal
 mathjax:
   enable: true
   per_page: false
-  cdn: http://mathjax.josephjctang.com/MathJax.js?config=TeX-MML-AM_HTMLorMML
+  cdn: //cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
 
 
 # Han Support docs: https://hanzi.pro/
