@@ -1,6 +1,6 @@
 ---
 title: Spring4配置多数据源
-date: 2017-10-09 14:27:55
+date: 2017-08-05 14:27:55
 tags: Spring
 ---
 Spring在每次操作数据库的时候都会通过AbstractRoutingDataSource类中的determineTargetDataSource()方法获取当前数据源，所以可以通过继承AbstractRoutingDataSource并重写determineTargetDataSource()方法来实现多数据源的配置。
@@ -289,4 +289,21 @@ public class IndexController {
 ```xml
 orcl
 pisdata
+```
+## 总结
+配置JdbcTemplate多数据源的核心在于初始化JdbcTemplate的时候数据源配置为动态数据源，就如xml配置的那样：
+```xml
+<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate"
+    abstract="false" lazy-init="false" autowire="default">
+    <property name="dataSource">
+        <ref bean="dynamicDataSource" />
+    </property>
+</bean>
+```
+假如使用的是MyBatis，则只需要在配置sqlSessionFactory的时候指定数据源为动态数据源即可：
+```xml
+<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean" scope="prototype">
+    <property name="dataSource" ref="dataSource"/>
+    <property name="configLocation" value="classpath:mybatis-config.xml"/>
+</bean>
 ```

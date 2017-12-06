@@ -1,9 +1,9 @@
 ---
-title: Spring Boot中使用Mybatis
+title: Spring Boot中使用MyBatis
 date: 2017-08-13 14:42:06
-tags: [Spring,Spring Boot,Mybatis,Druid]
+tags: [Spring,Spring Boot,MyBatis,Druid]
 ---
-整合Mybatis之前，先搭建一个基本的Spring Boot项目[开启Spring Boot](https://mrbird.cc/%E5%BC%80%E5%90%AFSpring-Boot.html)。然后引入`mybatis-spring-boot-starter`和数据库连接驱动（这里使用关系型数据库Oracle 11g）。
+整合MyBatis之前，先搭建一个基本的Spring Boot项目[开启Spring Boot](https://mrbird.cc/%E5%BC%80%E5%90%AFSpring-Boot.html)。然后引入`mybatis-spring-boot-starter`和数据库连接驱动（这里使用关系型数据库Oracle 11g）。
 ## mybatis-spring-boot-starter
 在pom中引入：
 ```xml
@@ -13,7 +13,8 @@ tags: [Spring,Spring Boot,Mybatis,Druid]
     <version>1.3.1</version>
 </dependency>
 ```
-不同版本的Spring Boot和Mybatis版本对应不一样，具体可查看官方文档：[http://www.mybatis.org/spring-boot-starter/mybatis-spring-boot-autoconfigure/](http://www.mybatis.org/spring-boot-starter/mybatis-spring-boot-autoconfigure/)。
+不同版本的Spring Boot和MyBatis版本对应不一样，具体可查看官方文档：[http://www.mybatis.org/spring-boot-starter/mybatis-spring-boot-autoconfigure/](http://www.mybatis.org/spring-boot-starter/mybatis-spring-boot-autoconfigure/)。
+<!--more-->
 
 通过`dependency:tree`命令查看`mybatis-spring-boot-starter`都有哪些隐性依赖：
 ```
@@ -28,7 +29,7 @@ tags: [Spring,Spring Boot,Mybatis,Druid]
 |  \- org.mybatis:mybatis-spring:jar:1.3.1:compile
 ```
 可发现其包含了`spring-boot-starter-jdbc`依赖，默认使用tomcat-jdbc数据源。
-<!--more-->
+
 ## 引入ojdbc6
 由于版权的原因，我们需要将ojdbc6.jar依赖安装到本地的maven仓库，然后才可以在pom中进行配置。
 
@@ -151,7 +152,7 @@ spring:
 
 关于Druid的更多说明，可查看官方wiki——[https://github.com/alibaba/druid/wiki/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98](https://github.com/alibaba/druid/wiki/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98)
 
-## 使用Mybatis
+## 使用MyBatis
 使用的库表：
 ```sql
 CREATE TABLE "SCOTT"."STUDENT" (
@@ -183,7 +184,9 @@ public interface StudentMapper {
     Student queryStudentById(Long id);
 }
 ```
-StudentMapper的实现可以基于xml也可以基于注解。这里主要介绍使用注解的方式，继续编辑StudentMapper：
+StudentMapper的实现可以基于xml也可以基于注解。
+### 使用注解方式
+继续编辑StudentMapper：
 ```java
 @Component
 @Mapper
@@ -206,8 +209,18 @@ public interface StudentMapper {
     Student queryStudentBySno(String sno);
 
 ```
-简单的语句只需要使用@Insert、@Update、@Delete、@Select这4个注解即可，动态SQL语句需要使用@InsertProvider、@UpdateProvider、@DeleteProvider、@SelectProvider等注解。具体可参考Mybatis官方文档：[http://www.mybatis.org/mybatis-3/zh/java-api.html](http://www.mybatis.org/mybatis-3/zh/java-api.html)。
-
+简单的语句只需要使用@Insert、@Update、@Delete、@Select这4个注解即可，动态SQL语句需要使用@InsertProvider、@UpdateProvider、@DeleteProvider、@SelectProvider等注解。具体可参考MyBatis官方文档：[http://www.mybatis.org/mybatis-3/zh/java-api.html](http://www.mybatis.org/mybatis-3/zh/java-api.html)。
+### 使用xml方式
+使用xml方式需要在application.yml中进行一些额外的配置：
+```yml
+mybatis:
+  # type-aliases扫描路径
+  # type-aliases-package:
+  # mapper xml实现扫描路径
+  mapper-locations: classpath:mapper/*.xml
+  property:
+    order: BEFORE
+```
 ## 测试
 接下来编写Service：
 ```java
@@ -274,4 +287,4 @@ public class TestController {
 
 可看到其记录的就是刚刚访问[/querystudent](/querystudent)得到的SQL。
 
-> [source code](https://pan.baidu.com/s/1ck7T1c)
+> [source code](https://drive.google.com/open?id=1pYGTYxXrQcDPtszsTjsUe12U2aPvZ_GK)

@@ -15,6 +15,7 @@ Spring Boot项目在启动的时候会有一个默认的启动图案：
  :: Spring Boot ::        (v1.5.9.RELEASE)
 ```
 我们可以把这个图案修改为自己想要的。在src/main/resources目录下新建banner.txt文件，然后将自己的图案黏贴进去即可。ASCII图案可通过网站[http://www.network-science.de/ascii/](http://www.network-science.de/ascii/)一键生成，比如输入mrbird生成图案后复制到banner.txt，启动项目，eclipse控制台输出如下：
+<!--more-->
 ```
   _   _   _   _   _   _  
  / \ / \ / \ / \ / \ / \ 
@@ -170,4 +171,4 @@ server.port=8081
 
 如：`spring.profiles.active=dev`就会加载application-dev.properties配置文件内容。可以在运行jar文件的时候使用命令`java -jar xxx.jar --spring.profiles.active={profile}`切换不同的环境配置。
 
-> [source code](https://pan.baidu.com/s/1miGb2Zm)
+> [source code](https://drive.google.com/open?id=1US_tSpNJB04TfUO25jspOrpaktEamm8Z)

@@ -1,7 +1,7 @@
 ---
-title: Spring Boot使用thymeleaf
+title: Spring Boot中使用thymeleaf
 date: 2017-09-30 19:52:21
-tags: [Spring,Spring Boot]
+tags: [Spring,Spring Boot,Thymeleaf]
 ---
 Spring Boot支持FreeMarker、Groovy、Thymeleaf和Mustache四种模板解析引擎，官方推荐使用Thymeleaf。
 ## spring-boot-starter-thymeleaf
@@ -107,4 +107,4 @@ public class IndexController {
 
 ![QQ截图20171201103600.png](img/QQ截图20171201103600.png)
 
-> [source code](https://pan.baidu.com/s/1o8sqJUi)
+> [source code](https://drive.google.com/open?id=1J2IVMXKUuq6SkBZz1aPtGXioj1IlcAFX)
