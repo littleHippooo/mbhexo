@@ -58,10 +58,10 @@
 		font-size: 15px !important;
 	}
 	.post-nav-item a {
-		font-size: 16px !important;
+		font-size: 15px !important;
 	}
 	.posts-expand .post-tags a {
-		font-size: 16px !important;
+		font-size: 15px !important;
 	}
 	.sidebar-sticky p, .sidebar-sticky li {
 		font-size: 18px !important;
@@ -118,5 +118,8 @@
 	}
 	.valine .vinfo .col {
 		margin-left: -37.5rem !important;
+	}
+	table {
+		font-size: 15px !important;
 	}
 }
