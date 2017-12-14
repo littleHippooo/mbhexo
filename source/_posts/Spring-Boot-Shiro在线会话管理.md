@@ -282,7 +282,7 @@ public class SessionController {
 
 回到tester用户的主界面，点击“查看用户信息”，会发现页面已经被重定向到login页面，因为其Session已经失效！
 
-再次刷新mrird的online页面，显示如下：
+再次刷新mrbird的online页面，显示如下：
 
 ![QQ截图20171214192219.png](img/QQ截图20171214192219.png)
 
