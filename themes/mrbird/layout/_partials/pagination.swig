@@ -9,3 +9,4 @@
     }}
   </nav>
 {% endif %}
+<span style="display:none">Hosted &nbsp;by &nbsp;<a href="https://pages.coding.me" style="color:#f9f9f9;cursor:default" target="_blank" class="ignore-href" >Coding Pages</a></span>
