@@ -1,6 +1,6 @@
 ---
 title: Spring Boot Shiro Remember Me
-date: 2017-11-21 11:01:41
+date: 2017-12-21 11:01:41
 tags: [Spring,Spring Boot,Shiro]
 ---
 接着[《Spring-Boot-shiro用户认证》](/Spring-Boot-shiro用户认证.html)，当用户成功登录后，关闭浏览器然后再打开浏览器访问[http://localhost:8080/web/index](http://localhost:8080/web/index)，页面会跳转到登录页，之前的登录因为浏览器的关闭已经失效。

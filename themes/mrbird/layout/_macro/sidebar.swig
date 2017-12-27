@@ -152,7 +152,7 @@
 				</li>
 				<li>
 				  <a href="http://weibo.com/mrbird123" target="_blank" itemprop="sameAs" class="ignore-href">
-					<i class="fa fa-fw fa-weibo" aria-hidden="true"></i>&nbsp;&nbsp;Weico</a>
+					<i class="fa fa-fw fa-weibo" aria-hidden="true"></i>&nbsp;&nbsp;Weibo</a>
 				</li>
 				<li>
 				  <a href="https://github.com/wuyouzhuguli" target="_blank" itemprop="sameAs" class="ignore-href">

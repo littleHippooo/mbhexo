@@ -1,6 +1,6 @@
 ---
 title: Spring Boot Shiro权限控制
-date: 2017-11-24 08:56:07
+date: 2017-12-24 08:56:07
 tags: [Spring,Spring Boot,Shiro]
 ---
 在[《Spring-Boot-shiro用户认证》](/Spring-Boot-shiro用户认证.html)中，我们通过继承AuthorizingRealm抽象类实现了`doGetAuthenticationInfo()`方法完成了用户认证操作。接下来继续实现`doGetAuthorizationInfo()`方法完成Shiro的权限控制功能。

@@ -1,6 +1,6 @@
 ---
 title: Spring Boot Thymeleaf中使用Shiro标签
-date: 2017-11-26 10:36:33
+date: 2017-12-26 10:36:33
 tags: [Spring,Spring Boot,Shiro,Thymeleaf]
 ---
 在[《Spring-Boot-shiro权限控制》](/Spring-Boot-Shiro权限控制.html)中，当用户访问没有权限的资源时，我们采取的做法是跳转到403页面，但在实际项目中更为常见的做法是只显示当前用户拥有访问权限的资源链接。配合Thymeleaf中的Shiro标签可以很简单的实现这个目标。

@@ -1,11 +1,11 @@
 ---
 title: Spring Boot Shiro在线会话管理
-date: 2017-11-28 18:29:59
+date: 2017-12-28 18:29:59
 tags: [Spring,Spring Boot,Shiro]
 ---
 在Shiro中我们可以通过`org.apache.shiro.session.mgt.eis.SessionDAO`对象的`getActiveSessions()`方法方便的获取到当前所有有效的Session对象。通过这些Session对象，我们可以实现一些比较有趣的功能，比如查看当前系统的在线人数，查看这些在线用户的一些基本信息，强制让某个用户下线等。
 
-为了达到这几个目标，我们在现有的Spring Boot Shiro项目基础上进行一些改造。
+为了达到这几个目标，我们在现有的Spring Boot Shiro项目基础上进行一些改造（缓存使用Ehcache）。
 <!--more-->
 ## 更改ShiroConfig
 为了能够在Spring Boot中使用`SessionDao`，我们在ShiroConfig中配置该Bean：
@@ -15,6 +15,15 @@ public SessionDAO sessionDAO() {
     MemorySessionDAO sessionDAO = new MemorySessionDAO();
     return sessionDAO;
 }
+```
+如果使用的是Redis作为缓存实现，那么SessionDAO则为`RedisSessionDAO`：
+```java
+@Bean
+public RedisSessionDAO sessionDAO() {
+    RedisSessionDAO redisSessionDAO = new RedisSessionDAO();
+    redisSessionDAO.setRedisManager(redisManager());
+    return redisSessionDAO;
+}		
 ```
 在Shiro中，`SessionDao`通过`org.apache.shiro.session.mgt.SessionManager`进行管理，所以继续在ShiroConfig中配置`SessionManager`：
 ```java
@@ -57,8 +66,7 @@ public class ShiroSessionListener implements SessionListener{
 public SecurityManager securityManager(){  
     DefaultWebSecurityManager securityManager =  new DefaultWebSecurityManager();
     securityManager.setRealm(shiroRealm());
-    securityManager.setRememberMeManager(rememberMeManager());
-    securityManager.setCacheManager(getEhCacheManager());
+    ...
     securityManager.setSessionManager(sessionManager());
     return securityManager;  
 }
@@ -149,6 +157,16 @@ public class SessionServiceImpl implements SessionService {
 通过SessionDao的`getActiveSessions()`方法，我们可以获取所有有效的Session，通过该Session，我们还可以获取到当前用户的Principal信息。
 
 值得说明的是，当某个用户被踢出后（Session Time置为0），该Session并不会立刻从ActiveSessions中剔除，所以我们可以通过其timeout信息来判断该用户在线与否。
+
+如果使用的Redis作为缓存实现，那么，`forceLogout()`方法需要稍作修改：
+```java
+@Override
+public boolean forceLogout(String sessionId) {
+    Session session = sessionDAO.readSession(sessionId);
+    sessionDAO.delete(session);
+    return true;
+}
+```
 
 ## Controller
 定义一个SessionContoller，用于处理Session的相关操作：
@@ -286,4 +304,6 @@ public class SessionController {
 
 ![QQ截图20171214192219.png](img/QQ截图20171214192219.png)
 
-源码链接：[https://drive.google.com/open?id=1AkCqvpVfGtdqpDktziCZrxSjPG854Arn](https://drive.google.com/open?id=1AkCqvpVfGtdqpDktziCZrxSjPG854Arn)
+源码链接（Ehcache版）：[https://drive.google.com/open?id=1AkCqvpVfGtdqpDktziCZrxSjPG854Arn](https://drive.google.com/open?id=1AkCqvpVfGtdqpDktziCZrxSjPG854Arn)
+
+源码链接（Redis版）：[https://drive.google.com/open?id=1GHJxnoX2rZuQXtMYpNv-TE5SHRwyqSN7](https://drive.google.com/open?id=1GHJxnoX2rZuQXtMYpNv-TE5SHRwyqSN7)
