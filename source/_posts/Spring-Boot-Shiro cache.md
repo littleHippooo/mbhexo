@@ -121,7 +121,7 @@ public SecurityManager securityManager(){
         overflowToDisk="false"
         statistics="true" />
 </ehcache>
-```s
+```
 ### ShiroConfig配置Ehcache
 接着在ShiroConfig中注入Ehcache缓存：
 ```java

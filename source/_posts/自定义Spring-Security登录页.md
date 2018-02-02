@@ -1,9 +1,9 @@
 ---
-title: 自定义Spring Security登陆页
+title: 自定义Spring Security登录页
 date: 2017-02-07 18:45:02
 tags: [Spring,Spring Security]
 ---
-虽然Spring Security框架给我们赠送了个登陆页面，但这个页面过于简单，Spring Security允许我们自定义登陆页。
+虽然Spring Security框架给我们赠送了个登录页面，但这个页面过于简单，Spring Security允许我们自定义登录页。
 ## 准备工作
 第一步在maven中加入Spring Security相关依赖（Spring MVC已搭建好）。
 ```xml
@@ -115,11 +115,11 @@ applicationContext.xml的配置如下：
 
 4.`access="IS_AUTHENTICATED_ANONYMOUSLY"`指定匿名用户也可以访问。
 
-5.`<form-login/>`标签的login-page="/login"属性表示登陆页面的请求，由控制器去处理。
+5.`<form-login/>`标签的login-page="/login"属性表示登录页面的请求，由控制器去处理。
 
-6.`<custom-filter/>`标签引用了一个名为loginfilter的过滤器，用于登陆的时候进行验证。
+6.`<custom-filter/>`标签引用了一个名为loginfilter的过滤器，用于登录的时候进行验证。
 
-7.接下来定义了id为loginfilter的bean，其`filterProcessesUrl`设定了登陆页表单提交时的请求；`authenticationManager`属性指向authenticationManager。该bean对应的类下文再做介绍。
+7.接下来定义了id为loginfilter的bean，其`filterProcessesUrl`设定了登录页表单提交时的请求；`authenticationManager`属性指向authenticationManager。该bean对应的类下文再做介绍。
 
 8.`user-service`中定义了两个用户，admin 和user，`password`属性定义其密码，`authorities`属性为其分配权限。
 
@@ -242,8 +242,8 @@ Spring Security支持的所有SpEL表达式如下：
     ...
 </http>
 ```
-接下来自己编写个登陆页。
-## 自定义登陆页
+接下来自己编写个登录页。
+## 自定义登录页
 login.jsp如下：
 ```html
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
@@ -321,13 +321,13 @@ login.jsp如下：
 ```
 与Spring Security相关的就几个：
 
-1.`/j_spring_security_check`，提交登陆信息的URL地址。
+1.`/j_spring_security_check`，提交登录信息的URL地址。
 
-2.`j_username`，输入登陆名的参数名称。
+2.`j_username`，输入登录名的参数名称。
 
 3.`j_password`，输入密码的参数名称。
 
-4.`${sessionScope['SPRING_SECURITY_LAST_EXCEPTION'].message}`和`${SPRING_SECURITY_403_EXCEPTION.message}`用于输出登陆失败的异常信息。
+4.`${sessionScope['SPRING_SECURITY_LAST_EXCEPTION'].message}`和`${SPRING_SECURITY_403_EXCEPTION.message}`用于输出登录失败的异常信息。
 
 login.jsp页面尾部添加了验证码验证。验证码对应的controller如下：
 ```java
@@ -423,7 +423,7 @@ public class CodeController {
     } 
 }
 ```
-接下来编写index.jsp，成功登陆后跳转到该页面：
+接下来编写index.jsp，成功登录后跳转到该页面：
 ```html
 <%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="s" %>
@@ -483,7 +483,7 @@ public class LoginController {
     }
 }
 ```
-## 处理登陆    
+## 处理登录    
 在spring-security.xml文件中定义的loginfilter过滤器对应的类如下：
 ```java
 import javax.servlet.http.HttpServletRequest;
@@ -557,11 +557,11 @@ public class MrbirdUsernamePasswordAuthenticationFilter
 	
 }
 ```
-`MrbirdUsernamePasswordAuthenticationFilter`继承自`UsernamePasswordAuthenticationFilter`，主要工作是获取用户在登陆界面输入的用户名和密码，并判断是否为空，以及判断验证码的正确性。
+`MrbirdUsernamePasswordAuthenticationFilter`继承自`UsernamePasswordAuthenticationFilter`，主要工作是获取用户在登录界面输入的用户名和密码，并判断是否为空，以及判断验证码的正确性。
 
 `UsernamePasswordAuthenticationToken` 中有2个参数`Object principal`（主要的身份认证信息），`Object credentials`（用于证明principal是正确的信息，比如密码）在一个带有username和password的权限认证请求中，principal就会被赋值username，credentials就会被赋值password。
 
-我们还可以在Spring Security.xml中的loginfilter bean配置登陆成功与失败的过滤器：
+我们还可以在Spring Security.xml中的loginfilter bean配置登录成功与失败的过滤器：
 ```xml
 <b:bean id="loginfilter" 
     class="spring.security.web.MrbirdUsernamePasswordAuthenticationFilter">
@@ -584,7 +584,7 @@ public class MrbirdUsernamePasswordAuthenticationFilter
     <b:property name="defaultTargetUrl" value="/index"/>
 </b:bean>  
 ```
-其中，`MrbirdLoginSuccessHandler`用于处理登陆成功后的操作，比如生成日志等：
+其中，`MrbirdLoginSuccessHandler`用于处理登录成功后的操作，比如生成日志等：
 ```java
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -601,8 +601,8 @@ public class MrbirdLoginSuccessHandler
         public void onAuthenticationSuccess(HttpServletRequest request, 
             HttpServletResponse response,Authentication authentication) 
             throws ServletException, IOException{
-        System.out.println("登陆成功！");
-        //获取登陆人信息
+        System.out.println("登录成功！");
+        //获取登录人信息
         User user = (User) authentication.getPrincipal();
         System.out.println(user.getUsername()+user.getAuthorities());
         //跳转到主页面
@@ -647,7 +647,7 @@ public class MrbirdLogoutSuccessHandler
         System.out.println("登出成功！");
         User user = (User) authentication.getPrincipal();
         System.out.println(user.getUsername()+user.getAuthorities());
-        //跳转到登陆页
+        //跳转到登录页
         super.handle(request, response, authentication);
     }
 }
@@ -797,14 +797,14 @@ admin成功登录后：
 
 控制台输出：
 ```xml
-登陆成功！
+登录成功！
 admin[ROLE_ADMIN, ROLE_USER]
 ```
 点击admin.jsp：
 
 ![49887609-file_1487996760103_2fc7.png](img/49887609-file_1487996760103_2fc7.png)
 
-点击logout回到登陆页面，使用user登录：
+点击logout回到登录页面，使用user登录：
 
 ![87434140-file_1487996785624_ce45.png](img/87434140-file_1487996785624_ce45.png)
 

@@ -122,11 +122,12 @@ public class LogAspect {
     public void pointcut() { }
 
     @Around("pointcut()")
-    public void around(ProceedingJoinPoint point) {
+    public Object around(ProceedingJoinPoint point) {
+        Object result = null;
         long beginTime = System.currentTimeMillis();
         try {
             // 执行方法
-            point.proceed();
+            result = point.proceed();
         } catch (Throwable e) {
             e.printStackTrace();
         }
@@ -134,6 +135,7 @@ public class LogAspect {
         long time = System.currentTimeMillis() - beginTime;
         // 保存日志
         saveLog(point, time);
+        return result;
     }
 
 	private void saveLog(ProceedingJoinPoint joinPoint, long time) {
