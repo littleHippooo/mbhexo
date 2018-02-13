@@ -318,7 +318,7 @@
         {{ post.content }}
       {% endif  %}
       <script>
-        $(".post-body a").addClass("ignore-href").attr("target","_blank");
+        $(".post-body a").not('.thispage').addClass("ignore-href").attr("target","_blank");
       </script>
     </div>
 

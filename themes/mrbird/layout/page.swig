@@ -39,13 +39,11 @@
         Let us be friends, g<span style="color:rgba(255,153,102,0.9);"><s>a</s></span>uys
 	  </div>
 	  <div class="friends-href">
-		<a href="https://32mb.space/" target="_blank" class="ignore-href"><i class="fa fa-fw fa-star"></i>32mb space</a>
-		<a href="http://blog.leanote.com/jint" target="_blank" class="ignore-href"><i class="fa fa-fw fa-star"></i>jint's blog</a>
+		<a href="http://lijint.cn/" target="_blank" class="ignore-href"><i class="fa fa-fw fa-star"></i>jint's blog</a>
 		<a href="http://ltsc.leanote.com/" target="_blank" class="ignore-href"><i class="fa fa-fw fa-star"></i>ltcs's blog</a>
 		<a href="http://blog.leanote.com/althars" target="_blank" class="ignore-href"><i class="fa fa-fw fa-star"></i>Althars's blog</a>
 		<a href="https://libisky.com/" target="_blank" class="ignore-href"><i class="fa fa-fw fa-star"></i>LiBiSky's blog</a>
-		<a href="http://hao.iyangqiong.com/" target="_blank" class="ignore-href"><i class="fa fa-fw fa-star"></i>HaoWeb navigation</a>
-    <a href="http://blog.leanote.com/tikki/" target="_blank" class="ignore-href"><i class="fa fa-fw fa-star"></i>tikki's blog</a>
+    	<a href="http://blog.leanote.com/tikki/" target="_blank" class="ignore-href"><i class="fa fa-fw fa-star"></i>tikki's blog</a>
 	  </div>
 	{% elif page.type === "music" %}
 	
