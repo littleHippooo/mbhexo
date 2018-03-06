@@ -50,7 +50,7 @@ menu:
   archives: /archives/
   tags: /tags/
   music: /music/
-  friends: /friends/
+  #friends: /friends/
   #sitemap: /sitemap.xml
   #commonweal: /404.html
 
@@ -163,7 +163,7 @@ social_icons:
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.jpg
 # in site  directory(source/uploads): /uploads/avatar.jpg
-avatar: /images/blogImage.jpg
+avatar: /images/c7c4ee7be3eb4e73a19887dc713505145.jpg
 
 
 # Table Of Contents in the Sidebar

@@ -52,6 +52,9 @@
 			.valine .vlist .vcard .vhead, .valine .vlist .vcard section .vfooter {
 				text-align: left;
 			}
+			.valine .vlist .vcard section {
+				padding-bottom: 0.5rem !important;
+			}
 			.vname {
 				color: #42b983 !important;
 			}
@@ -114,13 +117,13 @@
     	new Valine({
 		    el: '#comment-div' ,
 		    notify: true, 
-		    verify: false, 
+		    verify: true, 
 		    appId: '{{ theme.valine.app_id}}',
 		    appKey: '{{ theme.valine.app_key}}',
 		    placeholder: '',
 		    path: window.location.pathname, 
 		    avatar: 'monsterid',
-		    guest_info:  ['nick','link']
+		    guest_info:  ['nick','mail','link']
 		});
 		</script>
       {% endif %}
