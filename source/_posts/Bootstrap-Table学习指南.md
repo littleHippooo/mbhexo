@@ -205,7 +205,7 @@ var $Mrbird = (function() {
         sortable: false,
         sidePagination: "server",
         pageNumber: 1,
-        pageSize: 10,
+        pageSize: 5,
         pageList: [5, 10, 25, 50, 100],
         strictSearch: true,
         showColumns: false,
@@ -247,7 +247,6 @@ var $Mrbird = (function() {
 $(function() {
     var settings = {
         url: ctx + "bootstrap-table/list",
-        pageSize: 5,
         queryParams: function(params) {
             return {
                 pageSize: params.limit,
