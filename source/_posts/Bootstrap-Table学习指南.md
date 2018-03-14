@@ -194,7 +194,7 @@ function refresh() {
 ![QQ截图20180314172620.png](img/QQ截图20180314172620.png)
 
 ## 二次封装
-实际使用中除了几个常用的参数比如url，queryParams，columns等等之外，剩下的参数一半都是默认就好，所以接下来对其进行二次封装，使得开发中更为方便。
+实际使用中除了几个常用的参数比如url，queryParams，columns等等之外，剩下的参数一般默认就好，所以接下来对其进行二次封装，使得开发中更为方便。
 ```javascript
 var $Mrbird = (function() {
     var bootstrapTable_default = {
