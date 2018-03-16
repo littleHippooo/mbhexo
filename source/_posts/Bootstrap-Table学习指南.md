@@ -281,3 +281,4 @@ $(function() {
 ## 附录
 Bootstap Table除了上面介绍的内容外，其还包含了许多别的特性，可参考官方文档：[http://bootstrap-table.wenzhixin.net.cn/zh-cn/documentation/](http://bootstrap-table.wenzhixin.net.cn/zh-cn/documentation/)。
 
+源码链接：[https://drive.google.com/open?id=1qEVgDDBfbdaVJ1FSckzQr6RAUyGF7k6J](https://drive.google.com/open?id=1qEVgDDBfbdaVJ1FSckzQr6RAUyGF7k6J)

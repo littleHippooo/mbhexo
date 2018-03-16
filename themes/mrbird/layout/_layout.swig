@@ -93,7 +93,7 @@ $("body").animsition({inClass:"fade-in",outClass:"fade-out",inDuration:300,outDu
   {% include '_third-party/exturl.swig' %}
 </body>
 <script>
-  $(function(){$("a").not(".nav-link,.cloud-tie-join-count,.ignore-href").addClass("animsition-link");});var burst1 = new mojs.Burst({left: 0, top: 0,radius: { 5: 40 },children: {shape: 'circle',fill: ['red', 'cyan', 'orange' ],fillOpacity: .8,radiusX: 3.5,radiusY: 3.5}});document.addEventListener('click', function (e) {if(e.target.href != null || e.target.className=='footer' || e.target.className=='copyright' || e.target.className=='author__urls social-icons' || e.target.className=='author__avatar' || e.target.className=='sidebar sidebar-active') return; burst1.tune({ x: e.pageX, y: e.pageY }).generate().replay();});
+  $(function(){$("a").not(".nav-link,.cloud-tie-join-count,.ignore-href,.jstree-anchor").addClass("animsition-link");});var burst1 = new mojs.Burst({left: 0, top: 0,radius: { 5: 40 },children: {shape: 'circle',fill: ['red', 'cyan', 'orange' ],fillOpacity: .8,radiusX: 3.5,radiusY: 3.5}});document.addEventListener('click', function (e) {if(e.target.href != null || e.target.className=='footer' || e.target.className=='copyright' || e.target.className=='author__urls social-icons' || e.target.className=='author__avatar' || e.target.className=='sidebar sidebar-active') return; burst1.tune({ x: e.pageX, y: e.pageY }).generate().replay();});
 
 </script>
 <script type="text/javascript" src="{{ url_for(theme.js) }}/message.js"></script>
