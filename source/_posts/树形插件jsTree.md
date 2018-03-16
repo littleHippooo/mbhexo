@@ -1,7 +1,7 @@
 ---
 title: 树形插件jsTree
-date: 2018-03-14 09:49:17
-tags:
+date: 2018-02-01 09:49:17
+tags: jQuery
 ---
 jsTree是一款基于jQuery的树形控件，具有扩展性强，可编辑和可配置的特性，支持HTML，JSON和Ajax数据加载。jsTree官网地址：[https://www.jstree.com/](https://www.jstree.com/)。这里主要介绍的是基于Ajax从数据库获取数据，然后生成树形菜单的用法。jsTree的皮肤可以自由定制，本文使用的是一款第三方jsTree皮肤。
 <!--more-->
