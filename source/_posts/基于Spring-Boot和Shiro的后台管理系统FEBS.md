@@ -36,7 +36,7 @@ tags: [Java,Spring Boot,Shiro]
 
 - 基础框架：Spring Boot
 
-- 持久层框架：Mybatis
+- 持久层框架：MyBatis
 
 - 安全框架：Apache Shiro
 
@@ -52,7 +52,7 @@ tags: [Java,Spring Boot,Shiro]
 
 ### 前端
  
-- 基础框架：Bootstrap
+- 基础框架：Bootstrap4
 
 - JavaScirpy框架：jQuery
 
@@ -80,7 +80,7 @@ tags: [Java,Spring Boot,Shiro]
 
 - 依赖管理：Maven
 
-- 数据库：Oracle 11g
+- 数据库：Oracle 11g & MySQL 5.7
 
 - 版本管理：SVN，git
 
@@ -123,6 +123,7 @@ tags: [Java,Spring Boot,Shiro]
 
 下载地址：
 
+码云：
 <script src='https://gitee.com/github-16661027/project/widget_preview'></script>
 
 <style>
@@ -137,6 +138,18 @@ tags: [Java,Spring Boot,Shiro]
 }
 </style>
 
+GitHub：
+
+{% githubCard user:wuyouzhuguli repo:FEBS width:100% %}
+
+<style>
+.github-card {
+	border-radius: 2px !important;
+}
+.repo-card .content p {
+	font-size: .9rem !important;
+}
+</style>
 下载后以maven项目导入，建议打包成war包部署。账号mrbird，密码123456，访问地址[localhost](localhost)。
 
-本软件使用 [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0) 协议，请严格遵照协议内容
+本软件使用 [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0) 协议，请严格遵照协议内容。
