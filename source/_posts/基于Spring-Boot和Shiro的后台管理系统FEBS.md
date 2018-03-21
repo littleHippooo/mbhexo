@@ -52,11 +52,11 @@ tags: [Java,Spring Boot,Shiro]
 
 ### 前端
  
-- 基础框架：Bootstap
+- 基础框架：Bootstrap
 
-- JavaScirpy框架：Jquery
+- JavaScirpy框架：jQuery
 
-- 消息组件：Bootstap notify
+- 消息组件：Bootstrap notify
 
 - 提示框插件：SweetAlert2
 
